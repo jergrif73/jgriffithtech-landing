@@ -1,0 +1,197 @@
+<\!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>See 'n' Say — Revit Add-in for MEP Detailing - JGriffith Tech</title>
+  <meta name="description" content="A compiled Revit add-in built for MEP detailers. Inspect, identify, and organize elements with tools built for real detailing workflows. $39.99 one-time purchase.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <\!-- Open Graph -->
+  <meta property="og:title" content="See 'n' Say — Revit Add-in for MEP Detailing">
+  <meta property="og:description" content="Inspect, identify, and organize Revit elements with tools built for real detailing workflows. Created by a VDC manager with 25+ years in MEP.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://jgriffithtech.com/seensay">
+  <meta property="og:image" content="https://jgriffithtech.com/logo.png">
+  <meta property="og:site_name" content="JGriffith Tech">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="See 'n' Say — Revit Add-in for MEP Detailing">
+  <meta name="twitter:description" content="Inspect, identify, and organize Revit elements with tools built for real detailing workflows.">
+  <meta name="twitter:image" content="https://jgriffithtech.com/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class='nav-logo' href='/'><img src="logo-nav.png" alt="JGriffith Tech"></a>
+    <ul class="nav-links">
+      <li><a href='/'>Home</a></li>
+      <li><a href='/pipe-schematic-pro'>Pipe Schematic Pro</a></li>
+      <li><a href='/ductulator'>Ductulator</a></li>
+      <li><a href='/point-load-calculator'>Point Load Calc</a></li>
+      <li><a class='active' href='/seensay'>See 'n' Say</a></li>
+      <li><a class='btn btn-primary' href='/mep-toolkit' style='padding:8px 18px;font-size:0.85rem;'>MEP Toolkit</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="product-hero">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+    <div class="animate-on-scroll">
+      <p style="color:var(--gold);font-weight:600;font-size:0.9rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;">Revit Add-in for MEP Detailing</p>
+      <h1 style="margin-bottom:20px;">See 'n' <span class="text-gold">Say</span></h1>
+      <p style="color:var(--text-secondary);font-size:1.15rem;line-height:1.7;margin-bottom:32px;">A compiled Revit add-in built for MEP detailers who need to inspect, identify, and organize elements fast. Created by a VDC manager with 25+ years in MEP detailing, every tool solves a real problem from the field.</p>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+        <span style="font-size:2rem;font-weight:800;color:var(--gold);">$39.99</span>
+        <span style="color:var(--text-secondary);font-size:0.9rem;">One-time purchase</span>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <a href="https://jergrif.gumroad.com/l/seensay" class="btn btn-primary" target="_blank">Buy Now on Gumroad</a>
+      </div>
+      <p style="color:var(--text-muted);font-size:0.85rem;margin-top:16px;">Windows installer &bull; Revit 2024 &amp; 2025 &bull; Lifetime updates &bull; .NET Framework 4.8</p>
+    </div>
+    <div class="product-mockup animate-on-scroll stagger-2" style="display:flex;justify-content:center;">
+      <div style="width:320px;background:var(--dark-card);border-radius:16px;border:2px solid var(--gold);padding:32px;box-shadow:var(--shadow-lg);">
+        <div style="text-align:center;margin-bottom:24px;">
+          <span style="font-size:3rem;">🔍</span>
+          <h3 style="margin-top:12px;font-size:1.2rem;">8 Professional Tools</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:4px;">Inspection + Identification</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Element Visibility</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Renumber</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Sync Views</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Place Tags</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Find Sheet</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Check Duct</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Snoop</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Rotate Multi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
+      <h2>Inspection Tools</h2>
+      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">See what's in your model. Control what's visible. Navigate your sheets.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card animate-on-scroll stagger-1">
+        <div class="feature-icon">👁️</div>
+        <h3>Element Visibility</h3>
+        <p>Control element visibility in views. Quickly isolate, hide, or reveal elements by category, workset, or selection to focus on what matters.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-2">
+        <div class="feature-icon">🔄</div>
+        <h3>Sync Views</h3>
+        <p>Synchronize views across sheets. Keep your crop regions, view scales, and visibility settings consistent without manual effort.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-3">
+        <div class="feature-icon">🔎</div>
+        <h3>Find Sheet</h3>
+        <p>Locate elements across your entire sheet set. Select an element and instantly find every sheet it appears on.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-4">
+        <div class="feature-icon">🔬</div>
+        <h3>Snoop Selection</h3>
+        <p>Deep-dive into element properties. See parameters, family info, geometry data, and connector details that the Properties palette hides.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
+      <h2>Identification Tools</h2>
+      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Name it. Tag it. Orient it. Get your model talking.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card animate-on-scroll stagger-1">
+        <div class="feature-icon">🔢</div>
+        <h3>Renumber Elements</h3>
+        <p>Systematic renumbering workflows for spool numbers, hanger tags, equipment marks, and more. Sequential or custom patterns.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-2">
+        <div class="feature-icon">🏷️</div>
+        <h3>Place Tags</h3>
+        <p>Batch tag placement for elements. Select a group, pick a tag family, and place them all at once with consistent positioning.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-3">
+        <div class="feature-icon">📐</div>
+        <h3>Check Duct Orientation</h3>
+        <p>Verify duct direction and connections. Flag reversed sections, check slope direction, and confirm flow orientation across your system.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-4">
+        <div class="feature-icon">🔄</div>
+        <h3>Rotate Multiple</h3>
+        <p>Batch rotate selected elements. Align tags, equipment, or fittings consistently without clicking through them one by one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
+      <h2>What You Get</h2>
+    </div>
+    <div style="max-width:600px;margin:0 auto;">
+      <div class="card animate-on-scroll">
+        <ul style="list-style:none;">
+          <li style="padding:12px 0;color:var(--text-secondary);font-size:1rem;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);"><span style="color:var(--sage);font-size:1.2rem;">✓</span> SeeNSay_Setup.exe installer</li>
+          <li style="padding:12px 0;color:var(--text-secondary);font-size:1rem;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);"><span style="color:var(--sage);font-size:1.2rem;">✓</span> One-time purchase, lifetime updates</li>
+          <li style="padding:12px 0;color:var(--text-secondary);font-size:1rem;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);"><span style="color:var(--sage);font-size:1.2rem;">✓</span> Autodesk Revit 2024 and 2025 support</li>
+          <li style="padding:12px 0;color:var(--text-secondary);font-size:1rem;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);"><span style="color:var(--sage);font-size:1.2rem;">✓</span> Windows 10/11, .NET Framework 4.8</li>
+          <li style="padding:12px 0;color:var(--text-secondary);font-size:1rem;display:flex;align-items:center;gap:12px;"><span style="color:var(--sage);font-size:1.2rem;">✓</span> Email support at jergrif73@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="animate-on-scroll">
+      <a href="https://jergrif.gumroad.com/l/seensay" class="btn btn-primary" target="_blank" style="font-size:1.1rem;padding:16px 36px;">Buy Now — $39.99</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><a href='/'><img src="logo-nav.png" alt="JGriffith Tech"></a></div>
+        <p>MEP tools built by a detailer, for detailers.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <ul>
+          <li><a href='/pipe-schematic-pro'>Pipe Schematic Pro</a></li>
+          <li><a href='/ductulator'>Interactive Ductulator</a></li>
+          <li><a href='/point-load-calculator'>Point Load Calculator</a></li>
+          <li><a href='/mep-toolkit'>MEP Toolkit</a></li>
+          <li><a href='/seensay'>See 'n' Say</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact &amp; Legal</h4>
+        <ul>
+          <li><a href='/#contact'>Contact</a></li>
+          <li><a href='/privacy'>Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024-2026 JGriffith Tech. All rights reserved.</p>
+      <p>Made with precision in the Pacific Northwest.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
