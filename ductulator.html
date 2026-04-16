@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Ductulator - JGriffith Tech</title>
+  <meta name="description" content="HVAC duct sizing made simple. Round, rectangular, and flat oval equivalents with real-time calculations and visual scaled diagrams.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class='nav-logo' href='/'><img src="logo-nav.png" alt="JGriffith Tech"></a>
+    <ul class="nav-links">
+      <li><a href='/'>Home</a></li>
+      <li><a href='/pipe-schematic-pro'>Pipe Schematic Pro</a></li>
+      <li><a class='active' href='/ductulator'>Ductulator</a></li>
+      <li><a href='/point-load-calculator'>Point Load Calc</a></li>
+      <li><a href='/#seensay'>See 'n' Say</a></li>
+      <li><a class='btn btn-primary' href='/mep-toolkit' style='padding:8px 18px;font-size:0.85rem;'>MEP Toolkit</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="product-hero">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+    <div class="animate-on-scroll">
+      <p style="color:var(--gold);font-weight:600;font-size:0.9rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;">HVAC Duct Sizing</p>
+      <h1 style="margin-bottom:20px;">Interactive <span class="text-gold">Ductulator</span></h1>
+      <p style="color:var(--text-secondary);font-size:1.15rem;line-height:1.7;margin-bottom:32px;">Size ductwork instantly. Compare 4 simultaneous profiles, calculate CFM, velocity, and friction loss with visual scaled diagrams — all based on ASHRAE Fundamentals.</p>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+        <span style="font-size:2rem;font-weight:800;color:var(--gold);">$2.99</span>
+        <span style="color:var(--text-secondary);font-size:0.9rem;">One-time purchase</span>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="#" class="btn btn-primary">Get on Google Play</a>
+        <a href="/mep-toolkit" class="btn btn-outline">Save 27% with MEP Toolkit</a>
+      </div>
+    </div>
+    <div class="product-mockup animate-on-scroll stagger-2" style="display:flex;justify-content:center;">
+      <div class="mockup-frame" style="width:280px;height:560px;background:var(--dark-card);border-radius:36px;border:3px solid var(--border);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);">
+        <div class="mockup-screen" style="width:260px;height:520px;border-radius:28px;background:linear-gradient(180deg,#1a2236 0%,#0F172A 100%);display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:4rem;">💨</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
+      <h2>Duct Sizing, Solved</h2>
+      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Built for HVAC engineers, mechanical designers, and sheet metal detailers.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card animate-on-scroll stagger-1">
+        <div class="feature-icon">📊</div>
+        <h3>4 Simultaneous Profiles</h3>
+        <p>Compare 2 rectangular, 1 round, and 1 flat oval profile side by side. See all your options at once.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-2">
+        <div class="feature-icon">🔄</div>
+        <h3>Auto-Calculate Everything</h3>
+        <p>Enter any two of CFM, velocity (FPM), or friction loss (in. wg/100ft) and the third calculates automatically.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-3">
+        <div class="feature-icon">🏗️</div>
+        <h3>5 Duct Materials</h3>
+        <p>Galvanized steel, stainless steel, aluminum, fiberglass board, and flex duct — each with accurate roughness factors.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-4">
+        <div class="feature-icon">📐</div>
+        <h3>Visual Scaled Diagrams</h3>
+        <p>See duct cross-sections drawn to scale with live dimension labels. Aspect ratio displayed for manufacturability checks.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-1">
+        <div class="feature-icon">📏</div>
+        <h3>Snap to Standard Sizes</h3>
+        <p>Toggle snap-to-standard to lock dimensions to standard manufactured sizes. No guesswork.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-2">
+        <div class="feature-icon">📤</div>
+        <h3>Share Results</h3>
+        <p>Share duct sizing results directly with your team from the app. ASHRAE Equal Friction Loss method documented.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt section">
+  <div class="container" style="text-align:center;">
+    <div class="animate-on-scroll">
+      <h2>Save 27% with MEP Toolkit</h2>
+      <p class="text-secondary" style="margin-top:12px;font-size:1.1rem;max-width:600px;margin-left:auto;margin-right:auto;">
+        Get Interactive Ductulator plus Pipe Schematic Pro and Point Load Calculator for just <strong style="color:var(--gold);">$7.99</strong> instead of $10.97.
+      </p>
+      <div style="margin-top:32px;">
+        <a class='btn btn-primary' href='/mep-toolkit'>View MEP Toolkit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><a href='/'><img src="logo-nav.png" alt="JGriffith Tech"></a></div>
+        <p>MEP tools built by a detailer, for detailers.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <ul>
+          <li><a href='/pipe-schematic-pro'>Pipe Schematic Pro</a></li>
+          <li><a href='/ductulator'>Interactive Ductulator</a></li>
+          <li><a href='/point-load-calculator'>Point Load Calculator</a></li>
+          <li><a href='/mep-toolkit'>MEP Toolkit</a></li>
+          <li><a href='/#seensay'>See 'n' Say</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact &amp; Legal</h4>
+        <ul>
+          <li><a href='/#contact'>Contact</a></li>
+          <li><a href='/privacy'>Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024-2026 JGriffith Tech. All rights reserved.</p>
+      <p>Made with precision in the Pacific Northwest.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

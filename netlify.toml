@@ -1,2 +1,27 @@
 [build]
   publish = "."
+
+[[redirects]]
+  from = "/pipe-schematic-pro"
+  to = "/pipe-schematic-pro.html"
+  status = 200
+
+[[redirects]]
+  from = "/ductulator"
+  to = "/ductulator.html"
+  status = 200
+
+[[redirects]]
+  from = "/point-load-calculator"
+  to = "/point-load-calculator.html"
+  status = 200
+
+[[redirects]]
+  from = "/mep-toolkit"
+  to = "/mep-toolkit.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
