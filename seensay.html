@@ -60,18 +60,24 @@
       <div style="width:320px;background:var(--dark-card);border-radius:16px;border:2px solid var(--gold);padding:32px;box-shadow:var(--shadow-lg);">
         <div style="text-align:center;margin-bottom:24px;">
           <span style="font-size:3rem;">🔍</span>
-          <h3 style="margin-top:12px;font-size:1.2rem;">8 Professional Tools</h3>
-          <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:4px;">Inspection + Identification</p>
+          <h3 style="margin-top:12px;font-size:1.2rem;">14 Professional Tools</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:4px;">Inspection + Designation</p>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Element Visibility</div>
-          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Renumber</div>
           <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Sync Views</div>
-          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Place Tags</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Elem Visibility</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Snoop Selection</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Compare</div>
           <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Find Sheet</div>
-          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Check Duct</div>
-          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Snoop</div>
-          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Rotate Multi</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Duct Orient</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Coil Duct</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Renumber</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Place Tags</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">View Converter</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Toggle Case</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Rotate Multiple</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Convert</div>
+          <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Set Hangers</div>
         </div>
       </div>
     </div>
@@ -81,29 +87,44 @@
 <section class="section">
   <div class="container">
     <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
-      <h2>Inspection Tools</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">See what's in your model. Control what's visible. Navigate your sheets.</p>
+      <h2>Inspection Panel</h2>
+      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">See what's in your model. Diagnose what's hidden. Catch fab errors before the shop floor.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card animate-on-scroll stagger-1">
-        <div class="feature-icon">👁️</div>
-        <h3>Element Visibility</h3>
-        <p>Control element visibility in views. Quickly isolate, hide, or reveal elements by category, workset, or selection to focus on what matters.</p>
-      </div>
-      <div class="feature-card animate-on-scroll stagger-2">
         <div class="feature-icon">🔄</div>
         <h3>Sync Views</h3>
-        <p>Synchronize views across sheets. Keep your crop regions, view scales, and visibility settings consistent without manual effort.</p>
+        <p>Match the pan, zoom, and rotation of the active view to one or more target views. Works across 2D plans (crop regions and zoom) and 3D views (camera position and orientation). Keeps coordination views aligned during review.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-2">
+        <div class="feature-icon">👁️</div>
+        <h3>Element Visibility</h3>
+        <p>Pick an element and two views — the tool walks every visibility condition (category, workset, filter, phase, design option, crop region, view range) and reports exactly which setting causes the difference. Stop manually toggling settings to find why something disappeared.</p>
       </div>
       <div class="feature-card animate-on-scroll stagger-3">
-        <div class="feature-icon">🔎</div>
-        <h3>Find Sheet</h3>
-        <p>Locate elements across your entire sheet set. Select an element and instantly find every sheet it appears on.</p>
-      </div>
-      <div class="feature-card animate-on-scroll stagger-4">
         <div class="feature-icon">🔬</div>
         <h3>Snoop Selection</h3>
-        <p>Deep-dive into element properties. See parameters, family info, geometry data, and connector details that the Properties palette hides.</p>
+        <p>Deep-inspect any element's full property tree: parameters, geometry, connectors, fabrication data, and raw .NET members. Essential for debugging API behavior, verifying parameter values, and understanding how Revit stores element data.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-4">
+        <div class="feature-icon">⚖️</div>
+        <h3>Compare</h3>
+        <p>Side-by-side comparison of two elements, families, views, or schedules. Highlights every parameter difference in a sortable grid. Verify consistency between similar elements or track changes between model versions.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-1">
+        <div class="feature-icon">🔎</div>
+        <h3>Find Sheet</h3>
+        <p>Select a view or viewport and instantly navigate to the sheet where it lives. Saves time hunting through the Project Browser on large models with hundreds of sheets.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-2">
+        <div class="feature-icon">📐</div>
+        <h3>Check Duct Orientation</h3>
+        <p>Scans fabrication duct and flags any piece where the width dimension is narrower than the depth. Catches orientation errors before they reach the shop floor. Color-codes affected elements in the active view.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-3">
+        <div class="feature-icon">🌀</div>
+        <h3>Coil Duct</h3>
+        <p>Calculates overall cut length (body + connector allowances) for each rectangular fab straight and checks coil-machine eligibility. Tags and color-codes results: green = eligible, red = bad connector/shape, purple = exceeds coil width. Configurable connector profiles with import/export.</p>
       </div>
     </div>
   </div>
@@ -112,29 +133,44 @@
 <section class="section-alt section">
   <div class="container">
     <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
-      <h2>Identification Tools</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Name it. Tag it. Orient it. Get your model talking.</p>
+      <h2>Designation Panel</h2>
+      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Number it. Tag it. Convert it. Spin it. Sync the hangers.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card animate-on-scroll stagger-1">
         <div class="feature-icon">🔢</div>
-        <h3>Renumber Elements</h3>
-        <p>Systematic renumbering workflows for spool numbers, hanger tags, equipment marks, and more. Sequential or custom patterns.</p>
+        <h3>Renumber</h3>
+        <p>Wizard-driven renumbering with multiple ordering modes: left-to-right, top-to-bottom, nearest-neighbor, or along a path. Supports prefix/suffix patterns, grouping by system or level, and gap numbering. Preview mode shows proposed numbers before committing. Undo-safe.</p>
       </div>
       <div class="feature-card animate-on-scroll stagger-2">
         <div class="feature-icon">🏷️</div>
         <h3>Place Tags</h3>
-        <p>Batch tag placement for elements. Select a group, pick a tag family, and place them all at once with consistent positioning.</p>
+        <p>Batch-place tags on selected elements using saved tag profiles. Supports offset positioning, leader control, and multi-category tagging in a single pass. Profile system remembers your preferred tag family and settings per category.</p>
       </div>
       <div class="feature-card animate-on-scroll stagger-3">
-        <div class="feature-icon">📐</div>
-        <h3>Check Duct Orientation</h3>
-        <p>Verify duct direction and connections. Flag reversed sections, check slope direction, and confirm flow orientation across your system.</p>
+        <div class="feature-icon">🪟</div>
+        <h3>View Converter</h3>
+        <p>Converts Legend views to Drafting Detail views and back. Rebuilds detail curves, text notes, filled regions, annotation symbols, and dimensions directly in the new view. Options to delete the source, auto-open the result, and zoom to fit.</p>
       </div>
       <div class="feature-card animate-on-scroll stagger-4">
+        <div class="feature-icon">🔠</div>
+        <h3>Toggle Case</h3>
+        <p>Cycle TextNote elements between UPPERCASE, Title Case, and lowercase — like Shift+F3 in Word. Auto-Cycle mode detects the dominant case across your selection and advances to the next. Save profiles for your preferred mode.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-1">
         <div class="feature-icon">🔄</div>
         <h3>Rotate Multiple</h3>
-        <p>Batch rotate selected elements. Align tags, equipment, or fittings consistently without clicking through them one by one.</p>
+        <p>Rotates each selected element around its <em>own</em> center point — unlike Revit's native rotate, which uses a single shared axis. Enter an angle and every selected element spins in place. Built for adjusting diffusers, equipment, or fittings in bulk.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-2">
+        <div class="feature-icon">🔁</div>
+        <h3>Convert</h3>
+        <p>Unified conversion engine for fabrication ductwork. Convert between fabrication and native Revit elements, change service types, or swap connector configurations. Handles rectangular, round, and oval profiles with automatic size mapping.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-3">
+        <div class="feature-icon">🪝</div>
+        <h3>Set Hangers</h3>
+        <p>Pre-select duct or pipe (or pick after launching). Finds all Generic Model RFA hangers within 1 ft XY of each element and writes slope-interpolated BOH elevation, clamp size, trapeze width, and insulation parameters. Pick Host lets you manually reassign a hanger.</p>
       </div>
     </div>
   </div>
