@@ -17,6 +17,11 @@
   status = 200
 
 [[redirects]]
+  from = "/offset3d"
+  to = "/offset3d.html"
+  status = 200
+
+[[redirects]]
   from = "/mep-toolkit"
   to = "/mep-toolkit.html"
   status = 200
