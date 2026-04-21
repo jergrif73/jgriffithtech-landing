@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StairBuilder - JGriffith Tech</title>
+  <meta name="description" content="3D stair designer with IBC, IRC, and ADA code compliance checks. Auto-generated bill of materials, multi-flight support, and exportable BOMs.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta property="og:title" content="StairBuilder - 3D Stair Designer with Code Compliance">
+  <meta property="og:description" content="Design stairs with real-time IBC, IRC, and ADA code checks. Interactive 3D visualization, auto BOM, and multi-flight support.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://jgriffithtech.com/stairbuilder">
+  <meta property="og:image" content="https://jgriffithtech.com/logo.png">
+  <meta property="og:site_name" content="JGriffith Tech">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class='nav-logo' href='/'><img src="logo-nav.png" alt="JGriffith Tech"></a>
+    <ul class="nav-links">
+      <li><a href='/'>Home</a></li>
+      <li><a href='/pipe-schematic-pro'>Pipe Schematic Pro</a></li>
+      <li><a href='/ductulator'>Ductulator</a></li>
+      <li><a href='/point-load-calculator'>Point Load Calc</a></li>
+      <li><a href='/offset3d'>Offset3D</a></li>
+      <li><a class='active' href='/stairbuilder'>StairBuilder</a></li>
+      <li><a href='/seensay'>See 'n' Say</a></li>
+      <li><a class='btn btn-primary' href='/mep-toolkit' style='padding:8px 18px;font-size:0.85rem;'>MEP Toolkit</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="product-hero">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+    <div class="animate-on-scroll">
+      <p style="color:var(--gold);font-weight:600;font-size:0.9rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;">3D Stair Design + Code Compliance</p>
+      <h1 style="margin-bottom:20px;">Stair<span class="text-gold">Builder</span></h1>
+      <p style="color:var(--text-secondary);font-size:1.15rem;line-height:1.7;margin-bottom:32px;">Design code-compliant stairs in seconds. Real-time IBC, IRC, and ADA checks, interactive 3D visualization, and auto-generated bill of materials — all from your phone.</p>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+        <span style="font-size:2rem;font-weight:800;color:var(--gold);">$4.99</span>
+        <span style="color:var(--text-secondary);font-size:0.9rem;">One-time purchase</span>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <span class="btn btn-primary" style="opacity:0.6;cursor:default;">Coming Soon to Google Play</span>
+      </div>
+    </div>
+    <div class="product-mockup animate-on-scroll stagger-2" style="display:flex;justify-content:center;">
+      <div class="mockup-frame" style="width:280px;height:560px;background:var(--dark-card);border-radius:36px;border:3px solid var(--border);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);">
+        <div class="mockup-screen" style="width:260px;height:520px;border-radius:28px;background:linear-gradient(180deg,#1a2236 0%,#0F172A 100%);display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:4rem;">🏗️</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
+      <h2>Design Stairs That Pass Inspection</h2>
+      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Built for contractors, detailers, and architects who need it right the first time.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card animate-on-scroll stagger-1">
+        <div class="feature-icon">📋</div>
+        <h3>Code Compliance</h3>
+        <p>Real-time checks against IBC 2021 (commercial), IRC 2021 (residential), and ADA 2010 (accessible). Instant pass/fail on every parameter.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-2">
+        <div class="feature-icon">🧊</div>
+        <h3>Interactive 3D View</h3>
+        <p>See your stair in full 3D with orbit controls. Treads, risers, stringers, handrails, and balusters all rendered in real time as you adjust parameters.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-3">
+        <div class="feature-icon">📦</div>
+        <h3>Auto Bill of Materials</h3>
+        <p>Complete BOM generated automatically — treads, risers, stringers, handrails, balusters, newel posts, and landing platforms with dimensions and quantities.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-4">
+        <div class="feature-icon">🔀</div>
+        <h3>Multi-Flight Support</h3>
+        <p>Straight run, L-shape, or U-shape configurations. Landing depths calculated per code. Max flight rise enforced automatically.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-1">
+        <div class="feature-icon">📐</div>
+        <h3>Precision Calculations</h3>
+        <p>Actual riser height, total run, stringer length, stair angle, and the 2R+T comfort rule — all computed to 3 decimal places.</p>
+      </div>
+      <div class="feature-card animate-on-scroll stagger-2">
+        <div class="feature-icon">📤</div>
+        <h3>Export BOM</h3>
+        <p>Export your complete bill of materials as a text file or share directly from the app. Includes all dimensions and code compliance status.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
+      <h2>Codes Checked</h2>
+      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Every parameter validated against the code you select.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;">
+      <div class="card animate-on-scroll stagger-1">
+        <h3 style="color:var(--gold);margin-bottom:12px;">IBC 2021</h3>
+        <p class="text-secondary" style="font-size:0.9rem;">Commercial buildings. Riser 4"–7", tread min 11", width 44", headroom 6'-8", max flight rise 12'.</p>
+      </div>
+      <div class="card animate-on-scroll stagger-2">
+        <h3 style="color:var(--gold);margin-bottom:12px;">IRC 2021</h3>
+        <p class="text-secondary" style="font-size:0.9rem;">Residential buildings. Riser max 7.75", tread min 10", nosing 3/4"–1.25" required, max flight rise 12'-7".</p>
+      </div>
+      <div class="card animate-on-scroll stagger-3">
+        <h3 style="color:var(--gold);margin-bottom:12px;">ADA 2010</h3>
+        <p class="text-secondary" style="font-size:0.9rem;">Accessible design. Riser 4"–7", tread min 11", nosing max 1/2" (beveled), 60" landing for wheelchair turning.</p>
+      </div>
+    </div>
+    <div class="animate-on-scroll" style="text-align:center;margin-top:32px;">
+      <p class="text-secondary" style="font-size:0.85rem;max-width:600px;margin:0 auto;line-height:1.6;">
+        This tool checks dimensional compliance only. It does not verify structural load capacity, fire ratings, material specs, or local code amendments. Always consult your local building authority before building.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><a href='/'><img src="logo-nav.png" alt="JGriffith Tech"></a></div>
+        <p>MEP tools built by a detailer, for detailers.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <ul>
+          <li><a href='/pipe-schematic-pro'>Pipe Schematic Pro</a></li>
+          <li><a href='/ductulator'>Interactive Ductulator</a></li>
+          <li><a href='/point-load-calculator'>Point Load Calculator</a></li>
+          <li><a href='/offset3d'>Offset3D</a></li>
+          <li><a href='/stairbuilder'>StairBuilder</a></li>
+          <li><a href='/mep-toolkit'>MEP Toolkit</a></li>
+          <li><a href='/seensay'>See 'n' Say</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact &amp; Legal</h4>
+        <ul>
+          <li><a href='/#contact'>Contact</a></li>
+          <li><a href='/privacy'>Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024-2026 JGriffith Tech. All rights reserved.</p>
+      <p>Made with precision in the Pacific Northwest.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
