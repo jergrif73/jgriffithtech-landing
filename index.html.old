@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#262B40" />
+  <title>JGriffith Tech — Professional MEP Tools</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #262B40;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    .hero img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      border-radius: 18px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #b0b8cc;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards-section {
+      flex: 1;
+      padding: 2rem 1.25rem;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: #323850;
+      border-radius: 14px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+    }
+
+    .card.featured {
+      border: 2px solid #7A8B6F;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .badge {
+      background: #7A8B6F;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: #b0b8cc;
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
+
+    .price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #7A8B6F;
+    }
+
+    .play-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #7A8B6F;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.5rem 0.9rem;
+      border-radius: 8px;
+      transition: background 0.15s, transform 0.1s;
+      white-space: nowrap;
+    }
+
+    .play-btn:hover {
+      background: #8fa080;
+      transform: translateY(-1px);
+    }
+
+    .play-btn:active {
+      transform: translateY(0);
+    }
+
+    .play-icon {
+      width: 14px;
+      height: 14px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+
+    /* MEP Toolkit spans full width on larger screens */
+    @media (min-width: 600px) {
+      .card.featured {
+        grid-column: 1 / -1;
+      }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.8rem;
+      color: #7a829a;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    footer a {
+      color: #7A8B6F;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer .sep {
+      margin: 0 0.5rem;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="logo.png" alt="JGriffith Tech logo" />
+    <h1>JGriffith Tech</h1>
+    <p>Professional MEP Tools for the Field and Office</p>
+  </header>
+
+  <!-- APP CARDS -->
+  <main class="cards-section">
+    <div class="cards-grid">
+
+      <!-- MEP Toolkit (featured) -->
+      <div class="card featured">
+        <div class="card-header">
+          <span class="card-title">MEP Toolkit</span>
+          <span class="badge">SAVE 27%</span>
+        </div>
+        <p class="card-desc">All three tools in one app — Ductulator, Point Load Calculator, and Pipe Schematic Pro.</p>
+        <div class="card-footer">
+          <span class="price">$7.99</span>
+          <a href="#" class="play-btn" aria-label="Get MEP Toolkit on Google Play">
+            <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.18 23.76a2 2 0 0 0 2.05-.17l12.1-6.97-2.93-2.93-11.22 10.07ZM1 1.27A2 2 0 0 0 .5 2.75v18.5A2 2 0 0 0 1 22.73L13.49 12 1 1.27ZM20.9 10.33l-2.59-1.49-3.22 2.88 3.22 3.22 2.6-1.5A2.01 2.01 0 0 0 20.9 10.33ZM5.23.41 17.3 7.4 14.38 10.3 3.18.42A2.02 2.02 0 0 1 5.23.41Z"/>
+            </svg>
+            Get it on Google Play
+          </a>
+        </div>
+      </div>
+
+      <!-- Pipe Schematic Pro -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Pipe Schematic Pro</span>
+        </div>
+        <p class="card-desc">Professional pipe schematic drawings with fittings library, BOM, and PDF export.</p>
+        <div class="card-footer">
+          <span class="price">$4.99</span>
+          <a href="#" class="play-btn" aria-label="Get Pipe Schematic Pro on Google Play">
+            <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.18 23.76a2 2 0 0 0 2.05-.17l12.1-6.97-2.93-2.93-11.22 10.07ZM1 1.27A2 2 0 0 0 .5 2.75v18.5A2 2 0 0 0 1 22.73L13.49 12 1 1.27ZM20.9 10.33l-2.59-1.49-3.22 2.88 3.22 3.22 2.6-1.5A2.01 2.01 0 0 0 20.9 10.33ZM5.23.41 17.3 7.4 14.38 10.3 3.18.42A2.02 2.02 0 0 1 5.23.41Z"/>
+            </svg>
+            Get it on Google Play
+          </a>
+        </div>
+      </div>
+
+      <!-- Interactive Ductulator -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Interactive Ductulator</span>
+        </div>
+        <p class="card-desc">HVAC duct sizing — round, rectangular, and flat oval equivalents.</p>
+        <div class="card-footer">
+          <span class="price">$2.99</span>
+          <a href="#" class="play-btn" aria-label="Get Interactive Ductulator on Google Play">
+            <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.18 23.76a2 2 0 0 0 2.05-.17l12.1-6.97-2.93-2.93-11.22 10.07ZM1 1.27A2 2 0 0 0 .5 2.75v18.5A2 2 0 0 0 1 22.73L13.49 12 1 1.27ZM20.9 10.33l-2.59-1.49-3.22 2.88 3.22 3.22 2.6-1.5A2.01 2.01 0 0 0 20.9 10.33ZM5.23.41 17.3 7.4 14.38 10.3 3.18.42A2.02 2.02 0 0 1 5.23.41Z"/>
+            </svg>
+            Get it on Google Play
+          </a>
+        </div>
+      </div>
+
+      <!-- Point Load Calculator -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Point Load Calculator</span>
+        </div>
+        <p class="card-desc">Structural point loads, beam reactions, and hanger capacity verification.</p>
+        <div class="card-footer">
+          <span class="price">$2.99</span>
+          <a href="#" class="play-btn" aria-label="Get Point Load Calculator on Google Play">
+            <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.18 23.76a2 2 0 0 0 2.05-.17l12.1-6.97-2.93-2.93-11.22 10.07ZM1 1.27A2 2 0 0 0 .5 2.75v18.5A2 2 0 0 0 1 22.73L13.49 12 1 1.27ZM20.9 10.33l-2.59-1.49-3.22 2.88 3.22 3.22 2.6-1.5A2.01 2.01 0 0 0 20.9 10.33ZM5.23.41 17.3 7.4 14.38 10.3 3.18.42A2.02 2.02 0 0 1 5.23.41Z"/>
+            </svg>
+            Get it on Google Play
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>&copy; 2026 JGriffith Tech</span>
+    <span class="sep">|</span>
+    <a href="privacy.html">Privacy Policy</a>
+    <span class="sep">|</span>
+    <a href="mailto:jergrif73@gmail.com">jergrif73@gmail.com</a>
+  </footer>
+
+</body>
+</html>
