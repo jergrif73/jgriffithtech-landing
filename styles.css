@@ -179,16 +179,16 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
   position: relative;
 }
 .mockup-frame {
-  width: 280px; height: 560px; background: var(--dark-card);
-  border-radius: 36px; border: 3px solid var(--border);
+  width: 540px; max-width: 100%; aspect-ratio: 16 / 9;
+  background: var(--dark-card);
+  border-radius: 20px; border: 3px solid var(--border);
   box-shadow: var(--shadow-lg); position: relative; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
+  padding: 8px;
 }
 .mockup-screen {
-  width: 260px; height: 520px; border-radius: 28px;
+  width: 100%; height: 100%; border-radius: 14px;
   background: linear-gradient(135deg, var(--dark-alt) 0%, var(--dark) 100%);
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 16px; padding: 24px;
+  overflow: hidden;
 }
 .mockup-screen .mockup-icon { font-size: 3rem; }
 .mockup-screen .mockup-title { font-size: 1rem; font-weight: 600; text-align: center; }
@@ -306,8 +306,8 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
   .card { padding: 24px; }
   .feature-card { padding: 20px; }
   .btn { padding: 12px 20px; font-size: 0.9rem; }
-  .mockup-frame { width: 220px; height: 440px; }
-  .mockup-screen { width: 200px; height: 400px; }
+  .mockup-frame { width: 100%; height: auto; }
+  .mockup-screen { width: 100%; height: 100%; }
 }
 
 /* ============================================
@@ -448,7 +448,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
   display: flex; align-items: center; justify-content: center;
 }
 .phone-mock {
-  position: absolute; width: 460px; aspect-ratio: 16 / 9;
+  position: absolute; width: 460px; height: 259px;
   background: linear-gradient(135deg, #1c2238 0%, #0a0e1d 100%);
   border-radius: 18px; padding: 6px;
   box-shadow: 0 30px 60px -15px rgba(0,0,0,0.6),
@@ -851,4 +851,10 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
   .spotlight-v2 { padding: 60px 0; }
   .testimonial-block { padding: 60px 0; }
   .cta-band { padding: 60px 0; }
+}
+@media (max-width: 540px) {
+  /* On narrow phones, scale the landscape device stack so it fits */
+  .phone-stack { height: 360px; transform: scale(0.65); }
+  .phone-mock.p1 { transform: rotate(-5deg) translate(-20px, -130px); }
+  .phone-mock.p3 { transform: rotate(5deg)  translate(20px, 130px); }
 }
