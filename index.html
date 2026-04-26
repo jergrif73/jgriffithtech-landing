@@ -1,4 +1,4 @@
-<\!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,6 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <\!-- Open Graph -->
   <meta property="og:title" content="JGriffith Tech - Professional MEP Tools for the Field">
   <meta property="og:description" content="Mobile apps and Revit add-ins for HVAC detailers and mechanical engineers. Draw pipe schematics, size ductwork, calculate point loads, and streamline your Revit workflow.">
   <meta property="og:type" content="website">
@@ -20,10 +19,11 @@
   <meta name="twitter:description" content="Mobile apps and Revit add-ins for HVAC detailers and mechanical engineers.">
   <meta name="twitter:image" content="https://jgriffithtech.com/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
 <nav class="nav">
   <div class="nav-inner">
     <a class='nav-logo' href='/'><img src="logo-nav.png" alt="JGriffith Tech"></a>
@@ -42,146 +42,414 @@
     </button>
   </div>
 </nav>
-<section style="padding-top:140px;padding-bottom:80px;background:linear-gradient(180deg,var(--dark) 0%,var(--dark-surface) 100%);position:relative;overflow:hidden;">
-  <div style="position:absolute;top:-300px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,169,38,0.08) 0%,transparent 70%);"></div>
-  <div style="position:absolute;bottom:-200px;left:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(122,139,111,0.06) 0%,transparent 70%);"></div>
-  <div class="container" style="position:relative;z-index:1;text-align:center;max-width:800px;">
-    <div class="animate-on-scroll">
-      <p style="color:var(--gold);font-weight:600;font-size:0.9rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;">MEP Tools Built by a Detailer, for Detailers</p>
-      <h1 style="margin-bottom:20px;">Professional MEP Tools<br>for the <span class="text-gold">Field</span></h1>
-      <p style="color:var(--text-secondary);font-size:1.2rem;line-height:1.7;margin-bottom:40px;max-width:640px;margin-left:auto;margin-right:auto;">Mobile apps and Revit add-ins for HVAC detailers and mechanical engineers. Draw pipe schematics, size ductwork, calculate point loads, and streamline your Revit workflow.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="#apps" class="btn btn-primary">Explore Apps</a>
-        <a class='btn btn-outline' href='/mep-toolkit'>Get MEP Toolkit</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="apps" class="section">
+
+<!-- HERO V2 -->
+<section class="hero-v2">
+  <div class="hero-v2-glow-1"></div>
+  <div class="hero-v2-glow-2"></div>
   <div class="container">
-    <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
-      <h2>The App Portfolio</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Five purpose-built tools for mechanical, plumbing, and structural work.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
-
-      <div class="card animate-on-scroll stagger-1">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-          <div style="font-size:2.5rem;">📐</div>
-          <span style="background:rgba(212,169,38,0.12);color:var(--gold);padding:4px 14px;border-radius:100px;font-size:0.85rem;font-weight:600;">$4.99</span>
+    <div class="hero-v2-grid">
+      <div class="animate-on-scroll">
+        <div class="live-badge">
+          <span class="pulse-dot"></span>
+          Offset3D launching May 2026
         </div>
-        <h3 style="margin-bottom:8px;">Pipe Schematic Pro</h3>
-        <p class="text-secondary" style="margin-bottom:20px;font-size:0.95rem;">Professional pipe drawing with angle snapping, fittings library, and auto-generated BOMs.</p>
-        <ul style="list-style:none;margin-bottom:24px;">
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Angle snapping (0° to 90°)</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> 10+ fitting types</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Export PDF with BOM &amp; cover sheet</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Save/load JSON projects</li>
-        </ul>
-        <a href='/pipe-schematic-pro' style='color:var(--gold);font-weight:600;font-size:0.95rem;'>Learn More →</a>
-      </div>
-
-      <div class="card animate-on-scroll stagger-2">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-          <div style="font-size:2.5rem;">💨</div>
-          <span style="background:rgba(212,169,38,0.12);color:var(--gold);padding:4px 14px;border-radius:100px;font-size:0.85rem;font-weight:600;">$2.99</span>
+        <h1>
+          Trade math, <span class="strike">solved on paper.</span><br>
+          Now <span class="accent">solved in 3D.</span>
+        </h1>
+        <p class="lede">
+          Mobile apps and Revit add-ins built by a working VDC manager and sheet metal detailer. Replace cardboard wheels, napkin sketches, and $80 hardware calculators with tools that actually show you the geometry.
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <a href="#apps" class="btn btn-primary">Explore the apps</a>
+          <a href="/mep-toolkit" class="btn btn-outline">Get MEP Toolkit</a>
+          <span class="hero-v2-meta">$2.99 - $7.99 &middot; No subscriptions</span>
         </div>
-        <h3 style="margin-bottom:8px;">Interactive Ductulator</h3>
-        <p class="text-secondary" style="margin-bottom:20px;font-size:0.95rem;">Real-time duct sizing with 4 simultaneous profiles and ASHRAE calculations.</p>
-        <ul style="list-style:none;margin-bottom:24px;">
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> 4 simultaneous profiles</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> CFM/velocity/friction loss</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> 5 duct materials</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Visual scaled duct shapes</li>
-        </ul>
-        <a href='/ductulator' style='color:var(--gold);font-weight:600;font-size:0.95rem;'>Learn More →</a>
       </div>
-
-      <div class="card animate-on-scroll stagger-3">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-          <div style="font-size:2.5rem;">⚖️</div>
-          <span style="background:rgba(212,169,38,0.12);color:var(--gold);padding:4px 14px;border-radius:100px;font-size:0.85rem;font-weight:600;">$2.99</span>
-        </div>
-        <h3 style="margin-bottom:8px;">Point Load Calculator</h3>
-        <p class="text-secondary" style="margin-bottom:20px;font-size:0.95rem;">Visual beam loading with drag-and-drop point loads and hanger calculations.</p>
-        <ul style="list-style:none;margin-bottom:24px;">
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Up to 10 point loads</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Hanger load calculations</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Hide/show load scenarios</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Share results with team</li>
-        </ul>
-        <a href='/point-load-calculator' style='color:var(--gold);font-weight:600;font-size:0.95rem;'>Learn More →</a>
-      </div>
-
-      <div class="card animate-on-scroll stagger-4">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-          <svg width="40" height="40" viewBox="0 0 64 64" fill="none"><g stroke="#D4A926" stroke-width="5" stroke-linecap="round"><line x1="8" y1="48" x2="22" y2="48"/><line x1="22" y1="48" x2="42" y2="16"/><line x1="42" y1="16" x2="56" y2="16"/></g><circle cx="22" cy="48" r="4" fill="#7A8B6F"/><circle cx="42" cy="16" r="4" fill="#7A8B6F"/></svg>
-          <span style="background:rgba(212,169,38,0.12);color:var(--gold);padding:4px 14px;border-radius:100px;font-size:0.85rem;font-weight:600;">$2.99</span>
-        </div>
-        <h3 style="margin-bottom:8px;">Offset3D</h3>
-        <p class="text-secondary" style="margin-bottom:20px;font-size:0.95rem;">See your rolling offset in 3D. Travel, cut length, and fitting takeouts in one tap.</p>
-        <ul style="list-style:none;margin-bottom:24px;">
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Interactive 3D pipe model</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Simple + rolling offset modes</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Built-in fitting takeouts</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Learning mode with formulas</li>
-        </ul>
-        <a href='/offset3d' style='color:var(--gold);font-weight:600;font-size:0.95rem;'>Learn More →</a>
-      </div>
-
-      <div class="card animate-on-scroll stagger-1">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-          <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="48" width="15" height="14" rx="1" fill="#D4A926" opacity="0.9"/><rect x="17" y="36" width="15" height="26" rx="1" fill="#D4A926" opacity="0.75"/><rect x="32" y="24" width="15" height="38" rx="1" fill="#D4A926" opacity="0.6"/><rect x="47" y="12" width="15" height="50" rx="1" fill="#D4A926" opacity="0.45"/></svg>
-          <span style="background:rgba(212,169,38,0.12);color:var(--gold);padding:4px 14px;border-radius:100px;font-size:0.85rem;font-weight:600;">$2.99</span>
-        </div>
-        <h3 style="margin-bottom:8px;">StairBuilder</h3>
-        <p class="text-secondary" style="margin-bottom:20px;font-size:0.95rem;">3D stair designer with IBC, IRC, and ADA code compliance checks and auto-generated BOMs.</p>
-        <ul style="list-style:none;margin-bottom:24px;">
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> IBC / IRC / ADA compliance</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Interactive 3D stair model</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Auto Bill of Materials</li>
-          <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Multi-flight (L / U shape)</li>
-        </ul>
-        <a href='/stairbuilder' style='color:var(--gold);font-weight:600;font-size:0.95rem;'>Learn More →</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section-alt section">
-  <div class="container" style="text-align:center;">
-    <div class="animate-on-scroll">
-      <span style="background:rgba(122,139,111,0.15);color:var(--sage);padding:6px 18px;border-radius:100px;font-size:0.85rem;font-weight:600;display:inline-block;margin-bottom:20px;">Save 27%</span>
-      <h2>Get All Three Tools in One App</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.1rem;max-width:600px;margin-left:auto;margin-right:auto;">
-        MEP Toolkit bundles Pipe Schematic Pro, Interactive Ductulator, and Point Load Calculator for just <strong style="color:var(--gold);">$7.99</strong> instead of $10.97.
-      </p>
-      <div style="margin-top:32px;">
-        <a class='btn btn-primary' href='/mep-toolkit'>View MEP Toolkit →</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="seensay" class="section">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
-      <h2>Revit Tools</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Professional Revit add-ins for MEP detailing and coordination.</p>
-    </div>
-    <div style="max-width:800px;margin:0 auto;">
-      <div class="card animate-on-scroll" style="background:var(--dark-surface);border:2px solid var(--gold);border-radius:16px;padding:40px;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(212,169,38,0.06) 0%,transparent 70%);"></div>
-        <div style="position:relative;z-index:1;">
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-            <span style="font-size:1.6rem;">🔍</span>
-            <h3 style="font-size:1.5rem;font-weight:700;">See 'n' Say</h3>
-            <span style="background:rgba(212,169,38,0.15);color:var(--gold);padding:4px 12px;border-radius:100px;font-size:0.75rem;font-weight:600;">Revit Add-in</span>
+      <div class="phone-stack animate-on-scroll stagger-2">
+        <!-- Phone 1: Pipe Schematic Pro -->
+        <div class="phone-mock p1">
+          <div class="phone-mock-screen">
+            <div class="phone-notch"></div>
+            <div class="app-mockup app-mockup-1">
+              <div class="app-mock-title">Pipe Schematic Pro</div>
+              <div class="app-mock-sub">untitled-project.json</div>
+              <svg viewBox="0 0 200 240" style="width:100%;flex:1;">
+                <defs>
+                  <pattern id="grid1" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                  </pattern>
+                </defs>
+                <rect width="200" height="240" fill="url(#grid1)"/>
+                <line x1="20" y1="60" x2="100" y2="60" stroke="#D4A926" stroke-width="3"/>
+                <line x1="100" y1="60" x2="100" y2="140" stroke="#D4A926" stroke-width="3"/>
+                <line x1="100" y1="140" x2="180" y2="140" stroke="#D4A926" stroke-width="3"/>
+                <circle cx="100" cy="60" r="6" fill="#7A8B6F"/>
+                <circle cx="100" cy="140" r="6" fill="#7A8B6F"/>
+                <rect x="60" y="55" width="14" height="10" fill="#7A8B6F"/>
+                <rect x="140" y="135" width="14" height="10" fill="#7A8B6F"/>
+                <text x="20" y="180" fill="rgba(255,255,255,0.5)" font-size="9" font-family="monospace">2x 90 elbows</text>
+                <text x="20" y="195" fill="rgba(255,255,255,0.5)" font-size="9" font-family="monospace">2x check valves</text>
+              </svg>
+              <div class="app-mock-card">
+                <div class="app-mock-stat">Total Length</div>
+                <div class="app-mock-val">14' 6"</div>
+              </div>
+            </div>
           </div>
-          <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.7;margin-bottom:24px;">
-            A compiled Revit add-in that brings clarity and communication to your MEP models. Inspect, identify, and organize elements with tools built for real detailing workflows.
+        </div>
+
+        <!-- Phone 2: Offset3D (center) -->
+        <div class="phone-mock p2">
+          <div class="phone-mock-screen">
+            <div class="phone-notch"></div>
+            <div class="app-mockup app-mockup-2">
+              <div class="app-mock-title">Offset3D</div>
+              <div class="app-mock-sub">Rolling Offset &middot; 4" Sched 40</div>
+              <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+                <svg viewBox="-100 -100 200 200" style="width:100%;height:100%;">
+                  <defs>
+                    <linearGradient id="pipeGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#e8c44a"/>
+                      <stop offset="100%" stop-color="#D4A926"/>
+                    </linearGradient>
+                  </defs>
+                  <line x1="-60" y1="60" x2="60" y2="60" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2 2"/>
+                  <line x1="-60" y1="-60" x2="-60" y2="60" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2 2"/>
+                  <g transform="rotate(-12)">
+                    <line x1="-60" y1="60" x2="-60" y2="20" stroke="url(#pipeGradH)" stroke-width="14" stroke-linecap="round"/>
+                    <line x1="-60" y1="20" x2="40" y2="-30" stroke="url(#pipeGradH)" stroke-width="14" stroke-linecap="round"/>
+                    <line x1="40" y1="-30" x2="40" y2="-60" stroke="url(#pipeGradH)" stroke-width="14" stroke-linecap="round"/>
+                    <circle cx="-60" cy="20" r="9" fill="#7A8B6F"/>
+                    <circle cx="40" cy="-30" r="9" fill="#7A8B6F"/>
+                  </g>
+                </svg>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                <div class="app-mock-card" style="padding:8px;">
+                  <div class="app-mock-stat">Travel</div>
+                  <div class="app-mock-val" style="font-size:0.75rem;">3' 7-1/2"</div>
+                </div>
+                <div class="app-mock-card" style="padding:8px;">
+                  <div class="app-mock-stat">Cut</div>
+                  <div class="app-mock-val" style="font-size:0.75rem;">2' 11-3/4"</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone 3: Ductulator -->
+        <div class="phone-mock p3">
+          <div class="phone-mock-screen">
+            <div class="phone-notch"></div>
+            <div class="app-mockup app-mockup-3">
+              <div class="app-mock-title">Ductulator</div>
+              <div class="app-mock-sub">4 profiles &middot; ASHRAE</div>
+              <div style="display:flex;flex-direction:column;gap:6px;flex:1;">
+                <div class="app-mock-card" style="display:flex;align-items:center;gap:8px;padding:8px;">
+                  <div style="width:32px;height:22px;background:rgba(212,169,38,0.3);border:1px solid #D4A926;border-radius:2px;"></div>
+                  <div>
+                    <div class="app-mock-stat">24x12</div>
+                    <div class="app-mock-val" style="font-size:0.7rem;">1200 CFM</div>
+                  </div>
+                </div>
+                <div class="app-mock-card" style="display:flex;align-items:center;gap:8px;padding:8px;">
+                  <div style="width:24px;height:24px;background:rgba(212,169,38,0.3);border:1px solid #D4A926;border-radius:50%;"></div>
+                  <div>
+                    <div class="app-mock-stat">16" diameter</div>
+                    <div class="app-mock-val" style="font-size:0.7rem;">800 CFM</div>
+                  </div>
+                </div>
+                <div class="app-mock-card" style="display:flex;align-items:center;gap:8px;padding:8px;">
+                  <div style="width:28px;height:18px;background:rgba(212,169,38,0.3);border:1px solid #D4A926;border-radius:2px;"></div>
+                  <div>
+                    <div class="app-mock-stat">18x10</div>
+                    <div class="app-mock-val" style="font-size:0.7rem;">650 CFM</div>
+                  </div>
+                </div>
+                <div class="app-mock-card" style="display:flex;align-items:center;gap:8px;padding:8px;opacity:0.5;">
+                  <div style="width:18px;height:18px;border:1px dashed rgba(255,255,255,0.3);border-radius:50%;"></div>
+                  <div class="app-mock-stat">+ Profile 4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANIMATED STATS -->
+<section class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-block animate-on-scroll stagger-1">
+      <div class="stat-num" data-target="25">25+</div>
+      <div class="stat-lbl">years detailing experience</div>
+    </div>
+    <div class="stat-block animate-on-scroll stagger-2">
+      <div class="stat-num" data-target="6">6</div>
+      <div class="stat-lbl">apps + Revit add-in</div>
+    </div>
+    <div class="stat-block animate-on-scroll stagger-3">
+      <div class="stat-num" data-target="0">$0</div>
+      <div class="stat-lbl">subscriptions &middot; ever</div>
+    </div>
+    <div class="stat-block animate-on-scroll stagger-4">
+      <div class="stat-num" data-target="100">100%</div>
+      <div class="stat-lbl">offline-capable in the field</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT GRID -->
+<section id="apps" class="section-v2">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;" class="animate-on-scroll">
+      <span class="section-eyebrow-v2">The portfolio</span>
+      <h2 class="section-title-v2">Five apps. One philosophy.<br>Show the geometry.</h2>
+      <p class="section-sub-v2">Every tool replaces something outdated, a cardboard wheel, a napkin sketch, an $80 hardware device, with a visual mobile app you can actually use in the field.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
+
+      <!-- Offset3D - Featured -->
+      <div class="product-card-v2 featured animate-on-scroll stagger-1" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">
+            <svg width="32" height="32" viewBox="0 0 64 64" fill="none">
+              <g stroke="#D4A926" stroke-width="5" stroke-linecap="round">
+                <line x1="8" y1="48" x2="22" y2="48"/>
+                <line x1="22" y1="48" x2="42" y2="16"/>
+                <line x1="42" y1="16" x2="56" y2="16"/>
+              </g>
+              <circle cx="22" cy="48" r="4" fill="#7A8B6F"/>
+              <circle cx="42" cy="16" r="4" fill="#7A8B6F"/>
+            </svg>
+          </div>
+          <div class="pc-price">$2.99</div>
+        </div>
+        <div class="pc-name">Offset3D <span class="new-tag-v2">New</span></div>
+        <div class="pc-desc">See your rolling offset in 3D. Drag handles to set rise, roll, and offset. Travel and cut length update in real time. Replaces the $80 hardware calculator.</div>
+        <ul class="pc-features">
+          <li class="pc-feature">Interactive 3D pipe model</li>
+          <li class="pc-feature">Simple + rolling offset modes</li>
+          <li class="pc-feature">Learning Mode shows the formula</li>
+          <li class="pc-feature">Built-in fitting takeouts</li>
+        </ul>
+        <a href="/offset3d" class="pc-link">Read the story <span>→</span></a>
+      </div>
+
+      <!-- Pipe Schematic Pro -->
+      <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📐</div>
+          <div class="pc-price">$4.99</div>
+        </div>
+        <div class="pc-name">Pipe Schematic Pro</div>
+        <div class="pc-desc">Professional pipe drawings on your phone. Fittings library, auto-generated bill of materials, multi-page projects, PDF export.</div>
+        <ul class="pc-features">
+          <li class="pc-feature">Angle snapping (0° to 90°)</li>
+          <li class="pc-feature">10+ fitting types</li>
+          <li class="pc-feature">Auto BOM with PDF export</li>
+          <li class="pc-feature">Multi-page JSON projects</li>
+        </ul>
+        <a href="/pipe-schematic-pro" class="pc-link">Learn more <span>→</span></a>
+      </div>
+
+      <!-- Ductulator -->
+      <div class="product-card-v2 animate-on-scroll stagger-3" style="--card-accent:#7A8B6F;">
+        <div class="pc-head">
+          <div class="pc-icon">💨</div>
+          <div class="pc-price">$2.99</div>
+        </div>
+        <div class="pc-name">Interactive Ductulator</div>
+        <div class="pc-desc">HVAC duct sizing with four profiles side by side. Visual scaled shapes, ASHRAE-compliant calculations, snap to standard sizes.</div>
+        <ul class="pc-features">
+          <li class="pc-feature">4 simultaneous duct profiles</li>
+          <li class="pc-feature">CFM, velocity, friction loss</li>
+          <li class="pc-feature">5 duct materials</li>
+          <li class="pc-feature">Visual scaled shapes</li>
+        </ul>
+        <a href="/ductulator" class="pc-link">Learn more <span>→</span></a>
+      </div>
+
+      <!-- Point Load Calc -->
+      <div class="product-card-v2 animate-on-scroll stagger-4" style="--card-accent:#7A8B6F;">
+        <div class="pc-head">
+          <div class="pc-icon">⚖️</div>
+          <div class="pc-price">$2.99</div>
+        </div>
+        <div class="pc-name">Point Load Calculator</div>
+        <div class="pc-desc">Drag-and-drop point loads onto a beam diagram. Real-time hanger reactions, scenario comparison, save/load JSON projects.</div>
+        <ul class="pc-features">
+          <li class="pc-feature">Up to 10 point loads per beam</li>
+          <li class="pc-feature">Real-time beam reactions</li>
+          <li class="pc-feature">Hide/show load scenarios</li>
+          <li class="pc-feature">Share results with the team</li>
+        </ul>
+        <a href="/point-load-calculator" class="pc-link">Learn more <span>→</span></a>
+      </div>
+
+      <!-- StairBuilder -->
+      <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">
+            <svg width="32" height="32" viewBox="0 0 64 64" fill="none">
+              <rect x="2" y="48" width="15" height="14" rx="1" fill="#D4A926" opacity="0.9"/>
+              <rect x="17" y="36" width="15" height="26" rx="1" fill="#D4A926" opacity="0.75"/>
+              <rect x="32" y="24" width="15" height="38" rx="1" fill="#D4A926" opacity="0.6"/>
+              <rect x="47" y="12" width="15" height="50" rx="1" fill="#D4A926" opacity="0.45"/>
+            </svg>
+          </div>
+          <div class="pc-price">$2.99</div>
+        </div>
+        <div class="pc-name">StairBuilder</div>
+        <div class="pc-desc">3D stair designer with IBC, IRC, and ADA code compliance checks. Interactive stair model, auto BOM, multi-flight L and U shapes.</div>
+        <ul class="pc-features">
+          <li class="pc-feature">IBC / IRC / ADA compliance</li>
+          <li class="pc-feature">Interactive 3D stair model</li>
+          <li class="pc-feature">Auto Bill of Materials</li>
+          <li class="pc-feature">Multi-flight (L / U shape)</li>
+        </ul>
+        <a href="/stairbuilder" class="pc-link">Learn more <span>→</span></a>
+      </div>
+
+      <!-- Bundle CTA card -->
+      <div class="product-card-v2 animate-on-scroll stagger-2" style="background:linear-gradient(135deg,#262B40 0%,#1a2236 100%);border-color:rgba(122,139,111,0.3);">
+        <div class="pc-head">
+          <div class="pc-icon" style="background:rgba(122,139,111,0.15);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7A8B6F" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <div class="pc-price">$7.99</div>
+        </div>
+        <div class="pc-name">MEP Toolkit <span class="new-tag-v2" style="background:var(--sage);color:white;">Save 27%</span></div>
+        <div class="pc-desc">All three core tools in one app. Pipe Schematic Pro + Ductulator + Point Load Calculator. Buy once, use forever.</div>
+        <ul class="pc-features">
+          <li class="pc-feature">3 apps for the price of 2</li>
+          <li class="pc-feature">One icon, one launcher</li>
+          <li class="pc-feature">No subscriptions, no ads</li>
+          <li class="pc-feature">Lifetime updates</li>
+        </ul>
+        <a href="/mep-toolkit" class="pc-link">Get the bundle <span>→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OFFSET3D SPOTLIGHT -->
+<section class="spotlight-v2">
+  <div class="container">
+    <div class="spotlight-grid">
+      <div class="animate-on-scroll">
+        <div class="spotlight-launch">
+          <span class="pulse-dot"></span>
+          Launching May 2026
+        </div>
+        <h2 class="section-title-v2">The pipe offset calculator that finally <span class="text-gold">shows you the geometry</span>.</h2>
+        <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.6;margin-bottom:32px;">
+          Existing pipe-trades calculators give you the number but not the understanding. Offset3D gives both. An interactive 3D pipe model as the primary interface, with the math exposed step-by-step for learning.
+        </p>
+
+        <div class="spot-features-grid">
+          <div class="spot-feature">
+            <div class="spot-feature-title">🧊 See it in 3D</div>
+            <div class="spot-feature-desc">Rotate, pan, zoom an interactive pipe model</div>
+          </div>
+          <div class="spot-feature">
+            <div class="spot-feature-title">🧮 Two modes</div>
+            <div class="spot-feature-desc">Simple offset + rolling offset (3D)</div>
+          </div>
+          <div class="spot-feature">
+            <div class="spot-feature-title">📚 Learning Mode</div>
+            <div class="spot-feature-desc">Toggle "fx" to see the formula with your numbers</div>
+          </div>
+          <div class="spot-feature">
+            <div class="spot-feature-title">📤 Export PDF</div>
+            <div class="spot-feature-desc">Annotated diagram with inputs and results</div>
+          </div>
+        </div>
+
+        <div class="vs-row">
+          <div class="vs-card-v2 them">
+            <div class="vs-lbl">The old way</div>
+            <div class="vs-prod">Pipe Trades Pro</div>
+            <div class="vs-price-v2">$40<span style="font-size:0.7rem;font-weight:600;">/yr</span></div>
+            <div class="vs-detail">or $80 hardware. No 3D. Subscription model.</div>
+          </div>
+          <div class="vs-card-v2 us">
+            <div class="vs-lbl">Offset3D</div>
+            <div class="vs-prod">3D pipe calculator</div>
+            <div class="vs-price-v2">$2.99</div>
+            <div class="vs-detail">One purchase. 3D visualization. Learning mode.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="animate-on-scroll stagger-2">
+        <div class="pipe-demo-v2">
+          <svg viewBox="-100 -100 200 200" class="pipe-rotate-svg">
+            <defs>
+              <linearGradient id="pipeGradS" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#e8c44a"/>
+                <stop offset="100%" stop-color="#D4A926"/>
+              </linearGradient>
+            </defs>
+            <line x1="-60" y1="60" x2="60" y2="60" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="2 3"/>
+            <line x1="-60" y1="60" x2="-60" y2="-60" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="2 3"/>
+            <g transform="rotate(-15)">
+              <line x1="-60" y1="60" x2="-60" y2="10" stroke="url(#pipeGradS)" stroke-width="16" stroke-linecap="round" opacity="0.95"/>
+              <line x1="-60" y1="10" x2="40" y2="-40" stroke="url(#pipeGradS)" stroke-width="16" stroke-linecap="round" opacity="0.95"/>
+              <line x1="40" y1="-40" x2="40" y2="-65" stroke="url(#pipeGradS)" stroke-width="16" stroke-linecap="round" opacity="0.95"/>
+              <circle cx="-60" cy="10" r="11" fill="#7A8B6F"/>
+              <circle cx="40" cy="-40" r="11" fill="#7A8B6F"/>
+            </g>
+          </svg>
+          <div class="pipe-readout-row">
+            <div class="readout-block">
+              <div class="readout-lbl">Travel</div>
+              <div class="readout-val-big">3' 7&frac12;"</div>
+            </div>
+            <div class="readout-block">
+              <div class="readout-lbl">Cut</div>
+              <div class="readout-val-big">2' 11&frac34;"</div>
+            </div>
+            <div class="readout-block">
+              <div class="readout-lbl">Angle</div>
+              <div class="readout-val-big">45°</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEE 'N' SAY -->
+<section id="seensay" class="section-v2 section-alt">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
+      <span class="section-eyebrow-v2">For the office</span>
+      <h2 class="section-title-v2">See 'n' Say.<br>The Revit add-in built for MEP detailers.</h2>
+    </div>
+    <div style="max-width:900px;margin:0 auto;">
+      <div class="animate-on-scroll" style="background:var(--dark-card);border:2px solid var(--gold);border-radius:24px;padding:48px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-150px;right:-150px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,169,38,0.08) 0%,transparent 70%);"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap;">
+            <span style="font-size:1.6rem;">🔍</span>
+            <h3 style="font-size:1.6rem;font-weight:800;letter-spacing:-0.02em;">See 'n' Say</h3>
+            <span style="background:rgba(212,169,38,0.15);color:var(--gold);padding:4px 12px;border-radius:100px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">REVIT ADD-IN</span>
+          </div>
+          <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.7;margin-bottom:28px;max-width:700px;">
+            14 professional tools for inspecting, identifying, and organizing elements. Built for real detailing workflows by someone who runs them every day.
           </p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px;">
             <div>
-              <h4 style="color:var(--gold);font-size:0.85rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px;">Inspection</h4>
+              <h4 style="color:var(--gold);font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Inspection</h4>
               <ul style="list-style:none;">
                 <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Element Visibility</li>
                 <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Sync Views</li>
@@ -190,7 +458,7 @@
               </ul>
             </div>
             <div>
-              <h4 style="color:var(--gold);font-size:0.85rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px;">Identification</h4>
+              <h4 style="color:var(--gold);font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Identification</h4>
               <ul style="list-style:none;">
                 <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Renumber Elements</li>
                 <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Place Tags</li>
@@ -200,19 +468,37 @@
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-            <a href="https://jgriffithtech.gumroad.com/l/seensay" class="btn btn-primary" target="_blank">Buy Now — $39.99</a>
-            <a href="/seensay" style="color:var(--gold);font-weight:600;font-size:0.95rem;">Full Details →</a>
-            <span style="color:var(--text-secondary);font-size:0.9rem;">Windows installer &bull; Revit 2024 &amp; 2025 &bull; Lifetime updates</span>
+            <a href="https://jgriffithtech.gumroad.com/l/seensay" class="btn btn-primary" target="_blank">Buy Now &mdash; $39.99</a>
+            <a href="/seensay" style="color:var(--gold);font-weight:600;font-size:0.95rem;">Full Details &rarr;</a>
+            <span style="color:var(--text-muted);font-size:0.85rem;">Windows installer &middot; Revit 2024 &amp; 2025 &middot; Lifetime updates</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="section">
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-block">
+  <div class="testimonial-inner animate-on-scroll">
+    <div class="quote-mark">"</div>
+    <div class="quote-body">It's the first calculator that lets my apprentices see the pipe before they cut it. Learning mode does in 30 seconds what takes me 10 minutes on a whiteboard.</div>
+    <div class="quote-meta">
+      <div class="quote-avatar">J</div>
+      <div>
+        <div class="quote-name">JATC Instructor</div>
+        <div class="quote-role">Sheet Metal Workers Local</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section-v2">
   <div class="container">
     <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
-      <h2>Why JGriffith Tech</h2>
+      <span class="section-eyebrow-v2">Why JGriffith Tech</span>
+      <h2 class="section-title-v2">Tools built by someone<br>who actually does the work.</h2>
     </div>
     <div class="features-grid">
       <div class="feature-card animate-on-scroll stagger-1">
@@ -232,12 +518,28 @@
       </div>
       <div class="feature-card animate-on-scroll stagger-4">
         <div class="feature-icon">🔄</div>
-        <h3>Regular Updates</h3>
-        <p>Active development with feature requests from real users. One-time purchase, lifetime updates.</p>
+        <h3>Lifetime Updates</h3>
+        <p>Active development with feature requests from real users. One-time purchase, lifetime updates. No subscriptions.</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner animate-on-scroll">
+      <h2>Stop calculating on cardboard.<br>Start calculating in 3D.</h2>
+      <p>Five mobile apps and a Revit add-in. One philosophy: visual tools for visual work.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="/mep-toolkit" class="btn btn-on-gold">Get the MEP Toolkit &mdash; $7.99</a>
+        <a href="/offset3d" class="btn btn-on-gold-outline">See Offset3D &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="container">
     <div style="text-align:center;" class="animate-on-scroll">
