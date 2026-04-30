@@ -538,23 +538,61 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
   max-width: 640px; margin: 0 auto;
 }
 
-/* Product Card v2 - with accent bar reveal */
+/* Product Card v2 - Advanced Glassmorphic Spotlight & 3D Tilt */
 .product-card-v2 {
   position: relative;
-  background: var(--dark-card);
-  border: 1px solid var(--border);
+  background: rgba(26, 34, 54, 0.6); /* Semi-transparent --dark-card for glass effect */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: var(--radius-lg);
-  padding: 32px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
+  padding: 32px; 
+  /* Responsive transition for mouse tracking */
+  transition: border-color 0.5s, box-shadow 0.5s, transform 0.15s ease-out;
+  /* 3D setup */
+  transform-style: preserve-3d;
+  --rot-x: 0deg;
+  --rot-y: 0deg;
+  --trans-y: 0px;
+  transform: perspective(1200px) translateY(var(--trans-y)) rotateX(var(--rot-x)) rotateY(var(--rot-y));
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
 }
+.product-card-v2 > * {
+  position: relative;
+  z-index: 1;
+  /* Float content above glass */
+  transform: translateZ(40px);
+  transition: transform 0.5s ease;
+}
+/* Internal Volumetric Glow */
+.product-card-v2::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: var(--radius-lg);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    color-mix(in srgb, var(--card-accent, #D4A926) 12%, transparent),
+    transparent 40%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+.product-card-v2:hover::after {
+  opacity: 1;
+}
+/* Top edge reveal on hover */
 .product-card-v2::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 3px;
+  height: 2px;
   background: linear-gradient(90deg, var(--card-accent, var(--gold)), transparent);
-  opacity: 0; transition: opacity 0.4s ease;
+  opacity: 0; transition: opacity 0.5s ease;
+  z-index: 2;
 }
 .product-card-v2:hover {
-  transform: translateY(-6px);
+  --trans-y: -6px; /* Uses CSS variable so JS rotation isn't overwritten */
   border-color: rgba(212,169,38,0.3);
   box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
 }
