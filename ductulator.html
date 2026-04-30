@@ -43,81 +43,100 @@
   </div>
 </nav>
 
-<section class="product-hero">
-  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
-    <div class="animate-on-scroll">
-      <p style="color:var(--gold);font-weight:600;font-size:0.9rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;">HVAC Duct Sizing</p>
-      <h1 style="margin-bottom:20px;">Interactive <span class="text-gold">Ductulator</span></h1>
-      <p style="color:var(--text-secondary);font-size:1.15rem;line-height:1.7;margin-bottom:32px;">Size ductwork instantly. Compare 4 simultaneous profiles, calculate CFM, velocity, and friction loss with visual scaled diagrams — all based on ASHRAE Fundamentals.</p>
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
-        <span style="font-size:2rem;font-weight:800;color:var(--gold);">$2.99</span>
-        <span style="color:var(--text-secondary);font-size:0.9rem;">One-time purchase</span>
+<section class="hero-v2">
+  <div class="hero-v2-glow-1"></div>
+  <div class="hero-v2-glow-2"></div>
+  <div class="container">
+    <div class="hero-v2-grid">
+      <div class="animate-on-scroll">
+        <span class="section-eyebrow-v2">HVAC Duct Sizing</span>
+        <h1>Interactive <span class="accent">Ductulator</span></h1>
+        <p class="lede">Size ductwork instantly. Compare 4 simultaneous profiles, calculate CFM, velocity, and friction loss with visual scaled diagrams — all based on ASHRAE Fundamentals.</p>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <span style="font-size:2rem;font-weight:800;color:var(--gold);">$2.99</span>
+          <span style="color:var(--text-secondary);font-size:0.9rem;">One-time purchase</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <span class="btn btn-primary" style="opacity:0.6;cursor:default;">Coming Soon to Google Play</span>
+          <a href="/mep-toolkit" class="btn btn-outline">Save 27% with MEP Toolkit</a>
+        </div>
       </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
-        <span class="btn btn-primary" style="opacity:0.6;cursor:default;">Coming Soon to Google Play</span>
-        <a href="/mep-toolkit" class="btn btn-outline">Save 27% with MEP Toolkit</a>
-      </div>
-    </div>
-    <div class="product-mockup animate-on-scroll stagger-2" style="display:flex;justify-content:center;">
-      <div class="mockup-frame" style="width:540px;max-width:100%;aspect-ratio:16/9;background:var(--dark-card);border-radius:20px;border:3px solid var(--border);padding:8px;box-shadow:var(--shadow-lg);">
-        <div class="mockup-screen" style="width:100%;height:100%;border-radius:14px;background:linear-gradient(180deg,#1a2236 0%,#0F172A 100%);overflow:hidden;">
-          <img src="screenshots/ductulator-hero.png" alt="Interactive Ductulator showing four duct profiles side by side" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:14px;">
+      <div class="animate-on-scroll stagger-2">
+        <div class="spotlight-screenshot-frame">
+          <img src="screenshots/ductulator-hero.png" alt="Interactive Ductulator showing four duct profiles side by side" class="spotlight-screenshot">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section-v2">
   <div class="container">
     <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
-      <h2>Duct Sizing, Solved</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Built for HVAC engineers, mechanical designers, and sheet metal detailers.</p>
+      <h2 class="section-title-v2">Duct Sizing, Solved</h2>
+      <p class="section-sub-v2">Built for HVAC engineers, mechanical designers, and sheet metal detailers.</p>
     </div>
-    <div class="features-grid">
-      <div class="feature-card animate-on-scroll stagger-1">
-        <div class="feature-icon">📊</div>
-        <h3>4 Simultaneous Profiles</h3>
-        <p>Compare 2 rectangular, 1 round, and 1 flat oval profile side by side. See all your options at once.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
+      
+      <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#7A8B6F;">
+        <div class="pc-head">
+          <div class="pc-icon">📊</div>
+        </div>
+        <div class="pc-name">4 Simultaneous Profiles</div>
+        <div class="pc-desc">Compare 2 rectangular, 1 round, and 1 flat oval profile side by side. See all your options at once.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-2">
-        <div class="feature-icon">🔄</div>
-        <h3>Auto-Calculate Everything</h3>
-        <p>Enter any two of CFM, velocity (FPM), or friction loss (in. wg/100ft) and the third calculates automatically.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#7A8B6F;">
+        <div class="pc-head">
+          <div class="pc-icon">🔄</div>
+        </div>
+        <div class="pc-name">Auto-Calculate Everything</div>
+        <div class="pc-desc">Enter any two of CFM, velocity (FPM), or friction loss (in. wg/100ft) and the third calculates automatically.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-3">
-        <div class="feature-icon">🏗️</div>
-        <h3>5 Duct Materials</h3>
-        <p>Galvanized steel, stainless steel, aluminum, fiberglass board, and flex duct — each with accurate roughness factors.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-3" style="--card-accent:#7A8B6F;">
+        <div class="pc-head">
+          <div class="pc-icon">🏗️</div>
+        </div>
+        <div class="pc-name">5 Duct Materials</div>
+        <div class="pc-desc">Galvanized steel, stainless steel, aluminum, fiberglass board, and flex duct — each with accurate roughness factors.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-4">
-        <div class="feature-icon">📐</div>
-        <h3>Visual Scaled Diagrams</h3>
-        <p>See duct cross-sections drawn to scale with live dimension labels. Aspect ratio displayed for manufacturability checks.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-4" style="--card-accent:#7A8B6F;">
+        <div class="pc-head">
+          <div class="pc-icon">📐</div>
+        </div>
+        <div class="pc-name">Visual Scaled Diagrams</div>
+        <div class="pc-desc">See duct cross-sections drawn to scale with live dimension labels. Aspect ratio displayed for manufacturability checks.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-1">
-        <div class="feature-icon">📏</div>
-        <h3>Snap to Standard Sizes</h3>
-        <p>Toggle snap-to-standard to lock dimensions to standard manufactured sizes. No guesswork.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#7A8B6F;">
+        <div class="pc-head">
+          <div class="pc-icon">📏</div>
+        </div>
+        <div class="pc-name">Snap to Standard Sizes</div>
+        <div class="pc-desc">Toggle snap-to-standard to lock dimensions to standard manufactured sizes. No guesswork.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-2">
-        <div class="feature-icon">📤</div>
-        <h3>Share Results</h3>
-        <p>Share duct sizing results directly with your team from the app. ASHRAE Equal Friction Loss method documented.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#7A8B6F;">
+        <div class="pc-head">
+          <div class="pc-icon">📤</div>
+        </div>
+        <div class="pc-name">Share Results</div>
+        <div class="pc-desc">Share duct sizing results directly with your team from the app. ASHRAE Equal Friction Loss method documented.</div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section class="section-alt section">
-  <div class="container" style="text-align:center;">
-    <div class="animate-on-scroll">
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner animate-on-scroll">
       <h2>Save 27% with MEP Toolkit</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.1rem;max-width:600px;margin-left:auto;margin-right:auto;">
-        Get Interactive Ductulator plus Pipe Schematic Pro and Point Load Calculator for just <strong style="color:var(--gold);">$7.99</strong> instead of $10.97.
-      </p>
-      <div style="margin-top:32px;">
-        <a class='btn btn-primary' href='/mep-toolkit'>View MEP Toolkit</a>
+      <p>Get Interactive Ductulator plus Pipe Schematic Pro and Point Load Calculator for just $7.99 instead of $10.97.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="/mep-toolkit" class="btn btn-on-gold">View MEP Toolkit</a>
       </div>
     </div>
   </div>

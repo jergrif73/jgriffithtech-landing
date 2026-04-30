@@ -43,81 +43,100 @@
   </div>
 </nav>
 
-<section class="product-hero">
-  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
-    <div class="animate-on-scroll">
-      <p style="color:var(--gold);font-weight:600;font-size:0.9rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;">3D Pipe Offset Calculator</p>
-      <h1 style="margin-bottom:20px;">Offset<span class="text-gold">3D</span></h1>
-      <p style="color:var(--text-secondary);font-size:1.15rem;line-height:1.7;margin-bottom:32px;">See your rolling offset in 3D. Enter rise, roll, and offset — get travel, cut length, and fitting takeouts in one tap. The pipe offset calculator that finally shows you the geometry.</p>
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
-        <span style="font-size:2rem;font-weight:800;color:var(--gold);">$4.99</span>
-        <span style="color:var(--text-secondary);font-size:0.9rem;">One-time purchase</span>
+<section class="hero-v2">
+  <div class="hero-v2-glow-1"></div>
+  <div class="hero-v2-glow-2"></div>
+  <div class="container">
+    <div class="hero-v2-grid">
+      <div class="animate-on-scroll">
+        <span class="section-eyebrow-v2">3D Pipe Offset Calculator</span>
+        <h1>Offset<span class="accent">3D</span></h1>
+        <p class="lede">See your rolling offset in 3D. Enter rise, roll, and offset — get travel, cut length, and fitting takeouts in one tap. The pipe offset calculator that finally shows you the geometry.</p>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <span style="font-size:2rem;font-weight:800;color:var(--gold);">$4.99</span>
+          <span style="color:var(--text-secondary);font-size:0.9rem;">One-time purchase</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <span class="btn btn-primary" style="opacity:0.6;cursor:default;">Coming Soon to Google Play</span>
+        </div>
       </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
-        <span class="btn btn-primary" style="opacity:0.6;cursor:default;">Coming Soon to Google Play</span>
-      </div>
-    </div>
-    <div class="product-mockup animate-on-scroll stagger-2" style="display:flex;justify-content:center;">
-      <div class="mockup-frame" style="width:540px;max-width:100%;aspect-ratio:16/9;background:var(--dark-card);border-radius:20px;border:3px solid var(--border);padding:8px;box-shadow:var(--shadow-lg);">
-        <div class="mockup-screen" style="width:100%;height:100%;border-radius:14px;background:linear-gradient(180deg,#0e7490 0%,#0f172a 100%);position:relative;overflow:hidden;">
-          <img src="screenshots/offset3d-hero.png" alt="Offset3D Rolling 3D mode with 3D pipe and computed angle" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:14px;">
+      <div class="animate-on-scroll stagger-2">
+        <div class="spotlight-screenshot-frame">
+          <img src="screenshots/offset3d-hero.png" alt="Offset3D Rolling 3D mode with 3D pipe and computed angle" class="spotlight-screenshot">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section-v2">
   <div class="container">
     <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
-      <h2>Rolling Offsets, Solved</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Built for pipefitters, plumbers, apprentices, and journeymen who work offsets daily.</p>
+      <h2 class="section-title-v2">Rolling Offsets, Solved</h2>
+      <p class="section-sub-v2">Built for pipefitters, plumbers, apprentices, and journeymen who work offsets daily.</p>
     </div>
-    <div class="features-grid">
-      <div class="feature-card animate-on-scroll stagger-1">
-        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 64 64" fill="none"><g stroke="#D4A926" stroke-width="5" stroke-linecap="round"><line x1="8" y1="48" x2="22" y2="48"/><line x1="22" y1="48" x2="42" y2="16"/><line x1="42" y1="16" x2="56" y2="16"/></g></svg></div>
-        <h3>See It in 3D</h3>
-        <p>Interactive Three.js pipe model you can rotate, pan, and zoom. Watch the travel piece change as you enter rise, roll, and offset.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
+      
+      <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">
+            <svg width="24" height="24" viewBox="0 0 64 64" fill="none"><g stroke="#D4A926" stroke-width="5" stroke-linecap="round"><line x1="8" y1="48" x2="22" y2="48"/><line x1="22" y1="48" x2="42" y2="16"/><line x1="42" y1="16" x2="56" y2="16"/></g></svg>
+          </div>
+        </div>
+        <div class="pc-name">See It in 3D</div>
+        <div class="pc-desc">Interactive Three.js pipe model you can rotate, pan, and zoom. Watch the travel piece change as you enter rise, roll, and offset.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-2">
-        <div class="feature-icon">🧮</div>
-        <h3>Two Calculation Modes</h3>
-        <p>Simple Offset (2D) for the 90% case — rise + fitting angle → travel, run, cut length. Rolling Offset (3D) for the hard case with offset and roll.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">🧮</div>
+        </div>
+        <div class="pc-name">Two Calculation Modes</div>
+        <div class="pc-desc">Simple Offset (2D) for the 90% case — rise + fitting angle → travel, run, cut length. Rolling Offset (3D) for the hard case with offset and roll.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-3">
-        <div class="feature-icon">🔩</div>
-        <h3>Fitting Takeout Library</h3>
-        <p>Built-in takeouts for weld, threaded, socket weld, and grooved fittings. Sizes 1/2" through 8". Angles 60°, 45°, 30°, 22.5°, 11.25°.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-3" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">🔩</div>
+        </div>
+        <div class="pc-name">Fitting Takeout Library</div>
+        <div class="pc-desc">Built-in takeouts for weld, threaded, socket weld, and grooved fittings. Sizes 1/2" through 8". Angles 60°, 45°, 30°, 22.5°, 11.25°.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-4">
-        <div class="feature-icon">📚</div>
-        <h3>Learning Mode</h3>
-        <p>Toggle "fx" to see the formula with your numbers substituted. Perfect for apprentices learning the math behind the number.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-4" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📚</div>
+        </div>
+        <div class="pc-name">Learning Mode</div>
+        <div class="pc-desc">Toggle "fx" to see the formula with your numbers substituted. Perfect for apprentices learning the math behind the number.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-1">
-        <div class="feature-icon">📏</div>
-        <h3>Flexible Input</h3>
-        <p>Type 3-1/2, 3.5, or 88.9mm — all the same value. One-tap toggle between fraction/decimal and imperial/metric.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📏</div>
+        </div>
+        <div class="pc-name">Flexible Input</div>
+        <div class="pc-desc">Type 3-1/2, 3.5, or 88.9mm — all the same value. One-tap toggle between fraction/decimal and imperial/metric.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-2">
-        <div class="feature-icon">📤</div>
-        <h3>Export &amp; Share</h3>
-        <p>Save your calculation as a PDF or PNG. Share via email, messaging, or any app on your phone. Annotated diagram with all inputs and results.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📤</div>
+        </div>
+        <div class="pc-name">Export &amp; Share</div>
+        <div class="pc-desc">Save your calculation as a PDF or PNG. Share via email, messaging, or any app on your phone. Annotated diagram with all inputs and results.</div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section class="section-alt section">
-  <div class="container" style="text-align:center;">
-    <div class="animate-on-scroll">
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner animate-on-scroll">
       <h2>Replace the hardware calculator</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.1rem;max-width:620px;margin-left:auto;margin-right:auto;">
-        Existing pipe-trades calculators give you the number but not the understanding. Offset3D gives both — an interactive 3D pipe model as the primary interface, with the math exposed step-by-step for learning.
-      </p>
-      <p class="text-secondary" style="margin-top:16px;font-size:0.95rem;">
-        Works fully offline. No accounts. No ads. No subscriptions. Buy once, use forever.
-      </p>
+      <p>Existing pipe-trades calculators give you the number but not the understanding. Offset3D gives both — an interactive 3D pipe model as the primary interface, with the math exposed step-by-step for learning.</p>
+      <p style="margin-top:16px;font-size:0.95rem;opacity:0.9;">Works fully offline. No accounts. No ads. No subscriptions. Buy once, use forever.</p>
     </div>
   </div>
 </section>

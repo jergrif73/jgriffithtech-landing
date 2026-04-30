@@ -42,76 +42,97 @@
   </div>
 </nav>
 
-<section class="product-hero">
-  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
-    <div class="animate-on-scroll">
-      <p style="color:var(--gold);font-weight:600;font-size:0.9rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;">3D Stair Design + Code Compliance</p>
-      <h1 style="margin-bottom:20px;">Stair<span class="text-gold">Builder</span></h1>
-      <p style="color:var(--text-secondary);font-size:1.15rem;line-height:1.7;margin-bottom:32px;">Design code-compliant stairs in seconds. Real-time IBC, IRC, and ADA checks, interactive 3D visualization, and auto-generated bill of materials — all from your phone.</p>
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
-        <span style="font-size:2rem;font-weight:800;color:var(--gold);">$2.99</span>
-        <span style="color:var(--text-secondary);font-size:0.9rem;">One-time purchase</span>
+<section class="hero-v2">
+  <div class="hero-v2-glow-1"></div>
+  <div class="hero-v2-glow-2"></div>
+  <div class="container">
+    <div class="hero-v2-grid">
+      <div class="animate-on-scroll">
+        <span class="section-eyebrow-v2">3D Stair Design + Code Compliance</span>
+        <h1>Stair<span class="accent">Builder</span></h1>
+        <p class="lede">Design code-compliant stairs in seconds. Real-time IBC, IRC, and ADA checks, interactive 3D visualization, and auto-generated bill of materials — all from your phone.</p>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <span style="font-size:2rem;font-weight:800;color:var(--gold);">$2.99</span>
+          <span style="color:var(--text-secondary);font-size:0.9rem;">One-time purchase</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <span class="btn btn-primary" style="opacity:0.6;cursor:default;">Coming Soon to Google Play</span>
+        </div>
       </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
-        <span class="btn btn-primary" style="opacity:0.6;cursor:default;">Coming Soon to Google Play</span>
-      </div>
-    </div>
-    <div class="product-mockup animate-on-scroll stagger-2" style="display:flex;justify-content:center;">
-      <div class="mockup-frame" style="width:540px;max-width:100%;aspect-ratio:16/9;background:var(--dark-card);border-radius:20px;border:3px solid var(--border);padding:8px;box-shadow:var(--shadow-lg);">
-        <div class="mockup-screen" style="width:100%;height:100%;border-radius:14px;background:linear-gradient(180deg,#1a2236 0%,#0F172A 100%);overflow:hidden;">
-          <img src="screenshots/stairbuilder-hero.png" alt="StairBuilder 3D stair model with IBC compliance and BOM" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:14px;">
+      <div class="animate-on-scroll stagger-2">
+        <div class="spotlight-screenshot-frame">
+          <img src="screenshots/stairbuilder-hero.png" alt="StairBuilder 3D stair model with IBC compliance and BOM" class="spotlight-screenshot">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section-v2">
   <div class="container">
     <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
-      <h2>Design Stairs That Pass Inspection</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Built for contractors, detailers, and architects who need it right the first time.</p>
+      <h2 class="section-title-v2">Design Stairs That Pass Inspection</h2>
+      <p class="section-sub-v2">Built for contractors, detailers, and architects who need it right the first time.</p>
     </div>
-    <div class="features-grid">
-      <div class="feature-card animate-on-scroll stagger-1">
-        <div class="feature-icon">📋</div>
-        <h3>Code Compliance</h3>
-        <p>Real-time checks against IBC 2021 (commercial), IRC 2021 (residential), and ADA 2010 (accessible). Instant pass/fail on every parameter.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
+      
+      <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📋</div>
+        </div>
+        <div class="pc-name">Code Compliance</div>
+        <div class="pc-desc">Real-time checks against IBC 2021 (commercial), IRC 2021 (residential), and ADA 2010 (accessible). Instant pass/fail on every parameter.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-2">
-        <div class="feature-icon">🧊</div>
-        <h3>Interactive 3D View</h3>
-        <p>See your stair in full 3D with orbit controls. Treads, risers, stringers, handrails, and balusters all rendered in real time as you adjust parameters.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">🧊</div>
+        </div>
+        <div class="pc-name">Interactive 3D View</div>
+        <div class="pc-desc">See your stair in full 3D with orbit controls. Treads, risers, stringers, handrails, and balusters all rendered in real time as you adjust parameters.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-3">
-        <div class="feature-icon">📦</div>
-        <h3>Auto Bill of Materials</h3>
-        <p>Complete BOM generated automatically — treads, risers, stringers, handrails, balusters, newel posts, and landing platforms with dimensions and quantities.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-3" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📦</div>
+        </div>
+        <div class="pc-name">Auto Bill of Materials</div>
+        <div class="pc-desc">Complete BOM generated automatically — treads, risers, stringers, handrails, balusters, newel posts, and landing platforms with dimensions and quantities.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-4">
-        <div class="feature-icon">🔀</div>
-        <h3>Multi-Flight Support</h3>
-        <p>Straight run, L-shape, or U-shape configurations. Landing depths calculated per code. Max flight rise enforced automatically.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-4" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">🔀</div>
+        </div>
+        <div class="pc-name">Multi-Flight Support</div>
+        <div class="pc-desc">Straight run, L-shape, or U-shape configurations. Landing depths calculated per code. Max flight rise enforced automatically.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-1">
-        <div class="feature-icon">📐</div>
-        <h3>Precision Calculations</h3>
-        <p>Actual riser height, total run, stringer length, stair angle, and the 2R+T comfort rule — all computed to 3 decimal places.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📐</div>
+        </div>
+        <div class="pc-name">Precision Calculations</div>
+        <div class="pc-desc">Actual riser height, total run, stringer length, stair angle, and the 2R+T comfort rule — all computed to 3 decimal places.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-2">
-        <div class="feature-icon">📤</div>
-        <h3>Export BOM</h3>
-        <p>Export your complete bill of materials as a text file or share directly from the app. Includes all dimensions and code compliance status.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📤</div>
+        </div>
+        <div class="pc-name">Export BOM</div>
+        <div class="pc-desc">Export your complete bill of materials as a text file or share directly from the app. Includes all dimensions and code compliance status.</div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section class="section-alt section">
+<section class="section-v2 section-alt">
   <div class="container">
     <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
-      <h2>Codes Checked</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Every parameter validated against the code you select.</p>
+      <h2 class="section-title-v2">Codes Checked</h2>
+      <p class="section-sub-v2">Every parameter validated against the code you select.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;">
       <div class="card animate-on-scroll stagger-1">
@@ -131,6 +152,18 @@
       <p class="text-secondary" style="font-size:0.85rem;max-width:600px;margin:0 auto;line-height:1.6;">
         This tool checks dimensional compliance only. It does not verify structural load capacity, fire ratings, material specs, or local code amendments. Always consult your local building authority before building.
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner animate-on-scroll">
+      <h2>Stop guessing on stairs.<br>Start building with confidence.</h2>
+      <p>Ensure compliance with IBC, IRC, and ADA codes before you cut a single stringer.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <span class="btn btn-on-gold" style="opacity:0.6;cursor:default;">Coming Soon to Google Play</span>
+      </div>
     </div>
   </div>
 </section>

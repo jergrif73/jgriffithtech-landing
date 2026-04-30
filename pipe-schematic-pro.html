@@ -1,4 +1,4 @@
-<\!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <\!-- Open Graph -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Pipe Schematic Pro - JGriffith Tech">
   <meta property="og:description" content="Draw professional pipe schematics anywhere. Full fittings library, auto-updating BOM, multi-page projects, and PDF export.">
   <meta property="og:type" content="product">
@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="Draw professional pipe schematics anywhere. Full fittings library, auto-updating BOM, multi-page projects, and PDF export.">
   <meta name="twitter:image" content="https://jgriffithtech.com/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -43,81 +43,100 @@
   </div>
 </nav>
 
-<section class="product-hero">
-  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
-    <div class="animate-on-scroll">
-      <p style="color:var(--gold);font-weight:600;font-size:0.9rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;">Professional Pipe Schematics</p>
-      <h1 style="margin-bottom:20px;">Pipe Schematic <span class="text-gold">Pro</span></h1>
-      <p style="color:var(--text-secondary);font-size:1.15rem;line-height:1.7;margin-bottom:32px;">Draw professional pipe schematics anywhere. Full fittings library, auto-updating BOM, multi-page projects, and PDF export — all from your phone or tablet.</p>
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
-        <span style="font-size:2rem;font-weight:800;color:var(--gold);">$4.99</span>
-        <span style="color:var(--text-secondary);font-size:0.9rem;">One-time purchase</span>
+<section class="hero-v2">
+  <div class="hero-v2-glow-1"></div>
+  <div class="hero-v2-glow-2"></div>
+  <div class="container">
+    <div class="hero-v2-grid">
+      <div class="animate-on-scroll">
+        <span class="section-eyebrow-v2">Professional Pipe Schematics</span>
+        <h1>Pipe Schematic <span class="accent">Pro</span></h1>
+        <p class="lede">Draw professional pipe schematics anywhere. Full fittings library, auto-updating BOM, multi-page projects, and PDF export — all from your phone or tablet.</p>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <span style="font-size:2rem;font-weight:800;color:var(--gold);">$4.99</span>
+          <span style="color:var(--text-secondary);font-size:0.9rem;">One-time purchase</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <span class="btn btn-primary" style="opacity:0.6;cursor:default;">Coming Soon to Google Play</span>
+          <a href="/mep-toolkit" class="btn btn-outline">Save 27% with MEP Toolkit</a>
+        </div>
       </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
-        <span class="btn btn-primary" style="opacity:0.6;cursor:default;">Coming Soon to Google Play</span>
-        <a href="/mep-toolkit" class="btn btn-outline">Save 27% with MEP Toolkit</a>
-      </div>
-    </div>
-    <div class="product-mockup animate-on-scroll stagger-2" style="display:flex;justify-content:center;">
-      <div class="mockup-frame" style="width:540px;max-width:100%;aspect-ratio:16/9;background:var(--dark-card);border-radius:20px;border:3px solid var(--border);padding:8px;box-shadow:var(--shadow-lg);">
-        <div class="mockup-screen" style="width:100%;height:100%;border-radius:14px;background:linear-gradient(180deg,#1a2236 0%,#0F172A 100%);overflow:hidden;">
-          <img src="screenshots/pipe-schematic-hero.png" alt="Pipe Schematic Pro dark theme with tools panel" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:14px;">
+      <div class="animate-on-scroll stagger-2">
+        <div class="spotlight-screenshot-frame">
+          <img src="screenshots/pipe-schematic-hero.png" alt="Pipe Schematic Pro app screen" class="spotlight-screenshot">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section-v2">
   <div class="container">
     <div style="text-align:center;margin-bottom:48px;" class="animate-on-scroll">
-      <h2>Everything You Need to Draw Pipe</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.05rem;">Purpose-built for plumbers, pipefitters, and mechanical engineers.</p>
+      <h2 class="section-title-v2">Everything You Need to Draw Pipe</h2>
+      <p class="section-sub-v2">Purpose-built for plumbers, pipefitters, and mechanical engineers.</p>
     </div>
-    <div class="features-grid">
-      <div class="feature-card animate-on-scroll stagger-1">
-        <div class="feature-icon">📏</div>
-        <h3>Precision Drawing</h3>
-        <p>Angle snapping at 0, 11.25, 22.5, 45, and 90 degrees. Cartesian and isometric grid modes for any drawing style.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
+      
+      <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📏</div>
+        </div>
+        <div class="pc-name">Precision Drawing</div>
+        <div class="pc-desc">Angle snapping at 0, 11.25, 22.5, 45, and 90 degrees. Cartesian and isometric grid modes for any drawing style.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-2">
-        <div class="feature-icon">🔩</div>
-        <h3>Fittings Library</h3>
-        <p>10+ fitting types including elbows, tees, valves, reducers, flanges, unions, traps, pumps, gauges, and strainers.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">🔩</div>
+        </div>
+        <div class="pc-name">Fittings Library</div>
+        <div class="pc-desc">10+ fitting types including elbows, tees, valves, reducers, flanges, unions, traps, pumps, gauges, and strainers.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-3">
-        <div class="feature-icon">📋</div>
-        <h3>Auto BOM</h3>
-        <p>Bill of Materials updates automatically as you draw. Export complete material lists with your schematic PDF.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-3" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📋</div>
+        </div>
+        <div class="pc-name">Auto BOM</div>
+        <div class="pc-desc">Bill of Materials updates automatically as you draw. Export complete material lists with your schematic PDF.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-4">
-        <div class="feature-icon">📄</div>
-        <h3>Multi-Page Projects</h3>
-        <p>Create multi-page projects with cover sheets. Save and load projects as JSON for easy sharing.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-4" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📄</div>
+        </div>
+        <div class="pc-name">Multi-Page Projects</div>
+        <div class="pc-desc">Create multi-page projects with cover sheets. Save and load projects as JSON for easy sharing.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-1">
-        <div class="feature-icon">📤</div>
-        <h3>PDF & JPG Export</h3>
-        <p>Export professional schematics as PDF or JPG with BOM included. Share directly from the app.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📤</div>
+        </div>
+        <div class="pc-name">PDF & JPG Export</div>
+        <div class="pc-desc">Export professional schematics as PDF or JPG with BOM included. Share directly from the app.</div>
       </div>
-      <div class="feature-card animate-on-scroll stagger-2">
-        <div class="feature-icon">📶</div>
-        <h3>Fully Offline</h3>
-        <p>No internet required. Draw schematics in the field, in the trailer, or anywhere on the jobsite.</p>
+
+      <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#D4A926;">
+        <div class="pc-head">
+          <div class="pc-icon">📶</div>
+        </div>
+        <div class="pc-name">Fully Offline</div>
+        <div class="pc-desc">No internet required. Draw schematics in the field, in the trailer, or anywhere on the jobsite.</div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section class="section-alt section">
-  <div class="container" style="text-align:center;">
-    <div class="animate-on-scroll">
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner animate-on-scroll">
       <h2>Save 27% with MEP Toolkit</h2>
-      <p class="text-secondary" style="margin-top:12px;font-size:1.1rem;max-width:600px;margin-left:auto;margin-right:auto;">
-        Get Pipe Schematic Pro plus Ductulator and Point Load Calculator for just <strong style="color:var(--gold);">$7.99</strong> instead of $10.97.
-      </p>
-      <div style="margin-top:32px;">
-        <a class='btn btn-primary' href='/mep-toolkit'>View MEP Toolkit</a>
+      <p>Get Pipe Schematic Pro plus Ductulator and Point Load Calculator for just $7.99 instead of $10.97.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="/mep-toolkit" class="btn btn-on-gold">View MEP Toolkit</a>
       </div>
     </div>
   </div>
@@ -137,7 +156,7 @@
           <li><a href='/ductulator'>Interactive Ductulator</a></li>
           <li><a href='/point-load-calculator'>Point Load Calculator</a></li>
           <li><a href='/offset3d'>Offset3D</a></li>
-      <li><a href='/stairbuilder'>StairBuilder</a></li>
+          <li><a href='/stairbuilder'>StairBuilder</a></li>
           <li><a href='/mep-toolkit'>MEP Toolkit</a></li>
           <li><a href='/seensay'>See 'n' Say</a></li>
         </ul>
