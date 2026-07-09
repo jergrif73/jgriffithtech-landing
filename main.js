@@ -6,6 +6,24 @@ document.addEventListener('DOMContentLoaded', () => {
   // Enable scroll animations (content visible by default if JS fails)
   document.documentElement.classList.add('js-loaded');
 
+  // First impression: brand stinger — gold pipe draws across a dark veil,
+  // then the veil lifts. Once per session, skipped for reduced motion.
+  try {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('jgtIntroSeen')) {
+      sessionStorage.setItem('jgtIntroSeen', '1');
+      const veil = document.createElement('div');
+      veil.id = 'intro-veil';
+      veil.innerHTML = '<svg viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+        '<path class="veil-pipe" d="M20 90 H 230 L 330 30 H 580" stroke="#D4A926" stroke-width="6" stroke-linecap="round"/>' +
+        '<circle class="veil-joint vj1" cx="230" cy="90" r="9" fill="#7A8B6F"/>' +
+        '<circle class="veil-joint vj2" cx="330" cy="30" r="9" fill="#7A8B6F"/>' +
+        '</svg><div class="veil-brand">JGRIFFITH <span>TECH</span></div>';
+      document.body.appendChild(veil);
+      setTimeout(() => veil.classList.add('lift'), 1050);
+      setTimeout(() => veil.remove(), 1750);
+    }
+  } catch (e) { /* sessionStorage unavailable: skip intro */ }
+
   // Nav scroll effect
   const nav = document.querySelector('.nav');
   window.addEventListener('scroll', () => {
@@ -31,15 +49,37 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Scroll animations
+  const commitReveal = (el) => {
+    // Belt-and-suspenders: hard-commit the revealed state so content can
+    // never be left dimmed/blurred if a transition stalls or a class is lost
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.filter = 'none';
+    }, 1400);
+  };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        commitReveal(entry.target);
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+  // Sweep for anything the observer missed (5 passes over 7.5s)
+  let sweepCount = 0;
+  const sweep = setInterval(() => {
+    document.querySelectorAll('.animate-on-scroll:not(.visible)').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight - 40 && r.bottom > 0) {
+        el.classList.add('visible');
+        commitReveal(el);
+      }
+    });
+    if (++sweepCount >= 5) clearInterval(sweep);
+  }, 1500);
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -178,8 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             node.replaceChild(frag, child);
           } else if (child.nodeType === 1 && child.tagName !== 'BR') {
-            // Treat styled spans (.accent, .strike) as single reveal units
-            child.classList.add('w');
+            // Styled spans (.accent, .strike) stay inline and fade in,
+            // so the headline wraps exactly like the original design
+            child.classList.add('wf');
             child.style.setProperty('--wi', wi++);
           }
         });

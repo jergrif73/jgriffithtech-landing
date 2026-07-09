@@ -1312,3 +1312,46 @@ html.has-cursor-fx, html.has-cursor-fx a, html.has-cursor-fx button, html.has-cu
 }
 @property --spin { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
 @keyframes spinBorder { to { --spin: 360deg; } }
+
+/* ============================================
+   ANIMATION PASS 5 - Intro stinger + inline
+   word-fade units (headline wrap fix)
+   ============================================ */
+
+/* Styled headline spans (.strike/.accent) stay INLINE and fade in */
+.js-loaded .hero-v2 h1 .wf {
+  opacity: 0;
+  animation: wordFade 0.9s ease forwards;
+  animation-delay: calc(var(--wi, 0) * 0.09s + 0.2s);
+}
+.js-loaded .hero-v2 h1 .accent.wf {
+  animation: wordFade 0.9s ease forwards, accentShimmer 4s linear infinite;
+  animation-delay: calc(var(--wi, 0) * 0.09s + 0.2s), 1.8s;
+}
+@keyframes wordFade { to { opacity: 1; } }
+
+/* First-visit brand stinger */
+#intro-veil {
+  position: fixed; inset: 0; z-index: 5000;
+  background: var(--dark);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+  transition: transform 0.65s cubic-bezier(0.7, 0, 0.3, 1);
+}
+#intro-veil svg { width: min(440px, 72vw); height: auto; }
+#intro-veil .veil-pipe {
+  stroke-dasharray: 900; stroke-dashoffset: 900;
+  animation: pipeDraw 0.85s cubic-bezier(0.4, 0, 0.2, 1) 0.05s forwards;
+}
+#intro-veil .veil-joint {
+  opacity: 0; transform-origin: center;
+  animation: jointPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+#intro-veil .vj1 { animation-delay: 0.4s; }
+#intro-veil .vj2 { animation-delay: 0.6s; }
+#intro-veil .veil-brand {
+  font-weight: 900; letter-spacing: 0.3em; font-size: 0.95rem;
+  color: var(--text-primary); opacity: 0;
+  animation: wordFade 0.5s ease 0.55s forwards;
+}
+#intro-veil .veil-brand span { color: var(--gold); }
+#intro-veil.lift { transform: translateY(-101%); }
