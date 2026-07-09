@@ -1103,3 +1103,87 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
   html { scroll-behavior: auto; }
   .js-loaded .animate-on-scroll { opacity: 1; transform: none; }
 }
+
+/* ============================================
+   ANIMATION PASS 2 - Particles, word reveal,
+   marquee, magnetic UI, deeper reveals
+   ============================================ */
+
+/* Hero particle constellation canvas */
+.hero-particles {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  z-index: 0; pointer-events: none;
+}
+.hero-v2 .container { position: relative; z-index: 2; }
+
+/* Headline word-by-word reveal */
+.js-loaded .hero-v2 h1 .w {
+  display: inline-block;
+  opacity: 0; transform: translateY(0.6em) rotate(2deg); filter: blur(8px);
+  animation: wordIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--wi, 0) * 0.09s + 0.15s);
+}
+@keyframes wordIn {
+  to { opacity: 1; transform: translateY(0) rotate(0); filter: blur(0); }
+}
+
+/* Gold gradient shimmer sweeping through accent text */
+.hero-v2 h1 .accent {
+  background: linear-gradient(110deg, var(--gold) 25%, #fff3c9 42%, var(--gold-light) 55%, var(--gold) 75%);
+  background-size: 220% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: accentShimmer 4s linear 1.6s infinite;
+}
+@keyframes accentShimmer {
+  to { background-position: -220% center; }
+}
+
+/* Deeper scroll reveals: rise + descale + deblur */
+.js-loaded .animate-on-scroll {
+  opacity: 0; transform: translateY(44px) scale(0.975); filter: blur(7px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js-loaded .animate-on-scroll.visible {
+  opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
+}
+
+/* Tool marquee ribbon */
+.tool-marquee {
+  overflow: hidden; position: relative;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  background: var(--dark);
+  padding: 20px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.tool-marquee-track {
+  display: flex; align-items: center; gap: 56px;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+.tool-marquee:hover .tool-marquee-track { animation-play-state: paused; }
+.tm-item {
+  font-weight: 900; font-size: 1.1rem; letter-spacing: 0.14em;
+  text-transform: uppercase; white-space: nowrap;
+  color: transparent; -webkit-text-stroke: 1px rgba(212,169,38,0.55);
+}
+.tm-item.solid { color: var(--gold); -webkit-text-stroke: 0; }
+.tm-dot { color: var(--sage); font-size: 0.9rem; }
+@keyframes marqueeScroll {
+  to { transform: translateX(-50%); }
+}
+
+/* Stat pop-glow when the count lands */
+.stat-num.counted { animation: statGlow 0.7s ease; }
+@keyframes statGlow {
+  0%   { text-shadow: 0 0 0 rgba(212,169,38,0); }
+  45%  { text-shadow: 0 0 26px rgba(212,169,38,0.9); transform: scale(1.1); }
+  100% { text-shadow: 0 0 0 rgba(212,169,38,0); transform: scale(1); }
+}
+
+/* Magnetic buttons + 3D hero stack helpers */
+.btn { will-change: transform; }
+.phone-stack { transform-style: preserve-3d; transition: transform 0.25s ease-out; }

@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
           el.textContent = prefix + Math.round(eased * target) + suffix;
           if (p < 1) requestAnimationFrame(step);
-          else el.textContent = original;
+          else { el.textContent = original; el.classList.add('counted'); }
         };
         requestAnimationFrame(step);
       });
@@ -156,5 +156,124 @@ document.addEventListener('DOMContentLoaded', () => {
     // Kick off the CSS draw animation once the hero is on screen
     requestAnimationFrame(() => pipeSvg.classList.add('draw'));
   }
-});
 
+  // ============================================
+  // PASS 2: Headline word-by-word reveal
+  // ============================================
+  if (!reducedMotion) {
+    document.querySelectorAll('.hero-v2 h1').forEach(h1 => {
+      let wi = 0;
+      const wrap = (node) => {
+        [...node.childNodes].forEach(child => {
+          if (child.nodeType === 3) {
+            const frag = document.createDocumentFragment();
+            child.textContent.split(/(\s+)/).forEach(part => {
+              if (!part) return;
+              if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+              const s = document.createElement('span');
+              s.className = 'w';
+              s.style.setProperty('--wi', wi++);
+              s.textContent = part;
+              frag.appendChild(s);
+            });
+            node.replaceChild(frag, child);
+          } else if (child.nodeType === 1 && child.tagName !== 'BR') {
+            // Treat styled spans (.accent, .strike) as single reveal units
+            child.classList.add('w');
+            child.style.setProperty('--wi', wi++);
+          }
+        });
+      };
+      wrap(h1);
+    });
+  }
+
+  // ============================================
+  // PASS 2: Magnetic buttons (fine pointers only)
+  // ============================================
+  if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r = btn.getBoundingClientRect();
+        const dx = e.clientX - (r.left + r.width / 2);
+        const dy = e.clientY - (r.top + r.height / 2);
+        btn.style.transform = 'translate(' + (dx * 0.14).toFixed(1) + 'px, ' + (dy * 0.3).toFixed(1) + 'px)';
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  // ============================================
+  // PASS 2: Phone stack follows the cursor in 3D
+  // ============================================
+  const stackEl = document.querySelector('.phone-stack');
+  const heroEl = document.querySelector('.hero-v2');
+  if (stackEl && heroEl && !reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    heroEl.addEventListener('mousemove', e => {
+      if (window.innerWidth < 901) return;
+      const r = heroEl.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width - 0.5;
+      const ny = (e.clientY - r.top) / r.height - 0.5;
+      stackEl.style.transform = 'perspective(1200px) rotateY(' + (nx * 10).toFixed(2) + 'deg) rotateX(' + (-ny * 8).toFixed(2) + 'deg)';
+    });
+    heroEl.addEventListener('mouseleave', () => { stackEl.style.transform = ''; });
+  }
+
+  // ============================================
+  // PASS 2: Hero particle constellation
+  // ============================================
+  document.querySelectorAll('.hero-particles').forEach(canvas => {
+    if (reducedMotion) return;
+    const ctx = canvas.getContext('2d');
+    const parent = canvas.parentElement;
+    let w = 0, h = 0, pts = [], raf = null;
+    const resize = () => {
+      w = canvas.width = parent.offsetWidth;
+      h = canvas.height = parent.offsetHeight;
+      const n = Math.min(70, Math.max(24, Math.floor(w / 20)));
+      pts = Array.from({ length: n }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.45, vy: (Math.random() - 0.5) * 0.45,
+        r: Math.random() * 1.8 + 0.6,
+        gold: Math.random() < 0.6
+      }));
+    };
+    const LINK = 130 * 130;
+    const tick = () => {
+      ctx.clearRect(0, 0, w, h);
+      for (const p of pts) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, 6.2832);
+        ctx.fillStyle = p.gold ? 'rgba(212,169,38,0.55)' : 'rgba(122,139,111,0.5)';
+        ctx.fill();
+      }
+      for (let i = 0; i < pts.length; i++) {
+        for (let j = i + 1; j < pts.length; j++) {
+          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+          const d2 = dx * dx + dy * dy;
+          if (d2 < LINK) {
+            ctx.strokeStyle = 'rgba(212,169,38,' + (0.13 * (1 - d2 / LINK)).toFixed(3) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(pts[i].x, pts[i].y);
+            ctx.lineTo(pts[j].x, pts[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    const vis = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && raf === null) raf = requestAnimationFrame(tick);
+        else if (!entry.isIntersecting && raf !== null) { cancelAnimationFrame(raf); raf = null; }
+      });
+    });
+    resize();
+    vis.observe(parent);
+    window.addEventListener('resize', resize);
+  });
+});
