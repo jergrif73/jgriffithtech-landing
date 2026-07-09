@@ -35,6 +35,7 @@
       <li><a href='/offset3d'>Offset3D</a></li>
       <li><a href='/stairbuilder'>StairBuilder</a></li>
       <li><a href='/seensay'>See 'n' Say</a></li>
+      <li><a class='beta-nav-link' href='/testers'><span class="pulse-dot"></span>Beta</a></li>
       <li><a class='btn btn-primary' href='/mep-toolkit' style='padding:8px 18px;font-size:0.85rem;'>MEP Toolkit</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Menu">
@@ -47,6 +48,15 @@
 <section class="hero-v2">
   <div class="hero-v2-glow-1"></div>
   <div class="hero-v2-glow-2"></div>
+  <div class="hero-pipe-wrap" aria-hidden="true">
+    <svg class="hero-pipe-svg" viewBox="0 0 1440 130" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path class="pipe-base" d="M-10 100 H 470 L 660 35 H 1000 L 1180 100 H 1450" stroke="#D4A926" stroke-width="5" stroke-linecap="round"/>
+      <path class="pipe-flow" d="M-10 100 H 470 L 660 35 H 1000 L 1180 100 H 1450" stroke="#e8c44a" stroke-width="2.5" stroke-linecap="round"/>
+      <circle class="pipe-joint j1" cx="470" cy="100" r="8" fill="#7A8B6F"/>
+      <circle class="pipe-joint j2" cx="660" cy="35" r="8" fill="#7A8B6F"/>
+      <circle class="pipe-joint j3" cx="1180" cy="100" r="8" fill="#7A8B6F"/>
+    </svg>
+  </div>
   <div class="container">
     <div class="hero-v2-grid">
       <div class="animate-on-scroll">
@@ -65,6 +75,9 @@
           <a href="#apps" class="btn btn-primary">Explore the apps</a>
           <a href="/mep-toolkit" class="btn btn-outline">Get MEP Toolkit</a>
           <span class="hero-v2-meta">$2.99 - $7.99 &middot; No subscriptions</span>
+        </div>
+        <div style="margin-top:20px;">
+          <a href="/testers" style="display:inline-flex;align-items:center;gap:8px;color:var(--sage-light);font-weight:600;font-size:0.95rem;"><span class="pulse-dot" style="background:var(--sage-light);"></span>Beta testers needed &mdash; try the apps free &rarr;</a>
         </div>
       </div>
       <div class="phone-stack animate-on-scroll stagger-2">
@@ -360,6 +373,7 @@
           <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
             <a href="https://jgriffithtech.gumroad.com/l/seensay" class="btn btn-primary" target="_blank">Buy Now &mdash; $39.99</a>
             <a href="/seensay" style="color:var(--gold);font-weight:600;font-size:0.95rem;">Full Details &rarr;</a>
+            <a href="/testers#seensay-beta" style="color:var(--sage-light);font-weight:600;font-size:0.95rem;">Join the beta &rarr;</a>
             <span style="color:var(--text-muted);font-size:0.85rem;">Windows installer &middot; Revit 2024 &amp; 2025 &middot; Lifetime updates</span>
           </div>
         </div>
@@ -469,6 +483,7 @@
       <div class="footer-links">
         <h4>Contact &amp; Legal</h4>
         <ul>
+          <li><a href='/testers'>Beta Testing</a></li>
           <li><a href='/#contact'>Contact</a></li>
           <li><a href='/privacy'>Privacy Policy</a></li>
         </ul>
