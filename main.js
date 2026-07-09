@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const y = window.scrollY;
         if (glow1) glow1.style.transform = 'translateY(' + y * 0.28 + 'px)';
         if (glow2) glow2.style.transform = 'translateY(' + y * -0.18 + 'px)';
-        if (stack && y < 900) stack.style.translate = '0 ' + y * 0.06 + 'px';
+        if (stack && y < 900 && !window.gsap) stack.style.translate = '0 ' + y * 0.06 + 'px';
         ticking = false;
       });
     }, { passive: true });
@@ -220,13 +220,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================
-  // PASS 2: Hero particle constellation
+  // PASS 3: Hero particle constellation with
+  // cursor repel + self-drawing circuit traces
   // ============================================
   document.querySelectorAll('.hero-particles').forEach(canvas => {
     if (reducedMotion) return;
     const ctx = canvas.getContext('2d');
     const parent = canvas.parentElement;
-    let w = 0, h = 0, pts = [], raf = null;
+    let w = 0, h = 0, pts = [], traces = [], raf = null;
+    const mouse = { x: -9999, y: -9999 };
+    parent.addEventListener('mousemove', e => {
+      const r = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
+    });
+    parent.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+
     const resize = () => {
       w = canvas.width = parent.offsetWidth;
       h = canvas.height = parent.offsetHeight;
@@ -238,13 +247,84 @@ document.addEventListener('DOMContentLoaded', () => {
         gold: Math.random() < 0.6
       }));
     };
+
+    // Circuit trace: an orthogonal "duct run" drawing itself across the hero
+    const spawnTrace = () => {
+      const segs = [];
+      let x = -20, y = h * (0.15 + Math.random() * 0.7);
+      segs.push({ x, y });
+      while (x < w + 40) {
+        x += 90 + Math.random() * 220;
+        segs.push({ x, y });
+        if (x < w - 60 && Math.random() < 0.75) {
+          y = Math.max(20, Math.min(h - 20, y + (Math.random() - 0.5) * h * 0.5));
+          segs.push({ x, y });
+        }
+      }
+      // total length for dash animation
+      let len = 0;
+      for (let i = 1; i < segs.length; i++)
+        len += Math.abs(segs[i].x - segs[i-1].x) + Math.abs(segs[i].y - segs[i-1].y);
+      traces.push({ segs, len, t: 0, dur: 2600 + Math.random() * 1200, born: performance.now() });
+    };
+    let lastSpawn = 0;
+
     const LINK = 130 * 130;
-    const tick = () => {
+    const tick = (now) => {
       ctx.clearRect(0, 0, w, h);
+
+      // traces
+      if (now - lastSpawn > 3400 && traces.length < 2) { spawnTrace(); lastSpawn = now; }
+      traces = traces.filter(tr => now - tr.born < tr.dur + 900);
+      for (const tr of traces) {
+        const p = Math.min((now - tr.born) / tr.dur, 1);
+        const fade = now - tr.born > tr.dur ? 1 - (now - tr.born - tr.dur) / 900 : 1;
+        const drawn = tr.len * (p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2);
+        ctx.strokeStyle = 'rgba(212,169,38,' + (0.28 * fade).toFixed(3) + ')';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        let rem = drawn, prev = tr.segs[0];
+        ctx.moveTo(prev.x, prev.y);
+        for (let i = 1; i < tr.segs.length && rem > 0; i++) {
+          const seg = tr.segs[i];
+          const segLen = Math.abs(seg.x - prev.x) + Math.abs(seg.y - prev.y);
+          if (rem >= segLen) { ctx.lineTo(seg.x, seg.y); rem -= segLen; prev = seg; }
+          else {
+            const f = rem / segLen;
+            ctx.lineTo(prev.x + (seg.x - prev.x) * f, prev.y + (seg.y - prev.y) * f);
+            rem = 0;
+          }
+        }
+        ctx.stroke();
+        // joint nodes at completed corners
+        let acc = 0;
+        for (let i = 1; i < tr.segs.length - 1; i++) {
+          acc += Math.abs(tr.segs[i].x - tr.segs[i-1].x) + Math.abs(tr.segs[i].y - tr.segs[i-1].y);
+          if (acc <= drawn) {
+            ctx.beginPath();
+            ctx.arc(tr.segs[i].x, tr.segs[i].y, 3, 0, 6.2832);
+            ctx.fillStyle = 'rgba(122,139,111,' + (0.6 * fade).toFixed(3) + ')';
+            ctx.fill();
+          }
+        }
+      }
+
+      // particles (with cursor repel)
       for (const p of pts) {
+        const dx = p.x - mouse.x, dy = p.y - mouse.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < 10000 && d2 > 1) {
+          const d = Math.sqrt(d2), f = (100 - d) / 100 * 0.6;
+          p.vx += (dx / d) * f; p.vy += (dy / d) * f;
+        }
+        p.vx *= 0.96; p.vy *= 0.96;
+        const sp = Math.hypot(p.vx, p.vy);
+        if (sp < 0.12) { p.vx += (Math.random() - 0.5) * 0.1; p.vy += (Math.random() - 0.5) * 0.1; }
         p.x += p.vx; p.y += p.vy;
         if (p.x < 0 || p.x > w) p.vx *= -1;
         if (p.y < 0 || p.y > h) p.vy *= -1;
+        p.x = Math.max(0, Math.min(w, p.x));
+        p.y = Math.max(0, Math.min(h, p.y));
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, 6.2832);
         ctx.fillStyle = p.gold ? 'rgba(212,169,38,0.55)' : 'rgba(122,139,111,0.5)';
@@ -275,5 +355,81 @@ document.addEventListener('DOMContentLoaded', () => {
     resize();
     vis.observe(parent);
     window.addEventListener('resize', resize);
+  });
+
+  // ============================================
+  // PASS 3: Custom cursor - gold dot + easing ring
+  // ============================================
+  if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    document.documentElement.classList.add('has-cursor-fx');
+    const dot = document.createElement('div'); dot.id = 'cursor-dot';
+    const ring = document.createElement('div'); ring.id = 'cursor-ring';
+    dot.style.opacity = '0'; ring.style.opacity = '0';
+    document.body.appendChild(dot); document.body.appendChild(ring);
+    let mx = 0, my = 0, rx = 0, ry = 0, shown = false;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      if (!shown) { shown = true; dot.style.opacity = '1'; ring.style.opacity = '1'; }
+      dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+    });
+    document.addEventListener('mouseleave', () => {
+      shown = false; dot.style.opacity = '0'; ring.style.opacity = '0';
+    });
+    const follow = () => {
+      rx += (mx - rx) * 0.16; ry += (my - ry) * 0.16;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(follow);
+    };
+    follow();
+    const hoverSel = 'a, button, .btn, .product-card-v2, .tester-step, .feature-card';
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest(hoverSel)) ring.classList.add('hovering');
+    });
+    document.addEventListener('mouseout', e => {
+      if (e.target.closest(hoverSel)) ring.classList.remove('hovering');
+    });
+  }
+
+  // ============================================
+  // PASS 3: Eyebrow decode/scramble on reveal
+  // ============================================
+  if (!reducedMotion) {
+    const CHARS = '#/\\|=+<>*';
+    document.querySelectorAll('.section-eyebrow-v2').forEach(eb => {
+      const finalText = eb.textContent;
+      const ob = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          ob.unobserve(eb);
+          const start = performance.now(), dur = 700;
+          const step = (now) => {
+            const p = Math.min((now - start) / dur, 1);
+            const settled = Math.floor(finalText.length * p);
+            let out = finalText.slice(0, settled);
+            for (let i = settled; i < finalText.length; i++) {
+              out += finalText[i] === ' ' ? ' ' : CHARS[(Math.random() * CHARS.length) | 0];
+            }
+            eb.textContent = out;
+            if (p < 1) requestAnimationFrame(step);
+            else eb.textContent = finalText;
+          };
+          requestAnimationFrame(step);
+        });
+      }, { threshold: 0.5 });
+      ob.observe(eb);
+    });
+  }
+
+  // ============================================
+  // PASS 3: Hand product cards back to the tilt
+  // engine once their flip-in reveal finishes
+  // ============================================
+  document.querySelectorAll('.product-card-v2.animate-on-scroll').forEach(card => {
+    card.addEventListener('transitionend', function onEnd(e) {
+      if (e.propertyName === 'transform' && card.classList.contains('visible')) {
+        card.classList.add('revealed');
+        card.removeEventListener('transitionend', onEnd);
+      }
+    });
   });
 });

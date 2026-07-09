@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Become a Beta Tester - JGriffith Tech</title>
-  <meta name="description" content="Help launch 6 MEP mobile apps on Google Play and test the See 'n' Say Revit add-in. Free during testing. All you need is an Android phone and a Google account.">
+  <meta name="description" content="Help launch 6 MEP mobile apps on Google Play and test the See 'n' Say Revit add-in. $0.99 per app during initial testing. All you need is an Android phone and a Google account.">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta property="og:title" content="Beta Testers Needed - JGriffith Tech">
-  <meta property="og:description" content="Test 6 MEP mobile apps free before they launch on Google Play. Scan, tap Become a Tester, install. Takes 2 minutes.">
+  <meta property="og:description" content="Test 6 MEP mobile apps for $0.99 each before they launch on Google Play. Scan, tap Become a Tester, install. Takes 2 minutes.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jgriffithtech.com/testers">
   <meta property="og:image" content="https://jgriffithtech.com/logo.png">
@@ -17,6 +17,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="effects.js"></script>
 </head>
 <body>
 
@@ -244,6 +247,40 @@
     </div>
   </div>
 </section>
+
+<!-- TOOL MARQUEE -->
+<div class="tool-marquee" aria-hidden="true">
+  <div class="tool-marquee-track">
+    <span class="tm-item">Pipe Schematic Pro</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item solid">Interactive Ductulator</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item">Point Load Calculator</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item solid">Offset3D</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item">StairBuilder</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item solid">MEP Toolkit</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item">See 'n' Say</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item">Pipe Schematic Pro</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item solid">Interactive Ductulator</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item">Point Load Calculator</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item solid">Offset3D</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item">StairBuilder</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item solid">MEP Toolkit</span>
+    <span class="tm-dot">&#9670;</span>
+    <span class="tm-item">See 'n' Say</span>
+    <span class="tm-dot">&#9670;</span>
+  </div>
+</div>
 
 <!-- CTA BAND -->
 <section class="cta-band">

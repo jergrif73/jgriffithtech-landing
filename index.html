@@ -21,6 +21,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="effects.js"></script>
 </head>
 <body>
 
@@ -358,8 +362,10 @@
       </div>
 
       <div class="animate-on-scroll stagger-2">
-        <div class="spotlight-screenshot-frame">
-          <img src="screenshots/offset3d-hero.png" alt="Offset3D Rolling 3D mode showing rise, roll, offset inputs with the 3D pipe model and computed travel, angle, and cut length" class="spotlight-screenshot">
+        <div class="spotlight-screenshot-frame" id="offset3d-widget">
+          <img src="screenshots/offset3d-hero.png" alt="Offset3D Rolling 3D mode showing rise, roll, offset inputs with the 3D pipe model and computed travel, angle, and cut length" class="spotlight-screenshot widget-fallback">
+          <div class="widget-hint">Live model &mdash; drag to rotate</div>
+          <div class="pipe-readout-row" id="offset3d-readouts"></div>
         </div>
       </div>
     </div>
