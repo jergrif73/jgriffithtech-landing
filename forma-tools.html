@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JGT Forma Model Coordination Tools · JGriffith Tech</title>
+<meta name="description" content="Copy Revit Element IDs in Autodesk Forma Model Coordination, plus Find by ID, Select Same, Quick Properties, Profiler and Export. Chrome extension by JGriffith Tech.">
+<style>
+  :root { --navy: #0F172A; --slate: #1E293B; --gold: #D4A926; --text: #E2E8F0; --sub: #94A3B8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--navy); color: var(--text); font: 16px/1.6 "Segoe UI", Arial, sans-serif; }
+  main { max-width: 820px; margin: 0 auto; padding: 44px 20px 60px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; color: #F1F5F9; }
+  .lead { color: var(--sub); font-size: 18px; margin: 0 0 24px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 0 0 32px; }
+  .btn { display: inline-block; padding: 11px 18px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+  .btn.gold { background: var(--gold); color: var(--navy); }
+  .btn.line { border: 1px solid #334155; color: var(--text); }
+  h2 { color: var(--gold); font-size: 19px; margin: 34px 0 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--slate); vertical-align: top; }
+  th { color: var(--sub); font-size: 13px; }
+  kbd { background: var(--slate); border: 1px solid #334155; border-radius: 4px; padding: 0 6px; font: 13px Consolas, monospace; }
+  .tag { font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 10px; }
+  .free { background: #1E3A2B; color: #9FC28F; } .pro { background: #3B300B; color: var(--gold); }
+  ol li, ul li { margin: 6px 0; }
+  a { color: var(--gold); }
+  .fine { color: var(--sub); font-size: 13px; margin-top: 40px; }
+  @media (max-width: 560px) { h1 { font-size: 24px; } td:nth-child(2), th:nth-child(2) { display: none; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>JGT Forma Model Coordination Tools</h1>
+  <p class="lead">Copy Revit Element IDs straight out of Autodesk Forma Model Coordination, plus the Navisworks tools you miss in the browser.</p>
+  <!-- LAUNCH: replace this block with the two live buttons once the store listing and the Gumroad
+       product exist:
+       <a class="btn gold" href="CHROME_WEB_STORE_LISTING_URL">Add to Chrome (free)</a>
+       <a class="btn line" href="https://jgriffithtech.gumroad.com/l/forma-tools">Get Pro, $9.99</a> -->
+  <div class="cta">
+    <span class="btn line">Coming soon to the Chrome Web Store</span>
+  </div>
+
+  <h2>What it does</h2>
+  <table>
+    <tr><th>Tool</th><th>How</th><th>Plan</th></tr>
+    <tr><td>Copy Element ID, ready for Revit's Select by ID</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd></td><td><span class="tag free">Free</span></td></tr>
+    <tr><td>Copy ID + Details (ID, name, file for Excel)</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>E</kbd></td><td><span class="tag free">Free</span></td></tr>
+    <tr><td>Find by Element ID: paste IDs, select or isolate</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td><td><span class="tag pro">Pro</span></td></tr>
+    <tr><td>Quick Properties hover tooltip</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd></td><td><span class="tag pro">Pro</span></td></tr>
+    <tr><td>Select Same: type, family, category, level, system, size</td><td>Right-click</td><td><span class="tag pro">Pro</span></td></tr>
+    <tr><td>Appearance Profiler: color by any property</td><td>JGT toolbar button</td><td><span class="tag pro">Pro</span></td></tr>
+    <tr><td>Export to CSV or Excel, plus takeoff totals</td><td>JGT toolbar button</td><td><span class="tag pro">Pro</span></td></tr>
+    <tr><td>Clash objects (both sides' IDs) and clash objects by level</td><td>Clashes view</td><td><span class="tag pro">Pro</span></td></tr>
+  </table>
+
+  <h2>Activate Pro</h2>
+  <ol>
+    <li>Buy Pro on Gumroad. Got a team code? Enter it at checkout.</li>
+    <li>Copy the license key from your receipt email.</li>
+    <li>Click the extension's icon in the Chrome toolbar, paste the key, and choose <strong>Activate</strong>.</li>
+    <li>Reload your Forma tab.</li>
+  </ol>
+
+  <h2>Help</h2>
+  <ul>
+    <li><strong>Nothing happens on the shortcut:</strong> reload the Forma tab after installing or updating.</li>
+    <li><strong>"Select a part first" in the Clashes view:</strong> click the part itself in the 3D view, then press the shortcut.</li>
+    <li><strong>IDs are only unique per Revit file.</strong> Copy ID + Details shows which file each ID came from.</li>
+    <li><strong>Moving to a new computer:</strong> remove the key from the old browser's options page, then activate it on the new one. Each key covers up to 5 browsers.</li>
+    <li>Still stuck? Reply to your Gumroad receipt email and it comes straight to me.</li>
+  </ul>
+
+  <p class="fine">Made by JGriffith Tech. Your model data stays in your browser; see the <a href="/forma-tools/privacy">privacy policy</a>. Not affiliated with or endorsed by Autodesk, Inc. Autodesk and Forma are registered trademarks or trademarks of Autodesk, Inc.</p>
+</main>
+</body>
+</html>
