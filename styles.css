@@ -1355,20 +1355,31 @@ html.has-cursor-fx, html.has-cursor-fx a, html.has-cursor-fx button, html.has-cu
 }
 #intro-veil .veil-brand span { color: var(--gold); }
 #intro-veil.lift { transform: translateY(-101%); }
-/* Nav: keep the logo at full size and labels on one line; tighten spacing as the desktop nav gets crowded */
+/* Nav: keep the logo at full size and labels on one line; tighten spacing as the desktop nav gets crowded,
+   and switch to the hamburger menu below 900px where ten links no longer fit */
 .nav-logo { flex-shrink: 0; }
 .nav-links a { white-space: nowrap; }
-@media (min-width: 769px) {
+@media (min-width: 901px) {
   .nav-links { gap: 4px; }
   .nav-links a { padding: 8px 10px; }
 }
-@media (max-width: 1240px) and (min-width: 769px) {
+@media (max-width: 1240px) and (min-width: 901px) {
   .nav-links { gap: 2px; }
   .nav-links a { padding: 8px 7px; font-size: 0.8rem; }
 }
-@media (max-width: 1080px) and (min-width: 769px) {
+@media (max-width: 1080px) and (min-width: 901px) {
   .nav-links a { padding: 6px 5px; font-size: 0.74rem; }
 }
-@media (max-width: 940px) and (min-width: 769px) {
+@media (max-width: 960px) and (min-width: 901px) {
   .nav-links a { padding: 6px 4px; font-size: 0.68rem; }
+}
+@media (max-width: 900px) {
+  .nav-links {
+    display: none; position: fixed; top: 72px; left: 0; right: 0;
+    background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(20px);
+    flex-direction: column; padding: 16px; gap: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
 }
