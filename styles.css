@@ -1355,16 +1355,20 @@ html.has-cursor-fx, html.has-cursor-fx a, html.has-cursor-fx button, html.has-cu
 }
 #intro-veil .veil-brand span { color: var(--gold); }
 #intro-veil.lift { transform: translateY(-101%); }
-/* Nav: keep labels on one line and tighten spacing as the desktop nav gets crowded */
+/* Nav: keep the logo at full size and labels on one line; tighten spacing as the desktop nav gets crowded */
+.nav-logo { flex-shrink: 0; }
 .nav-links a { white-space: nowrap; }
-@media (max-width: 1240px) and (min-width: 769px) {
+@media (min-width: 769px) {
   .nav-links { gap: 4px; }
   .nav-links a { padding: 8px 10px; }
 }
-@media (max-width: 1080px) and (min-width: 769px) {
+@media (max-width: 1240px) and (min-width: 769px) {
   .nav-links { gap: 2px; }
-  .nav-links a { padding: 8px 6px; font-size: 0.78rem; }
+  .nav-links a { padding: 8px 7px; font-size: 0.8rem; }
 }
-@media (max-width: 920px) and (min-width: 769px) {
-  .nav-links a { padding: 6px 4px; font-size: 0.7rem; }
+@media (max-width: 1080px) and (min-width: 769px) {
+  .nav-links a { padding: 6px 5px; font-size: 0.74rem; }
+}
+@media (max-width: 940px) and (min-width: 769px) {
+  .nav-links a { padding: 6px 4px; font-size: 0.68rem; }
 }
