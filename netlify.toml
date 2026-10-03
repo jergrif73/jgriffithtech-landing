@@ -47,6 +47,11 @@
   status = 200
 
 [[redirects]]
+  from = "/traverse-duct-route"
+  to = "/traverse-duct-route.html"
+  status = 200
+
+[[redirects]]
   from = "/forma-tools/privacy"
   to = "/forma-tools-privacy.html"
   status = 200

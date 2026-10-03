@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traverse Duct Route - JGriffith Tech</title>
+  <meta name="description" content="Claude, driving Revit 2024 through an MCP connection, routed a 16-inch SA02 fabrication duct through a lattice of 313 chilled water pipes with 0.49 inches to spare. Explore the 3D result.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta property="og:title" content="Threading a 16-inch duct through 313 pipes with Claude and Revit">
+  <meta property="og:description" content="An AI coordination challenge: connect two wall stubs without touching a single pipe. 4 fittings, 0 contacts, 0.49 in tightest gap. Explore the 3D model.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jgriffithtech.com/traverse-duct-route">
+  <meta property="og:image" content="https://jgriffithtech.com/demos/traverse-duct-route-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="JGriffith Tech">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Threading a 16-inch duct through 313 pipes with Claude and Revit">
+  <meta name="twitter:description" content="4 fittings, 0 contacts, 0.49 in tightest gap. Explore the 3D model.">
+  <meta name="twitter:image" content="https://jgriffithtech.com/demos/traverse-duct-route-card.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="effects.js"></script>
+  <style>
+    .tdr-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:28px; }
+    .tdr-stat { background:var(--dark-card); border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px; }
+    .tdr-stat b { display:block; font-size:1.9rem; font-weight:800; color:var(--gold); line-height:1.1; font-variant-numeric:tabular-nums; }
+    .tdr-stat span { color:var(--text-secondary); font-size:0.85rem; }
+    .tdr-frame { width:100%; border:0; display:block; min-height:900px; background:var(--dark); }
+    .tdr-video { width:100%; max-width:960px; display:block; margin:0 auto; border-radius:var(--radius); border:1px solid var(--border); background:#000; }
+    .tdr-cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+    .tdr-card { background:var(--dark-card); border:1px solid var(--border); border-radius:var(--radius); padding:22px 24px; }
+    .tdr-card h3 { font-size:1.05rem; margin:0 0 10px; color:var(--gold); }
+    .tdr-card p, .tdr-card li { color:var(--text-secondary); font-size:0.95rem; line-height:1.65; }
+    .tdr-card ul { margin:0; padding-left:18px; }
+    .tdr-card li { margin:6px 0; }
+    .tdr-note { color:var(--text-muted); font-size:0.85rem; max-width:760px; margin:18px auto 0; text-align:center; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class='nav-logo' href='/'><img src="logo-nav.png" alt="JGriffith Tech"></a>
+    <ul class="nav-links">
+      <li><a href='/'>Home</a></li>
+      <li><a href='/pipe-schematic-pro'>Pipe Schematic Pro</a></li>
+      <li><a href='/ductulator'>Ductulator</a></li>
+      <li><a href='/point-load-calculator'>Point Load Calc</a></li>
+      <li><a href='/offset3d'>Offset3D</a></li>
+      <li><a href='/stairbuilder'>StairBuilder</a></li>
+      <li><a href='/seensay'>See 'n' Say</a></li>
+      <li><a href='/forma-tools'>Forma Tools</a></li>
+      <li><a class='beta-nav-link' href='/testers'><span class="pulse-dot"></span>Beta</a></li>
+      <li><a class='btn btn-primary' href='/mep-toolkit' style='padding:8px 18px;font-size:0.85rem;'>MEP Toolkit</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="hero-v2">
+  <div class="hero-v2-glow-1"></div>
+  <div class="hero-v2-glow-2"></div>
+  <canvas class="hero-particles" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="animate-on-scroll" style="max-width:860px;">
+      <span class="section-eyebrow-v2">AI coordination challenge · Revit 2024 + Claude</span>
+      <h1>Threading a 16" duct through <span class="accent">313 pipes</span></h1>
+      <p class="lede">I drew a duct between two wall stubs, hid it, filled the room with a lattice of 3" chilled water pipes, and deleted only the pipes the duct hit. Then I asked Claude, working in Revit through an MCP connection, to reconnect the stubs with real SA02 fabrication parts without touching a single pipe. It never got to see my duct.</p>
+      <div class="tdr-stats">
+        <div class="tdr-stat"><b>0</b><span>pipe contacts</span></div>
+        <div class="tdr-stat"><b>0.49"</b><span>tightest gap, from the real fab meshes</span></div>
+        <div class="tdr-stat"><b>4</b><span>fittings, 9 joints</span></div>
+        <div class="tdr-stat"><b>49 min</b><span>from first question to built and checked</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-v2" style="padding-top:24px;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:28px;" class="animate-on-scroll">
+      <h2 class="section-title-v2">Explore the route</h2>
+      <p class="section-sub-v2">Drag to orbit, scroll to zoom. Press Play build to watch the parts go in, or click a row in the schedule to highlight the pipe it comes closest to.</p>
+    </div>
+    <iframe class="tdr-frame" id="tdrFrame" src="/demos/traverse-duct-route-viewer.html" title="3D view of the duct route through the pipe lattice" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="section-v2">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:28px;" class="animate-on-scroll">
+      <h2 class="section-title-v2">The build in Revit</h2>
+      <p class="section-sub-v2">Each part was placed in its own transaction and exported from a dedicated 3D view.</p>
+    </div>
+    <video class="tdr-video" src="/demos/traverse-duct-route-build.mp4" controls muted playsinline preload="metadata" poster="/demos/traverse-duct-route-card.jpg"></video>
+  </div>
+</section>
+
+<section class="section-v2">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:28px;" class="animate-on-scroll">
+      <h2 class="section-title-v2">How it went</h2>
+    </div>
+    <div class="tdr-cols">
+      <div class="tdr-card animate-on-scroll stagger-1">
+        <h3>The rules</h3>
+        <ul>
+          <li>Connect a 24×12 TDC stub to a 16" round stub on opposite walls.</li>
+          <li>Any fitting in the SA02 service, real installed geometry, flanges included.</li>
+          <li>Hold the free area of the 16" round and a 4:1 maximum aspect ratio.</li>
+          <li>TDC above 20", S&amp;D or round connectors below.</li>
+          <li>Don't modify the stubs, stay inside the walls, and never look at the hidden workset.</li>
+          <li>Fewest fittings wins.</li>
+        </ul>
+      </div>
+      <div class="tdr-card animate-on-scroll stagger-2">
+        <h3>The approach</h3>
+        <p>Claude surveyed the model first, then mapped every position a 16" duct centerline could occupy without touching a pipe. That exposed one shaft down through the lattice and a 0.3" dogleg that forces a long down-north slope. It solved for the corner points, dry-ran the parts in Revit, checked every mesh triangle against every pipe, and rolled back. The real build ran only after I approved the plan.</p>
+      </div>
+      <div class="tdr-card animate-on-scroll stagger-3">
+        <h3>The result</h3>
+        <ul>
+          <li>Square to Round, three 5-gore elbows (64°, 76°, 62°), four 16" spiral straights.</li>
+          <li>All 18 connectors connected, closing on the north stub with zero gap.</li>
+          <li>Tightest gap 0.49", set by where the north stub sits.</li>
+          <li>About 20 minutes of AI work and 30 minutes of my answers across the session.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="tdr-note">Revit 2024's built-in Interference Check doesn't support MEP Fabrication parts, so clearance was verified directly against the fabrication meshes. Not affiliated with or endorsed by Autodesk, Inc. or Anthropic.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><a href='/'><img src="logo-nav.png" alt="JGriffith Tech"></a></div>
+        <p>MEP tools built by a detailer, for detailers.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <ul>
+          <li><a href='/pipe-schematic-pro'>Pipe Schematic Pro</a></li>
+          <li><a href='/ductulator'>Interactive Ductulator</a></li>
+          <li><a href='/point-load-calculator'>Point Load Calculator</a></li>
+          <li><a href='/offset3d'>Offset3D</a></li>
+          <li><a href='/stairbuilder'>StairBuilder</a></li>
+          <li><a href='/mep-toolkit'>MEP Toolkit</a></li>
+          <li><a href='/seensay'>See 'n' Say</a></li>
+          <li><a href='/forma-tools'>Forma Model Coordination Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact &amp; Legal</h4>
+        <ul>
+          <li><a href='/testers'>Beta Testing</a></li>
+          <li><a href='/#contact'>Contact</a></li>
+          <li><a href='/privacy'>Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024-2026 JGriffith Tech. All rights reserved.</p>
+      <p>Made with precision in the Pacific Northwest.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  // size the viewer iframe to its content (same origin)
+  (function () {
+    var f = document.getElementById('tdrFrame');
+    function fit() {
+      try {
+        var d = f.contentDocument; if (!d || !d.body) return;
+        var w = d.querySelector('.wrap') || d.body;
+        f.style.height = Math.ceil(w.getBoundingClientRect().height + 8) + 'px';
+      } catch (e) {}
+    }
+    f.addEventListener('load', function () {
+      fit();
+      try { new ResizeObserver(fit).observe(f.contentDocument.querySelector('.wrap')); } catch (e) {}
+    });
+    window.addEventListener('resize', fit);
+  })();
+</script>
+</body>
+</html>
