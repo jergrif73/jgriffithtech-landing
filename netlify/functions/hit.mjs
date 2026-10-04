@@ -20,7 +20,7 @@ function refHost(r) {
   }
 }
 
-export default async (req) => {
+export default async (req, context) => {
   if (req.method !== "POST") return new Response(null, { status: 405 });
   let body = {};
   try { body = await req.json(); } catch { return new Response(null, { status: 400 }); }
@@ -29,13 +29,20 @@ export default async (req) => {
   p = p.replace(/\.html$/, "").replace(/\/index$/, "/") || "/";
   if (p === "/stats") return new Response(null, { status: 204 });
   const ref = refHost(body.r);
+  const g = context?.geo || {};
+  const country = (g.country?.code || "??") + (g.country?.name ? " " + g.country.name : "");
+  const city = [g.city, g.subdivision?.name, g.country?.code].filter(Boolean).join(", ") || "unknown";
   const day = new Date().toISOString().slice(0, 10);
   const key = "day/" + day;
   const s = store();
-  const d = (await s.get(key, { type: "json" })) || { total: 0, pages: {}, refs: {} };
+  const d = (await s.get(key, { type: "json" })) || { total: 0, pages: {}, refs: {}, countries: {}, cities: {} };
+  d.countries = d.countries || {}; d.cities = d.cities || {};
+  d.countries[country] = (d.countries[country] || 0) + 1;
+  d.cities[city] = (d.cities[city] || 0) + 1;
   d.total += 1;
-  const pg = d.pages[p] || { n: 0, refs: {} };
-  pg.n += 1; pg.refs[ref] = (pg.refs[ref] || 0) + 1; d.pages[p] = pg;
+  const pg = d.pages[p] || { n: 0, refs: {}, countries: {} };
+  pg.n += 1; pg.refs[ref] = (pg.refs[ref] || 0) + 1;
+  pg.countries = pg.countries || {}; pg.countries[country] = (pg.countries[country] || 0) + 1; d.pages[p] = pg;
   d.refs[ref] = (d.refs[ref] || 0) + 1;
   await s.setJSON(key, d);
   return new Response(null, { status: 204 });

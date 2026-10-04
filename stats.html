@@ -35,7 +35,7 @@
 <body>
 <main>
   <h1>Site stats</h1>
-  <p class="sub" id="meta">Page views and referrers from the site-wide beacon. No cookies, no personal data.</p>
+  <p class="sub" id="meta">Page views, referrers and visitor location (country/city from Netlify's edge, no IP stored). No cookies.</p>
   <div class="row">
     <span>Range:</span>
     <button data-days="1" type="button">Today</button>
@@ -49,7 +49,10 @@
     <section class="wide"><h2>Daily views</h2><div class="chart" id="chart"></div></section>
     <section><h2>Pages</h2><table id="pages"><thead><tr><th>Page</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
     <section><h2>Referrers</h2><table id="refs"><thead><tr><th>Source</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
+    <section><h2>Countries</h2><table id="countries"><thead><tr><th>Country</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
+    <section><h2>Cities</h2><table id="cities"><thead><tr><th>City</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
     <section class="wide"><h2>Traverse pages, by source</h2><table id="traverse"><thead><tr><th>Page</th><th>Source</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
+    <section class="wide"><h2>Traverse pages, by country</h2><table id="traverseGeo"><thead><tr><th>Page</th><th>Country</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
   </div>
 </main>
 <script>
@@ -84,13 +87,22 @@
       `<div class="tile"><b>${fmt(d.total)}</b><span>views, last ${d.days} day${d.days > 1 ? 's' : ''}</span></div>` +
       `<div class="tile"><b>${fmt(todays)}</b><span>views today (UTC)</span></div>` +
       `<div class="tile"><b>${fmt(pageCount)}</b><span>pages viewed</span></div>` +
-      `<div class="tile"><b>${fmt(Object.keys(d.refs).filter(r => r !== 'direct' && r !== 'internal').length)}</b><span>external sources</span></div>`;
+      `<div class="tile"><b>${fmt(Object.keys(d.refs).filter(r => r !== 'direct' && r !== 'internal').length)}</b><span>external sources</span></div>` +
+      `<div class="tile"><b>${fmt(Object.keys(d.countries || {}).length)}</b><span>countries</span></div>`;
     const chart = document.getElementById('chart'); chart.innerHTML = '';
     const max = Math.max(1, ...d.daily.map(x => x.total));
     for (const x of d.daily) { const bar = document.createElement('div'); bar.style.height = (100 * x.total / max) + '%'; bar.title = `${x.day}: ${x.total}`; chart.appendChild(bar); }
     if (!d.daily.length) chart.innerHTML = '<span style="color:var(--sub)">No views yet</span>';
     rows(document.querySelector('#pages tbody'), Object.entries(d.pages).map(([p, v]) => [p, v.n]).sort((a, b) => b[1] - a[1]));
     rows(document.querySelector('#refs tbody'), Object.entries(d.refs).sort((a, b) => b[1] - a[1]));
+    rows(document.querySelector('#countries tbody'), Object.entries(d.countries || {}).sort((a, b) => b[1] - a[1]));
+    rows(document.querySelector('#cities tbody'), Object.entries(d.cities || {}).sort((a, b) => b[1] - a[1]).slice(0, 40));
+    const tg = document.querySelector('#traverseGeo tbody'); tg.innerHTML = '';
+    for (const p of ['/opus-pilot-traverse', '/fable-learning-traverse']) {
+      const v = d.pages[p]; const cs = v ? Object.entries(v.countries || {}).sort((a, b) => b[1] - a[1]) : [];
+      if (!cs.length) { tg.innerHTML += `<tr><td>${p}</td><td style="color:var(--sub)">no views yet</td><td class="n">0</td></tr>`; continue; }
+      cs.forEach(([c, n], i) => { tg.innerHTML += `<tr><td>${i === 0 ? p : ''}</td><td>${c}</td><td class="n">${fmt(n)}</td></tr>`; });
+    }
     const tb = document.querySelector('#traverse tbody'); tb.innerHTML = '';
     for (const p of ['/opus-pilot-traverse', '/fable-learning-traverse']) {
       const v = d.pages[p];
@@ -98,7 +110,7 @@
       const srcs = Object.entries(v.refs).sort((a, b) => b[1] - a[1]);
       srcs.forEach(([r, n], i) => { tb.innerHTML += `<tr><td>${i === 0 ? p + ' <span style="color:var(--sub)">(' + fmt(v.n) + ')</span>' : ''}</td><td>${r}</td><td class="n">${fmt(n)}</td></tr>`; });
     }
-    document.getElementById('meta').textContent = `Page views and referrers from the site-wide beacon. No cookies, no personal data. Updated ${new Date(d.generated).toLocaleString()}.`;
+    document.getElementById('meta').textContent = `Page views, referrers and visitor location (country/city from Netlify's edge, no IP stored). No cookies. Updated ${new Date(d.generated).toLocaleString()}.`;
   }
   document.querySelectorAll('button[data-days]').forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll('button[data-days]').forEach(x => x.classList.remove('on')); b.classList.add('on');
