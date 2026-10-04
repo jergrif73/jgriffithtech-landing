@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://jgriffithtech.com/sitemap.xml
+Disallow: /stats
+Disallow: /api/

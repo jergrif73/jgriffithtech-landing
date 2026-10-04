@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Site Stats - JGriffith Tech</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <style>
+    :root { --navy:#0F172A; --card:#1a2236; --surface:#151d30; --gold:#D4A926; --text:#E2E8F0; --sub:#94A3B8; --line:rgba(255,255,255,0.08); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--navy); color:var(--text); font:15px/1.5 "Segoe UI", Arial, sans-serif; }
+    main { max-width:1100px; margin:0 auto; padding:32px 20px 60px; }
+    h1 { font-size:26px; margin:0 0 4px; } .sub { color:var(--sub); margin:0 0 20px; font-size:14px; }
+    .row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-bottom:20px; }
+    button, select { font:600 13px "Segoe UI", Arial, sans-serif; background:var(--card); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:8px 14px; cursor:pointer; }
+    button.on { background:var(--gold); color:var(--navy); border-color:var(--gold); }
+    .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-bottom:24px; }
+    .tile { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+    .tile b { display:block; font-size:28px; color:var(--gold); font-variant-numeric:tabular-nums; } .tile span { color:var(--sub); font-size:13px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; }
+    section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; min-width:0; }
+    h2 { font-size:15px; color:var(--gold); margin:0 0 10px; letter-spacing:.04em; text-transform:uppercase; }
+    table { width:100%; border-collapse:collapse; font-size:14px; font-variant-numeric:tabular-nums; }
+    td, th { padding:6px 6px; border-bottom:1px solid var(--line); text-align:left; } td.n, th.n { text-align:right; white-space:nowrap; }
+    th { color:var(--sub); font-size:12px; font-weight:600; }
+    .bar { display:inline-block; height:8px; background:var(--gold); border-radius:2px; vertical-align:middle; margin-left:6px; opacity:.85; }
+    .chart { display:flex; align-items:flex-end; gap:3px; height:120px; margin-top:6px; }
+    .chart div { flex:1; background:var(--gold); opacity:.8; border-radius:2px 2px 0 0; min-width:4px; position:relative; }
+    .chart div[title]:hover { opacity:1; }
+    .err { color:#f07a3e; }
+    .wide { grid-column:1 / -1; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Site stats</h1>
+  <p class="sub" id="meta">Page views and referrers from the site-wide beacon. No cookies, no personal data.</p>
+  <div class="row">
+    <span>Range:</span>
+    <button data-days="1" type="button">Today</button>
+    <button data-days="7" type="button">7 days</button>
+    <button data-days="30" type="button" class="on">30 days</button>
+    <button data-days="90" type="button">90 days</button>
+    <button data-days="365" type="button">1 year</button>
+  </div>
+  <div class="tiles" id="tiles"></div>
+  <div class="grid">
+    <section class="wide"><h2>Daily views</h2><div class="chart" id="chart"></div></section>
+    <section><h2>Pages</h2><table id="pages"><thead><tr><th>Page</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
+    <section><h2>Referrers</h2><table id="refs"><thead><tr><th>Source</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
+    <section class="wide"><h2>Traverse pages, by source</h2><table id="traverse"><thead><tr><th>Page</th><th>Source</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
+  </div>
+</main>
+<script>
+  const qs = new URLSearchParams(location.search);
+  const token = qs.get('t') || '';
+  let days = 30;
+  const fmt = n => n.toLocaleString();
+  function rows(tbody, entries, total) {
+    tbody.innerHTML = '';
+    const max = Math.max(1, ...entries.map(e => e[1]));
+    for (const [k, n] of entries) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${k}</td><td class="n">${fmt(n)}<span class="bar" style="width:${Math.round(60 * n / max)}px"></span></td>`;
+      tbody.appendChild(tr);
+    }
+    if (!entries.length) tbody.innerHTML = '<tr><td colspan="2" style="color:var(--sub)">No views yet</td></tr>';
+  }
+  async function load() {
+    document.getElementById('meta').textContent = 'Loading…';
+    let d;
+    try {
+      const r = await fetch(`/api/stats?days=${days}` + (token ? `&t=${encodeURIComponent(token)}` : ''), { cache: 'no-store' });
+      if (!r.ok) throw new Error(r.status === 403 ? 'Forbidden: this page needs ?t=<token>' : 'HTTP ' + r.status);
+      d = await r.json();
+    } catch (e) {
+      document.getElementById('meta').innerHTML = '<span class="err">' + e.message + '</span>';
+      return;
+    }
+    const todays = d.daily.length ? d.daily[d.daily.length - 1].total : 0;
+    const pageCount = Object.keys(d.pages).length;
+    document.getElementById('tiles').innerHTML =
+      `<div class="tile"><b>${fmt(d.total)}</b><span>views, last ${d.days} day${d.days > 1 ? 's' : ''}</span></div>` +
+      `<div class="tile"><b>${fmt(todays)}</b><span>views today (UTC)</span></div>` +
+      `<div class="tile"><b>${fmt(pageCount)}</b><span>pages viewed</span></div>` +
+      `<div class="tile"><b>${fmt(Object.keys(d.refs).filter(r => r !== 'direct' && r !== 'internal').length)}</b><span>external sources</span></div>`;
+    const chart = document.getElementById('chart'); chart.innerHTML = '';
+    const max = Math.max(1, ...d.daily.map(x => x.total));
+    for (const x of d.daily) { const bar = document.createElement('div'); bar.style.height = (100 * x.total / max) + '%'; bar.title = `${x.day}: ${x.total}`; chart.appendChild(bar); }
+    if (!d.daily.length) chart.innerHTML = '<span style="color:var(--sub)">No views yet</span>';
+    rows(document.querySelector('#pages tbody'), Object.entries(d.pages).map(([p, v]) => [p, v.n]).sort((a, b) => b[1] - a[1]));
+    rows(document.querySelector('#refs tbody'), Object.entries(d.refs).sort((a, b) => b[1] - a[1]));
+    const tb = document.querySelector('#traverse tbody'); tb.innerHTML = '';
+    for (const p of ['/opus-pilot-traverse', '/fable-learning-traverse']) {
+      const v = d.pages[p];
+      if (!v) { tb.innerHTML += `<tr><td>${p}</td><td style="color:var(--sub)">no views yet</td><td class="n">0</td></tr>`; continue; }
+      const srcs = Object.entries(v.refs).sort((a, b) => b[1] - a[1]);
+      srcs.forEach(([r, n], i) => { tb.innerHTML += `<tr><td>${i === 0 ? p + ' <span style="color:var(--sub)">(' + fmt(v.n) + ')</span>' : ''}</td><td>${r}</td><td class="n">${fmt(n)}</td></tr>`; });
+    }
+    document.getElementById('meta').textContent = `Page views and referrers from the site-wide beacon. No cookies, no personal data. Updated ${new Date(d.generated).toLocaleString()}.`;
+  }
+  document.querySelectorAll('button[data-days]').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('button[data-days]').forEach(x => x.classList.remove('on')); b.classList.add('on');
+    days = +b.dataset.days; load();
+  }));
+  load();
+</script>
+</body>
+</html>

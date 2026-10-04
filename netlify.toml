@@ -1,6 +1,10 @@
 [build]
   publish = "."
 
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 [[redirects]]
   from = "/pipe-schematic-pro"
   to = "/pipe-schematic-pro.html"
@@ -44,6 +48,11 @@
 [[redirects]]
   from = "/testers"
   to = "/testers.html"
+  status = 200
+
+[[redirects]]
+  from = "/stats"
+  to = "/stats.html"
   status = 200
 
 [[redirects]]
