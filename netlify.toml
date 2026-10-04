@@ -57,16 +57,6 @@
   status = 200
 
 [[redirects]]
-  from = "/traverse-duct-route-run3"
-  to = "/fable-learning-traverse"
-  status = 301
-
-[[redirects]]
-  from = "/traverse-duct-route"
-  to = "/opus-pilot-traverse"
-  status = 301
-
-[[redirects]]
   from = "/forma-tools/privacy"
   to = "/forma-tools-privacy.html"
   status = 200
