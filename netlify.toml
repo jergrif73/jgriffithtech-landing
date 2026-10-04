@@ -47,6 +47,11 @@
   status = 200
 
 [[redirects]]
+  from = "/traverse-duct-route-run3"
+  to = "/traverse-duct-route-run3.html"
+  status = 200
+
+[[redirects]]
   from = "/traverse-duct-route"
   to = "/traverse-duct-route.html"
   status = 200

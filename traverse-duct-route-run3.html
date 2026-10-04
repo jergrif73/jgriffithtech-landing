@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Traverse Duct Route - JGriffith Tech</title>
-  <meta name="description" content="Claude, driving Revit 2024 through an MCP connection, routed a 16-inch SA02 fabrication duct through a lattice of 313 chilled water pipes with 0.49 inches to spare. Explore the 3D result.">
+  <title>Traverse Duct Route, Run 3 - JGriffith Tech</title>
+  <meta name="description" content="Round 3 of the AI coordination challenge: Claude, driving Revit 2024 through MCP, threads a 16-inch SA02 duct through 387 trimmed pipes with half-throat gored elbows. Drag the view limits to see every layer.">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Threading a 16-inch duct through 313 pipes with Claude and Revit">
-  <meta property="og:description" content="An AI coordination challenge: connect two wall stubs without touching a single pipe. 4 fittings, 0 contacts, 0.49 in tightest gap. Explore the 3D model.">
+  <meta property="og:title" content="Run 3: a 16-inch duct through 387 pipes, with draggable view limits">
+  <meta property="og:description" content="Tighter corridor, 8 elbows, 0.51 in to spare. Explore the 3D model and drag the view limits through every pipe layer.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://jgriffithtech.com/traverse-duct-route">
-  <meta property="og:image" content="https://jgriffithtech.com/demos/traverse-duct-route-card.jpg">
+  <meta property="og:url" content="https://jgriffithtech.com/traverse-duct-route-run3">
+  <meta property="og:image" content="https://jgriffithtech.com/demos/run3/traverse-run3-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="JGriffith Tech">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Threading a 16-inch duct through 313 pipes with Claude and Revit">
-  <meta name="twitter:description" content="4 fittings, 0 contacts, 0.49 in tightest gap. Explore the 3D model.">
-  <meta name="twitter:image" content="https://jgriffithtech.com/demos/traverse-duct-route-card.jpg">
+  <meta name="twitter:title" content="Run 3: a 16-inch duct through 387 pipes, with draggable view limits">
+  <meta name="twitter:description" content="8 elbows, 0 contacts, 0.51 in tightest gap. Drag the view limits through every pipe layer.">
+  <meta name="twitter:image" content="https://jgriffithtech.com/demos/run3/traverse-run3-card.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -71,14 +71,14 @@
   <canvas class="hero-particles" aria-hidden="true"></canvas>
   <div class="container">
     <div class="animate-on-scroll" style="max-width:860px;">
-      <span class="section-eyebrow-v2">AI coordination challenge · Revit 2024 + Claude</span>
-      <h1>Threading a 16" duct through <span class="accent">313 pipes</span></h1>
-      <p class="lede">I drew a duct between two wall stubs, hid it, filled the room with a lattice of 3" chilled water pipes, and deleted only the pipes the duct hit. Then I asked Claude, working in Revit through an MCP connection, to reconnect the stubs with real SA02 fabrication parts without touching a single pipe. It never got to see my duct. <a href="/traverse-duct-route-run3" style="color:var(--gold);">Run 3, with a much tighter corridor, is here.</a></p>
+      <span class="section-eyebrow-v2">AI coordination challenge, run 3 · Revit 2024 + Claude</span>
+      <h1>Same game, <span class="accent">tighter corridor</span></h1>
+      <p class="lede">Third round. I moved the stubs, re-drew my duct, hid it, and this time trimmed the pipes to stop just shy of it, so the corridor is only an inch or two wider than the duct. Claude had to get through on real SA02 fittings, including the half-throat gored elbows I used, without ever seeing my route. <a href="/traverse-duct-route" style="color:var(--gold);">Run 1 is here.</a></p>
       <div class="tdr-stats">
-        <div class="tdr-stat"><b>0</b><span>pipe contacts</span></div>
-        <div class="tdr-stat"><b>0.49"</b><span>tightest gap, from the real fab meshes</span></div>
-        <div class="tdr-stat"><b>4</b><span>fittings, 9 joints</span></div>
-        <div class="tdr-stat"><b>49 min</b><span>from first question to built and checked</span></div>
+        <div class="tdr-stat"><b>0</b><span>pipe contacts (387 pipe segments)</span></div>
+        <div class="tdr-stat"><b>0.51"</b><span>tightest gap, from the real fab meshes</span></div>
+        <div class="tdr-stat"><b>8</b><span>elbows, 4 at half throat</span></div>
+        <div class="tdr-stat"><b>2</b><span>questions asked</span></div>
       </div>
     </div>
   </div>
@@ -88,26 +88,42 @@
   <div class="container">
     <div style="text-align:center;margin-bottom:28px;" class="animate-on-scroll">
       <h2 class="section-title-v2">Explore the route</h2>
-      <p class="section-sub-v2">Drag to orbit, scroll to zoom. Press Play build to watch the parts go in, or click a row in the schedule to highlight the pipe it comes closest to.</p>
+      <p class="section-sub-v2">Drag to orbit, scroll to zoom. Use the <strong>view limits</strong> sliders, or the L1 to L6 buttons, to crop the model top and bottom and watch the duct thread between the pipe ends. Toggle my route on to compare.</p>
     </div>
-    <iframe class="tdr-frame" id="tdrFrame" src="/demos/traverse-duct-route-viewer.html" title="3D view of the duct route through the pipe lattice" loading="lazy"></iframe>
+    <iframe class="tdr-frame" id="tdrFrame" src="/demos/run3/traverse-run3-viewer.html" title="3D view of the duct route through the pipe lattice" loading="lazy"></iframe>
   </div>
 </section>
 
 <section class="section-v2">
   <div class="container">
     <div style="text-align:center;margin-bottom:28px;" class="animate-on-scroll">
-      <h2 class="section-title-v2">Two routes, one shaft</h2>
-      <p class="section-sub-v2">My original route in blue, Claude's in gold, both at 20% transparency with the pipes hidden. Where they overlap, the colors mix to green.</p>
+      <h2 class="section-title-v2">Two routes, one corridor</h2>
+      <p class="section-sub-v2">My route in blue, Claude's in gold, both at 20% transparency with the pipes hidden. Green is where they coincide, which is most of the way.</p>
     </div>
     <figure style="margin:0;">
-      <img src="/demos/traverse-duct-route-compare.jpg" alt="Revit 3D view comparing the original duct route in blue with Claude's route in gold" style="width:100%;max-width:1100px;display:block;margin:0 auto;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy">
+      <img src="/demos/run3/compare.jpg" alt="Revit 3D view comparing the original duct route in blue with Claude's route in gold" style="width:100%;max-width:1100px;display:block;margin:0 auto;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy">
       <figcaption class="tdr-note" style="margin-top:14px;">
-        <span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#33B1CC;vertical-align:-1px;margin-right:6px;"></span>My route&nbsp;&nbsp;&nbsp;
-        <span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#B9A246;vertical-align:-1px;margin-right:6px;"></span>Claude's route&nbsp;&nbsp;&nbsp;
-        Both share the only shaft down through the lattice and the final run into the north stub. Claude found that corridor without ever seeing my duct.
+        <span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#33B1CC;vertical-align:-1px;margin-right:6px;"></span>My route (5 elbows)&nbsp;&nbsp;&nbsp;
+        <span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#B9A246;vertical-align:-1px;margin-right:6px;"></span>Claude's route (8 elbows)
       </figcaption>
     </figure>
+  </div>
+</section>
+
+<section class="section-v2">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:28px;" class="animate-on-scroll">
+      <h2 class="section-title-v2">The path, level by level</h2>
+      <p class="section-sub-v2">Six wireframe plan views, each a thin section box through one pipe layer, bottom to top. The ovals are the duct where it crosses that layer.</p>
+    </div>
+    <div class="tdr-cols" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
+      <figure style="margin:0;"><img src="/demos/run3/L1.jpg" alt="Level L1 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L1 · pipe layer at z -1.79 to -1.43 ft</figcaption></figure>
+      <figure style="margin:0;"><img src="/demos/run3/L2.jpg" alt="Level L2 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L2 · pipe layer at z -0.51 to -0.18 ft</figcaption></figure>
+      <figure style="margin:0;"><img src="/demos/run3/L3.jpg" alt="Level L3 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L3 · pipe layer at z 0.73 to 1.07 ft</figcaption></figure>
+      <figure style="margin:0;"><img src="/demos/run3/L4.jpg" alt="Level L4 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L4 · pipe layer at z 1.98 to 2.35 ft</figcaption></figure>
+      <figure style="margin:0;"><img src="/demos/run3/L5.jpg" alt="Level L5 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L5 · pipe layer at z 3.26 to 3.60 ft</figcaption></figure>
+      <figure style="margin:0;"><img src="/demos/run3/L6.jpg" alt="Level L6 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L6 · pipe layer at z 4.53 to 4.89 ft</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -117,7 +133,7 @@
       <h2 class="section-title-v2">The build in Revit</h2>
       <p class="section-sub-v2">Each part was placed in its own transaction and exported from a dedicated 3D view.</p>
     </div>
-    <video class="tdr-video" src="/demos/traverse-duct-route-build.mp4" controls muted playsinline preload="metadata" poster="/demos/traverse-duct-route-card.jpg"></video>
+    <video class="tdr-video" src="/demos/run3/traverse-run3-build.mp4" controls muted playsinline preload="metadata" poster="/demos/run3/traverse-run3-card.jpg"></video>
   </div>
 </section>
 
@@ -128,27 +144,25 @@
     </div>
     <div class="tdr-cols">
       <div class="tdr-card animate-on-scroll stagger-1">
-        <h3>The rules</h3>
+        <h3>What changed from run 1</h3>
         <ul>
-          <li>Connect a 24×12 TDC stub to a 16" round stub on opposite walls.</li>
-          <li>Any fitting in the SA02 service, real installed geometry, flanges included.</li>
-          <li>Hold the free area of the 16" round and a 4:1 maximum aspect ratio.</li>
-          <li>TDC above 20", S&amp;D or round connectors below.</li>
-          <li>Don't modify the stubs, stay inside the walls, and never look at the hidden workset.</li>
-          <li>Fewest fittings wins.</li>
+          <li>Stubs moved; 387 pipe segments instead of 313.</li>
+          <li>Pipes trimmed to stop just short of my duct, so the free corridor is 1 to 2 inches wider than a 16" duct.</li>
+          <li>Non-standard bend angles. My route uses 45, 45, 60, 89 and 90 degree gored elbows, three of them at half throat.</li>
+          <li>Claude worked from its own survey of the model and a parts list I allowed: fitting types and sizes only, no positions.</li>
         </ul>
       </div>
       <div class="tdr-card animate-on-scroll stagger-2">
         <h3>The approach</h3>
-        <p>Claude surveyed the model first, then mapped every position a 16" duct centerline could occupy without touching a pipe. That exposed one shaft down through the lattice and a 0.3" dogleg that forces a long down-north slope. It solved for the corner points, dry-ran the parts in Revit, checked every mesh triangle against every pipe, and rolled back. The real build ran only after I approved the plan.</p>
+        <p>Claude surveyed the lattice, found the widest corridor, and optimised corner positions against an exact model of the 5-gore elbow measured from Revit's own meshes. The fixed 23.8" elbow radius couldn't make the bends, and that cost most of the day until the parts list showed half-throat elbows. The Revit API reports that option as locked; it turned out to live in the palette button's condition. Straights were placed exactly and elbows rolled into plane numerically, then every joint was closed and checked on the real fabrication geometry.</p>
       </div>
       <div class="tdr-card animate-on-scroll stagger-3">
         <h3>The result</h3>
         <ul>
-          <li>Square to Round, three 5-gore elbows (64°, 76°, 62°), four 16" spiral straights.</li>
-          <li>All 18 connectors connected, closing on the north stub with zero gap.</li>
-          <li>Tightest gap 0.49", set by where the north stub sits.</li>
-          <li>About 20 minutes of AI work and 30 minutes of my answers across the session.</li>
+          <li>Square to Round, 8 gored elbows (43, 92, 99, 10, 39, 33, 39 and 54 degrees; four at half throat), 9 spiral straights.</li>
+          <li>18 parts, every joint closed within 0.014", landing on the north stub.</li>
+          <li>Tightest gap 0.51" on the real meshes. Zero contacts.</li>
+          <li>About 3.9 hours of AI work across two models, 2 questions to me. Fewer elbows is the next target: my route has 5.</li>
         </ul>
       </div>
     </div>
