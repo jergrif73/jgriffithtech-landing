@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Traverse Duct Route, Run 3 - JGriffith Tech</title>
-  <meta name="description" content="Round 3 of the AI coordination challenge: Claude, driving Revit 2024 through MCP, threads a 16-inch SA02 duct through 387 trimmed pipes with half-throat gored elbows. Drag the view limits to see every layer.">
+  <title>Fable Learning Traverse - JGriffith Tech</title>
+  <meta name="description" content="Fable Learning Traverse: Claude Fable 5.1, driving Revit 2024 through MCP, threads a 16-inch SA02 duct through 387 trimmed pipes using half-throat gored elbows. Drag the view limits to see every layer.">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Run 3: a 16-inch duct through 387 pipes, with draggable view limits">
+  <meta property="og:title" content="Fable Learning Traverse: a 16-inch duct through 387 pipes, with draggable view limits">
   <meta property="og:description" content="Tighter corridor, 8 elbows, 0.51 in to spare. Explore the 3D model and drag the view limits through every pipe layer.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://jgriffithtech.com/traverse-duct-route-run3">
-  <meta property="og:image" content="https://jgriffithtech.com/demos/run3/traverse-run3-card.jpg">
+  <meta property="og:url" content="https://jgriffithtech.com/fable-learning-traverse">
+  <meta property="og:image" content="https://jgriffithtech.com/demos/fable/traverse-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="JGriffith Tech">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Run 3: a 16-inch duct through 387 pipes, with draggable view limits">
+  <meta name="twitter:title" content="Fable Learning Traverse: a 16-inch duct through 387 pipes, with draggable view limits">
   <meta name="twitter:description" content="8 elbows, 0 contacts, 0.51 in tightest gap. Drag the view limits through every pipe layer.">
-  <meta name="twitter:image" content="https://jgriffithtech.com/demos/run3/traverse-run3-card.jpg">
+  <meta name="twitter:image" content="https://jgriffithtech.com/demos/fable/traverse-card.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -71,9 +71,9 @@
   <canvas class="hero-particles" aria-hidden="true"></canvas>
   <div class="container">
     <div class="animate-on-scroll" style="max-width:860px;">
-      <span class="section-eyebrow-v2">AI coordination challenge, run 3 · Revit 2024 + Claude</span>
-      <h1>Same game, <span class="accent">tighter corridor</span></h1>
-      <p class="lede">Third round. I moved the stubs, re-drew my duct, hid it, and this time trimmed the pipes to stop just shy of it, so the corridor is only an inch or two wider than the duct. Claude had to get through on real SA02 fittings, including the half-throat gored elbows I used, without ever seeing my route. <a href="/traverse-duct-route" style="color:var(--gold);">Run 1 is here.</a></p>
+      <span class="section-eyebrow-v2">Fable Learning Traverse · Revit 2024 + Claude Fable 5.1</span>
+      <h1>Fable Learning Traverse: <span class="accent">a tighter corridor</span></h1>
+      <p class="lede">The follow-up to the <a href="/opus-pilot-traverse" style="color:var(--gold);">Opus Pilot Traverse</a>. I moved the stubs, re-drew my duct, hid it, and this time trimmed the pipes to stop just shy of it, so the corridor is only an inch or two wider than the duct. Claude Fable 5.1, carrying the tooling and lessons from the pilot, had to get through on real SA02 fittings, including the half-throat gored elbows I used, without ever seeing my route.</p>
       <div class="tdr-stats">
         <div class="tdr-stat"><b>0</b><span>pipe contacts (387 pipe segments)</span></div>
         <div class="tdr-stat"><b>0.51"</b><span>tightest gap, from the real fab meshes</span></div>
@@ -90,7 +90,7 @@
       <h2 class="section-title-v2">Explore the route</h2>
       <p class="section-sub-v2">Drag to orbit, scroll to zoom. Use the <strong>view limits</strong> sliders, or the L1 to L6 buttons, to crop the model top and bottom and watch the duct thread between the pipe ends. Toggle my route on to compare.</p>
     </div>
-    <iframe class="tdr-frame" id="tdrFrame" src="/demos/run3/traverse-run3-viewer.html" title="3D view of the duct route through the pipe lattice" loading="lazy"></iframe>
+    <iframe class="tdr-frame" id="tdrFrame" src="/demos/fable/viewer.html" title="3D view of the duct route through the pipe lattice" loading="lazy"></iframe>
   </div>
 </section>
 
@@ -101,7 +101,7 @@
       <p class="section-sub-v2">My route in blue, Claude's in gold, both at 20% transparency with the pipes hidden. Green is where they coincide, which is most of the way.</p>
     </div>
     <figure style="margin:0;">
-      <img src="/demos/run3/compare.jpg" alt="Revit 3D view comparing the original duct route in blue with Claude's route in gold" style="width:100%;max-width:1100px;display:block;margin:0 auto;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy">
+      <img src="/demos/fable/compare.jpg" alt="Revit 3D view comparing the original duct route in blue with Claude's route in gold" style="width:100%;max-width:1100px;display:block;margin:0 auto;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy">
       <figcaption class="tdr-note" style="margin-top:14px;">
         <span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#33B1CC;vertical-align:-1px;margin-right:6px;"></span>My route (5 elbows)&nbsp;&nbsp;&nbsp;
         <span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#B9A246;vertical-align:-1px;margin-right:6px;"></span>Claude's route (8 elbows)
@@ -117,12 +117,12 @@
       <p class="section-sub-v2">Six wireframe plan views, each a thin section box through one pipe layer, bottom to top. The ovals are the duct where it crosses that layer.</p>
     </div>
     <div class="tdr-cols" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
-      <figure style="margin:0;"><img src="/demos/run3/L1.jpg" alt="Level L1 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L1 · pipe layer at z -1.79 to -1.43 ft</figcaption></figure>
-      <figure style="margin:0;"><img src="/demos/run3/L2.jpg" alt="Level L2 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L2 · pipe layer at z -0.51 to -0.18 ft</figcaption></figure>
-      <figure style="margin:0;"><img src="/demos/run3/L3.jpg" alt="Level L3 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L3 · pipe layer at z 0.73 to 1.07 ft</figcaption></figure>
-      <figure style="margin:0;"><img src="/demos/run3/L4.jpg" alt="Level L4 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L4 · pipe layer at z 1.98 to 2.35 ft</figcaption></figure>
-      <figure style="margin:0;"><img src="/demos/run3/L5.jpg" alt="Level L5 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L5 · pipe layer at z 3.26 to 3.60 ft</figcaption></figure>
-      <figure style="margin:0;"><img src="/demos/run3/L6.jpg" alt="Level L6 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L6 · pipe layer at z 4.53 to 4.89 ft</figcaption></figure>
+      <figure style="margin:0;"><img src="/demos/fable/L1.jpg" alt="Level L1 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L1 · pipe layer at z -1.79 to -1.43 ft</figcaption></figure>
+      <figure style="margin:0;"><img src="/demos/fable/L2.jpg" alt="Level L2 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L2 · pipe layer at z -0.51 to -0.18 ft</figcaption></figure>
+      <figure style="margin:0;"><img src="/demos/fable/L3.jpg" alt="Level L3 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L3 · pipe layer at z 0.73 to 1.07 ft</figcaption></figure>
+      <figure style="margin:0;"><img src="/demos/fable/L4.jpg" alt="Level L4 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L4 · pipe layer at z 1.98 to 2.35 ft</figcaption></figure>
+      <figure style="margin:0;"><img src="/demos/fable/L5.jpg" alt="Level L5 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L5 · pipe layer at z 3.26 to 3.60 ft</figcaption></figure>
+      <figure style="margin:0;"><img src="/demos/fable/L6.jpg" alt="Level L6 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L6 · pipe layer at z 4.53 to 4.89 ft</figcaption></figure>
     </div>
   </div>
 </section>
@@ -133,7 +133,7 @@
       <h2 class="section-title-v2">The build in Revit</h2>
       <p class="section-sub-v2">Each part was placed in its own transaction and exported from a dedicated 3D view.</p>
     </div>
-    <video class="tdr-video" src="/demos/run3/traverse-run3-build.mp4" controls muted playsinline preload="metadata" poster="/demos/run3/traverse-run3-card.jpg"></video>
+    <video class="tdr-video" src="/demos/fable/build.mp4" controls muted playsinline preload="metadata" poster="/demos/fable/traverse-run3-card.jpg"></video>
   </div>
 </section>
 
@@ -144,7 +144,7 @@
     </div>
     <div class="tdr-cols">
       <div class="tdr-card animate-on-scroll stagger-1">
-        <h3>What changed from run 1</h3>
+        <h3>What changed from the pilot</h3>
         <ul>
           <li>Stubs moved; 387 pipe segments instead of 313.</li>
           <li>Pipes trimmed to stop just short of my duct, so the free corridor is 1 to 2 inches wider than a 16" duct.</li>
@@ -162,7 +162,7 @@
           <li>Square to Round, 8 gored elbows (43, 92, 99, 10, 39, 33, 39 and 54 degrees; four at half throat), 9 spiral straights.</li>
           <li>18 parts, every joint closed within 0.014", landing on the north stub.</li>
           <li>Tightest gap 0.51" on the real meshes. Zero contacts.</li>
-          <li>About 3.9 hours of AI work across two models, 2 questions to me. Fewer elbows is the next target: my route has 5.</li>
+          <li>About 3.9 hours of AI work and 2 questions to me, against 20 questions in the pilot. Fewer elbows is the next target: my route has 5.</li>
         </ul>
       </div>
     </div>
