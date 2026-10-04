@@ -74,7 +74,7 @@ figcaption{font:11px/1.4 var(--mono);color:var(--muted);margin-top:4px}
           <div><i style="background:var(--galv)"></i>3" CHW pipe (313)</div>
           <div><i style="background:var(--duct)"></i>new SA02 parts</div>
           <div><i style="background:var(--muted)"></i>existing stubs</div>
-          <div><i style="background:var(--hot)"></i>closest pipe to selected part</div>
+          <div><i style="background:var(--hot)"></i>closest pipe (when a part is selected)</div>
         </div>
       </div>
       <div class="controls">
@@ -96,11 +96,6 @@ figcaption{font:11px/1.4 var(--mono);color:var(--muted);margin-top:4px}
             <div class="small" style="margin-top:6px">Tightest gap, measured from the real fabrication mesh triangles to each pipe's 3⅛" OD.</div>
           </div>
         </div>
-      </section>
-      <section>
-        <h2>Shop schedule</h2>
-        <div class="tbl"><table id="sched"><thead><tr><th>#</th><th>Element</th><th>Part</th><th>Size</th><th class="num">L / ∠</th><th class="num">Min gap</th><th>Closest pipe</th></tr></thead><tbody></tbody></table></div>
-        <p class="small" style="margin-top:8px">4 fittings, 4 straights, 9 joints including both stub ends. Rect end is 24" so TDC applies; every other joint is round (RAW BE, BEAD 2 SE, COLLAR BEAD). Free area is held at Ø16 = 201 in².</p>
       </section>
       <section>
         <h2>Verification</h2>
@@ -193,7 +188,7 @@ const tb = document.querySelector('#sched tbody');
 const worst = Math.min(...DATA.parts.map(p=>p.clear));
 document.getElementById('worst').textContent = worst.toFixed(2)+'"';
 const maxc = Math.max(...DATA.parts.map(p=>p.clear));
-DATA.parts.forEach((p,i)=>{
+if (tb) DATA.parts.forEach((p,i)=>{
   const d=p.dims, isEl=p.name.includes('Elbow'), isTr=p.name.includes('Square');
   const label = isTr?'Square to Round':isEl?'5-Gore Elbow':'Spiral Pipe';
   const size = isTr?'24×12 → Ø16':'Ø16';
