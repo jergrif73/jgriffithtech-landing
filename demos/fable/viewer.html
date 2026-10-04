@@ -121,18 +121,6 @@ figcaption{font:11px/1.4 var(--mono);color:var(--muted);margin-top:4px}
         <img src="/demos/fable/compare.jpg" alt="Revit 3D view comparing both duct routes" style="width:100%;display:block;border:1px solid var(--rule)" loading="lazy">
       </section>
       <section>
-        <h2>The path, level by level</h2>
-        <p class="small">Six wireframe 3D views, each a thin section box through one pipe layer (bottom to top), showing where the duct had to pass between the pipe ends at that elevation. The view limits above do the same thing live.</p>
-        <div class="maps">
-          <figure><img src="/demos/fable/L1.jpg" alt="Level L1 section" style="width:100%;display:block;border:1px solid var(--rule)" loading="lazy"><figcaption>L1 - pipe layer at z -1.79 to -1.43 ft</figcaption></figure>
-          <figure><img src="/demos/fable/L2.jpg" alt="Level L2 section" style="width:100%;display:block;border:1px solid var(--rule)" loading="lazy"><figcaption>L2 - pipe layer at z -0.51 to -0.18 ft</figcaption></figure>
-          <figure><img src="/demos/fable/L3.jpg" alt="Level L3 section" style="width:100%;display:block;border:1px solid var(--rule)" loading="lazy"><figcaption>L3 - pipe layer at z 0.73 to 1.07 ft</figcaption></figure>
-          <figure><img src="/demos/fable/L4.jpg" alt="Level L4 section" style="width:100%;display:block;border:1px solid var(--rule)" loading="lazy"><figcaption>L4 - pipe layer at z 1.98 to 2.35 ft</figcaption></figure>
-          <figure><img src="/demos/fable/L5.jpg" alt="Level L5 section" style="width:100%;display:block;border:1px solid var(--rule)" loading="lazy"><figcaption>L5 - pipe layer at z 3.26 to 3.60 ft</figcaption></figure>
-          <figure><img src="/demos/fable/L6.jpg" alt="Level L6 section" style="width:100%;display:block;border:1px solid var(--rule)" loading="lazy"><figcaption>L6 - pipe layer at z 4.53 to 4.89 ft</figcaption></figure>
-        </div>
-      </section>
-      <section>
         <h2>How the corridor was found</h2>
         <p class="small">Each map shows where a Ø16 duct's <em>centerline</em> may sit (light) without touching a pipe (dark), with the beaded radius of 8.19" added to every pipe. Pipes running in X block the Y–Z plane; pipes running in Y block the X–Z plane. A position is legal only if it is light on both maps.</p>
         <div class="maps">
@@ -247,7 +235,7 @@ const step=document.getElementById('step'), stepLabel=document.getElementById('s
 const NP=DATA.parts.length; step.max=NP; step.value=NP;
 function showStep(n){
   partMeshes.forEach((m,k)=>m.visible = k<n);
-  stepLabel.textContent = n===0?'stubs only':`${n}/${NP} · ${DATA.parts[n-1].name.replace(/ deg$/,'°')}`;
+  stepLabel.textContent = n===0?'stubs only':(n>=NP?'complete':'building…');
 }
 step.addEventListener('input',()=>showStep(+step.value));
 let timer=null;

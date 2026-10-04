@@ -77,7 +77,7 @@
       <div class="tdr-stats">
         <div class="tdr-stat"><b>0</b><span>pipe contacts (387 pipe segments)</span></div>
         <div class="tdr-stat"><b>0.51"</b><span>tightest gap, from the real fab meshes</span></div>
-        <div class="tdr-stat"><b>8</b><span>elbows, 4 at half throat</span></div>
+        <div class="tdr-stat"><b>3.9 h</b><span>of AI work, start to built</span></div>
         <div class="tdr-stat"><b>2</b><span>questions asked</span></div>
       </div>
     </div>
@@ -88,7 +88,7 @@
   <div class="container">
     <div style="text-align:center;margin-bottom:28px;" class="animate-on-scroll">
       <h2 class="section-title-v2">Explore the route</h2>
-      <p class="section-sub-v2">Drag to orbit, scroll to zoom. Use the <strong>view limits</strong> sliders, or the L1 to L6 buttons, to crop the model top and bottom and watch the duct thread between the pipe ends. Toggle my route on to compare.</p>
+      <p class="section-sub-v2">Drag to orbit, scroll to zoom. Use the <strong>view limits</strong> sliders, or the L1 to L6 buttons, to crop the model to one pipe layer at a time and watch the duct thread between the pipe ends. Toggle my route on to compare.</p>
     </div>
     <iframe class="tdr-frame" id="tdrFrame" src="/demos/fable/viewer.html" title="3D view of the duct route through the pipe lattice" loading="lazy"></iframe>
   </div>
@@ -103,35 +103,20 @@
     <figure style="margin:0;">
       <img src="/demos/fable/compare.jpg" alt="Revit 3D view comparing the original duct route in blue with Claude's route in gold" style="width:100%;max-width:1100px;display:block;margin:0 auto;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy">
       <figcaption class="tdr-note" style="margin-top:14px;">
-        <span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#33B1CC;vertical-align:-1px;margin-right:6px;"></span>My route (5 elbows)&nbsp;&nbsp;&nbsp;
-        <span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#B9A246;vertical-align:-1px;margin-right:6px;"></span>Claude's route (8 elbows)
+        <span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#33B1CC;vertical-align:-1px;margin-right:6px;"></span>My route&nbsp;&nbsp;&nbsp;
+        <span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#B9A246;vertical-align:-1px;margin-right:6px;"></span>Claude's route
       </figcaption>
     </figure>
   </div>
 </section>
 
-<section class="section-v2">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:28px;" class="animate-on-scroll">
-      <h2 class="section-title-v2">The path, level by level</h2>
-      <p class="section-sub-v2">Six wireframe plan views, each a thin section box through one pipe layer, bottom to top. The ovals are the duct where it crosses that layer.</p>
-    </div>
-    <div class="tdr-cols" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
-      <figure style="margin:0;"><img src="/demos/fable/L1.jpg" alt="Level L1 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L1 · pipe layer at z -1.79 to -1.43 ft</figcaption></figure>
-      <figure style="margin:0;"><img src="/demos/fable/L2.jpg" alt="Level L2 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L2 · pipe layer at z -0.51 to -0.18 ft</figcaption></figure>
-      <figure style="margin:0;"><img src="/demos/fable/L3.jpg" alt="Level L3 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L3 · pipe layer at z 0.73 to 1.07 ft</figcaption></figure>
-      <figure style="margin:0;"><img src="/demos/fable/L4.jpg" alt="Level L4 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L4 · pipe layer at z 1.98 to 2.35 ft</figcaption></figure>
-      <figure style="margin:0;"><img src="/demos/fable/L5.jpg" alt="Level L5 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L5 · pipe layer at z 3.26 to 3.60 ft</figcaption></figure>
-      <figure style="margin:0;"><img src="/demos/fable/L6.jpg" alt="Level L6 section" style="width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);" loading="lazy"><figcaption class="tdr-note" style="margin-top:8px;">L6 · pipe layer at z 4.53 to 4.89 ft</figcaption></figure>
-    </div>
-  </div>
-</section>
+
 
 <section class="section-v2">
   <div class="container">
     <div style="text-align:center;margin-bottom:28px;" class="animate-on-scroll">
       <h2 class="section-title-v2">The build in Revit</h2>
-      <p class="section-sub-v2">Each part was placed in its own transaction and exported from a dedicated 3D view.</p>
+      <p class="section-sub-v2">Placed one part at a time and exported from a dedicated 3D view.</p>
     </div>
     <video class="tdr-video" src="/demos/fable/build.mp4" controls muted playsinline preload="metadata" poster="/demos/fable/traverse-card.jpg"></video>
   </div>
@@ -148,7 +133,7 @@
         <ul>
           <li>Stubs moved; 387 pipe segments instead of 313.</li>
           <li>Pipes trimmed to stop just short of my duct, so the free corridor is 1 to 2 inches wider than a 16" duct.</li>
-          <li>Non-standard bend angles. My route uses 45, 45, 60, 89 and 90 degree gored elbows, three of them at half throat.</li>
+          <li>Non-standard bend angles, including an 89 degree elbow, and half-throat gored elbows.</li>
           <li>Claude worked from its own survey of the model and a parts list I allowed: fitting types and sizes only, no positions.</li>
         </ul>
       </div>
@@ -159,10 +144,10 @@
       <div class="tdr-card animate-on-scroll stagger-3">
         <h3>The result</h3>
         <ul>
-          <li>Square to Round, 8 gored elbows (43, 92, 99, 10, 39, 33, 39 and 54 degrees; four at half throat), 9 spiral straights.</li>
-          <li>18 parts, every joint closed within 0.014", landing on the north stub.</li>
+          <li>A Square to Round, then 16" round all the way: gored elbows at non-standard angles, several at half throat, and spiral straights.</li>
+          <li>Every joint closed within 0.014", landing on the north stub.</li>
           <li>Tightest gap 0.51" on the real meshes. Zero contacts.</li>
-          <li>About 3.9 hours of AI work and 2 questions to me, against 20 questions in the pilot. Fewer elbows is the next target: my route has 5.</li>
+          <li>About 3.9 hours of AI work and 2 questions to me, against 20 questions in the pilot. Fewer fittings is the next target.</li>
         </ul>
       </div>
     </div>
