@@ -249,19 +249,20 @@ function select(i){
 
 // build scrubber
 const step=document.getElementById('step'), stepLabel=document.getElementById('stepLabel');
+const NP=DATA.parts.length; step.max=NP; step.value=NP;
 function showStep(n){
   partMeshes.forEach((m,k)=>m.visible = k<n);
-  stepLabel.textContent = n===0?'stubs only':`${n}/8 · ${DATA.parts[n-1].name.replace(/ deg$/,'°')}`;
+  stepLabel.textContent = n===0?'stubs only':`${n}/${NP} · ${DATA.parts[n-1].name.replace(/ deg$/,'°')}`;
 }
 step.addEventListener('input',()=>showStep(+step.value));
 let timer=null;
 document.getElementById('play').addEventListener('click',()=>{
   clearInterval(timer); let n=0; step.value=0; showStep(0);
-  timer=setInterval(()=>{n++; step.value=n; showStep(n); if(n>=8) clearInterval(timer);}, matchMedia('(prefers-reduced-motion: reduce)').matches?200:700);
+  timer=setInterval(()=>{n++; step.value=n; showStep(n); if(n>=NP) clearInterval(timer);}, matchMedia('(prefers-reduced-motion: reduce)').matches?200:700);
 });
 document.getElementById('fade').addEventListener('change',e=>{mats.pipe.opacity=e.target.checked?.28:1; mats.pipe.transparent=e.target.checked; mats.pipe.needsUpdate=true;});
 document.getElementById('reset').addEventListener('click',home);
-showStep(8);
+showStep(NP);
 
 // c-space maps
 function drawMap(id, M, mark){
