@@ -66,6 +66,16 @@
   status = 200
 
 [[redirects]]
+  from = "/clash-export/guide"
+  to = "/clash-export-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/forma-tools/guide"
+  to = "/forma-tools-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/clash-export/privacy"
   to = "/clash-export-privacy.html"
   status = 200

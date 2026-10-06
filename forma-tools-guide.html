@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User guide · JGT Forma Model Coordination Tools</title>
+<meta name="description" content="How to install and use JGT Forma Model Coordination Tools: Copy Element ID, Find by ID, Quick Properties, Select Same, Appearance Profiler, Export and takeoff, clash objects, and activating Pro.">
+<style>
+  :root { --navy: #0F172A; --slate: #1E293B; --line: #334155; --gold: #D4A926; --text: #E2E8F0; --sub: #94A3B8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--navy); color: var(--text); font: 16px/1.65 "Segoe UI", Arial, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 44px 20px 70px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; color: #F1F5F9; }
+  .lead { color: var(--sub); font-size: 18px; margin: 0 0 18px; }
+  nav.toc { background: var(--slate); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; margin: 0 0 8px; font-size: 15px; }
+  nav.toc a { display: inline-block; margin: 2px 14px 2px 0; }
+  h2 { color: var(--gold); font-size: 21px; margin: 40px 0 10px; padding-top: 6px; border-top: 1px solid var(--slate); }
+  h3 { color: #F1F5F9; font-size: 17px; margin: 22px 0 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0; }
+  th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--slate); vertical-align: top; }
+  th { color: var(--sub); font-size: 13px; }
+  kbd { background: var(--slate); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; font: 13px Consolas, monospace; white-space: nowrap; }
+  code { background: var(--slate); border-radius: 4px; padding: 0 5px; font: 14px Consolas, monospace; }
+  .tag { font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 10px; }
+  .free { background: #1E3A2B; color: #9FC28F; } .pro { background: #3B300B; color: var(--gold); }
+  .tip { background: rgba(212,169,38,.08); border: 1px solid #6B5714; border-radius: 8px; padding: 10px 14px; margin: 12px 0; font-size: 15px; }
+  ol li, ul li { margin: 6px 0; }
+  a { color: var(--gold); }
+  dt { font-weight: 600; color: #F1F5F9; margin-top: 14px; }
+  dd { margin: 4px 0 0 0; color: var(--text); }
+  .fine { color: var(--sub); font-size: 13px; margin-top: 44px; }
+</style>
+<script defer src="/hit.js"></script>
+</head>
+<body>
+<main>
+  <h1>JGT Forma Model Coordination Tools: user guide</h1>
+  <p class="lead">Everything the extension does in Autodesk Forma (ACC) Model Coordination, step by step. Back to the <a href="/forma-tools">product page</a>.</p>
+  <nav class="toc">
+    <a href="#start">Getting started</a><a href="#copy">Copy Element ID</a><a href="#find">Find by ID</a><a href="#quick">Quick Properties</a><a href="#same">Select Same</a><a href="#profiler">Appearance Profiler</a><a href="#export">Export and takeoff</a><a href="#clashes">Clashes view</a><a href="#pro">Activate Pro</a><a href="#trouble">Troubleshooting</a>
+  </nav>
+
+  <h2 id="start">Getting started</h2>
+  <ol>
+    <li>Install the extension from the Chrome Web Store.</li>
+    <li>Open or reload (<kbd>F5</kbd>) a project in Forma Model Coordination and open a model in the viewer.</li>
+    <li>Wait for the model to finish loading. Tools that run too early say "The model is still loading".</li>
+  </ol>
+  <p>There are three ways to reach the tools:</p>
+  <ul>
+    <li><strong>The JGT button</strong> on the viewer toolbar at the bottom of the 3D view (a navy square with a gold "ID") opens the full menu.</li>
+    <li><strong>Right-click a part</strong> for Copy Element ID, Copy ID + Details and Select Same.</li>
+    <li><strong>Keyboard shortcuts</strong>, which work even while Forma's search box has focus:</li>
+  </ul>
+  <table>
+    <tr><th>Tool</th><th>Shortcut</th><th>Plan</th></tr>
+    <tr><td>Copy Element ID</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd></td><td><span class="tag free">Free</span></td></tr>
+    <tr><td>Copy ID + Details</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>E</kbd></td><td><span class="tag free">Free</span></td></tr>
+    <tr><td>Find by Element ID</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td><td><span class="tag pro">Pro</span></td></tr>
+    <tr><td>Quick Properties on/off</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd></td><td><span class="tag pro">Pro</span></td></tr>
+  </table>
+  <p>Everything only reads. Nothing in Forma or your models is changed, and your model data never leaves your computer.</p>
+
+  <h2 id="copy">Copy Element ID <span class="tag free">Free</span></h2>
+  <ol>
+    <li>Select one or more parts in the 3D view or the model browser.</li>
+    <li>Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> (or right-click › Copy Element ID).</li>
+    <li>A toast confirms what was copied, for example "Copied 3 IDs".</li>
+    <li>In Revit: <strong>Manage › Select by ID</strong>, paste with <kbd>Ctrl</kbd>+<kbd>V</kbd>, and click <strong>Show</strong> or <strong>OK</strong>.</li>
+  </ol>
+  <p>IDs are separated by <code>;</code>, the format Revit's Select by ID expects. Duplicates are removed. Up to 5,000 parts per copy.</p>
+  <h3>Copy ID + Details <span class="tag free">Free</span></h3>
+  <p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>E</kbd> copies one line per part: Element ID, name and the file it came from. Paste it into Excel and it lands in three columns. Use it when parts come from several models, because <strong>Revit IDs are only unique within one file</strong>.</p>
+
+  <h2 id="find">Find by Element ID <span class="tag pro">Pro</span></h2>
+  <ol>
+    <li>Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> (or JGT › Find by Element ID).</li>
+    <li>Paste IDs: one per line, or separated by <code>;</code>, commas or spaces. A Copy ID + Details paste works too (the first column is used).</li>
+    <li>Pick <strong>All loaded models</strong> or one file.</li>
+    <li>Click <strong>Select and zoom</strong>, or <strong>Isolate</strong> to hide everything else. <strong>Show all</strong> brings the rest back.</li>
+  </ol>
+  <p>The results list how many were found in each file, which IDs weren't found, and any ID that exists in more than one file.</p>
+
+  <h2 id="quick">Quick Properties <span class="tag pro">Pro</span></h2>
+  <p>Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> to turn on a hover tooltip, like Navisworks' Quick Properties. Hover any part to see its Element ID, name and file, plus Category, Level, System Abbreviation, Size and Length. Press the shortcut again to turn it off.</p>
+  <p>To change the fields: JGT › <strong>Quick Properties fields…</strong>. Type property names exactly as Forma's Properties panel shows them (Family and Type work too). The choice is saved in your browser.</p>
+
+  <h2 id="same">Select Same <span class="tag pro">Pro</span></h2>
+  <p>Select a part, right-click it, and choose <strong>Select Same ›</strong> Type, Family, Category, Level, System Abbreviation or Size. Everything matching is selected across all loaded models. Combine it with Copy Element ID to send a whole system to Revit.</p>
+
+  <h2 id="profiler">Appearance Profiler <span class="tag pro">Pro</span></h2>
+  <ol>
+    <li>JGT › <strong>Appearance Profiler</strong>.</li>
+    <li>Pick a property: System Abbreviation, Level, Size, Category, Family, Type, File, Material and so on.</li>
+    <li>Parts are colored by value. The first 12 values get their own colors, any further values share gray, and blank values stay uncolored.</li>
+    <li>Click a row in the legend to select those parts.</li>
+    <li><strong>Clear colors</strong> puts the model back.</li>
+  </ol>
+  <p>It's off in the Clashes view, because coloring there would hide Forma's red and green clash colors. Clear colors resets every custom color in the viewer, including colors from other tools.</p>
+
+  <h2 id="export">Export and takeoff <span class="tag pro">Pro</span></h2>
+  <ol>
+    <li>JGT › <strong>Export properties</strong>.</li>
+    <li>Choose which parts: the selection, the visible parts, or all loaded models.</li>
+    <li>Choose columns. The defaults are Element ID, Name, File, Category, Family, Type, Level, System Abbreviation, Size and Length.</li>
+    <li><strong>Download CSV</strong>, or <strong>Copy table for Excel</strong> and paste.</li>
+  </ol>
+  <p><strong>Takeoff:</strong> group by one property and total another, for example count and total Length by Size. Lengths show in feet and inches to 1/16" plus a decimal column.</p>
+
+  <h2 id="clashes">In the Clashes view</h2>
+  <p>Forma's Clashes view doesn't keep a normal selection. To copy one part's ID there, <strong>click the part itself in the 3D view</strong>, then press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd>. The extension remembers the last part you clicked.</p>
+  <ul>
+    <li><span class="tag pro">Pro</span> <strong>Copy clash objects (A and B):</strong> copies every highlighted clash object as Side, Element ID, Name, File. Side A is Forma's red, side B is green.</li>
+    <li><span class="tag pro">Pro</span> <strong>Clash objects by level:</strong> counts the highlighted clash objects on each level, split by side, ready to copy or save as CSV. It counts objects, not clash pairs, because Forma doesn't say which objects pair up.</li>
+  </ul>
+
+  <h2 id="pro">Activate Pro</h2>
+  <ol>
+    <li>Buy Pro on <a href="https://jgriffithtech.gumroad.com/l/forma-tools">Gumroad</a> ($9.99 one-time). Got a team code? Enter it at checkout.</li>
+    <li>Copy the license key: it's on the purchase page Gumroad opens after checkout, and in your receipt email (four blocks of eight letters and numbers).</li>
+    <li>Click the extension's icon in Chrome's toolbar. Its options page opens.</li>
+    <li>Paste the key into <strong>License key</strong> and click <strong>Activate</strong>. It says "Pro is active".</li>
+    <li>Reload your Forma tab (<kbd>F5</kbd>).</li>
+  </ol>
+  <p>A key works in up to 5 browsers. The extension re-checks it with Gumroad about once a week, and stays Pro for 30 days if Gumroad can't be reached.</p>
+  <h3>Moving to a new computer</h3>
+  <p>On the old browser, open the options page and click <strong>Remove key from this browser</strong>. Then activate the same key on the new one.</p>
+
+  <h2 id="trouble">Troubleshooting</h2>
+  <dl>
+    <dt>The shortcut does nothing, or there's no JGT button on the toolbar.</dt>
+    <dd>Reload the Forma tab (<kbd>F5</kbd>). Chrome only adds the extension to pages opened after it was installed or updated. Check that the extension is switched on in <code>chrome://extensions</code>.</dd>
+    <dt>"Select a part first" in the Clashes view.</dt>
+    <dd>Click the part itself in the 3D view, then press the shortcut. A click in the clash list doesn't count as selecting the part.</dd>
+    <dt>"The model is still loading".</dt>
+    <dd>Wait for the progress bar at the top of the viewer to finish, then try again.</dd>
+    <dt>"Open a model in the viewer" while a model is open.</dt>
+    <dd>Reload the tab. If it keeps happening, a Forma update may have changed something the extension reads. Please let me know (contact below).</dd>
+    <dt>Revit's Select by ID can't find an ID, or finds the wrong part.</dt>
+    <dd>Make sure the Revit model you have open is the same file the part came from: IDs repeat across files. Copy ID + Details shows the file for each ID. A picked <em>type</em> row in the model browser gives the type's ID, not an element's.</dd>
+    <dt>"That license does not exist for the provided product".</dt>
+    <dd>Check the key is for <strong>JGT Forma Model Coordination Tools Pro</strong> (not another JGT product) and was pasted whole, with no extra spaces.</dd>
+    <dt>"This key is already active on 5 browsers".</dt>
+    <dd>Remove it from a browser you no longer use (options page › Remove key), or contact me to reset it.</dd>
+    <dt>Pro turned off by itself.</dt>
+    <dd>Gumroad reported the purchase as refunded or disputed, or the key couldn't be checked for over 30 days. Open the options page and click <strong>Check license now</strong>.</dd>
+  </dl>
+
+  <h2 id="contact">Contact</h2>
+  <p>Reply to your Gumroad receipt email and it comes straight to me. Include what you clicked, what you expected, and a screenshot if you can (blur any project names).</p>
+
+  <p class="fine">Made by JGriffith Tech. Your model data stays in your browser; see the <a href="/forma-tools/privacy">privacy policy</a>. Not affiliated with or endorsed by Autodesk, Inc. Autodesk, Forma, Navisworks and Revit are registered trademarks or trademarks of Autodesk, Inc.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User guide · JGT Forma Clash Export</title>
+<meta name="description" content="How to install and use JGT Forma Clash Export: export Forma Model Coordination clashes to Excel, import the Navisworks viewpoints and search sets, tune the rating rules, and activate Pro.">
+<style>
+  :root { --navy: #0F172A; --slate: #1E293B; --line: #334155; --gold: #D4A926; --text: #E2E8F0; --sub: #94A3B8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--navy); color: var(--text); font: 16px/1.65 "Segoe UI", Arial, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 44px 20px 70px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; color: #F1F5F9; }
+  .lead { color: var(--sub); font-size: 18px; margin: 0 0 18px; }
+  nav.toc { background: var(--slate); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; margin: 0 0 8px; font-size: 15px; }
+  nav.toc a { display: inline-block; margin: 2px 14px 2px 0; }
+  h2 { color: var(--gold); font-size: 21px; margin: 40px 0 10px; padding-top: 6px; border-top: 1px solid var(--slate); }
+  h3 { color: #F1F5F9; font-size: 17px; margin: 22px 0 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0; }
+  th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--slate); vertical-align: top; }
+  th { color: var(--sub); font-size: 13px; }
+  kbd { background: var(--slate); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; font: 13px Consolas, monospace; white-space: nowrap; }
+  code { background: var(--slate); border-radius: 4px; padding: 0 5px; font: 14px Consolas, monospace; }
+  .tag { font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 10px; }
+  .free { background: #1E3A2B; color: #9FC28F; } .pro { background: #3B300B; color: var(--gold); }
+  ol li, ul li { margin: 6px 0; }
+  a { color: var(--gold); }
+  dt { font-weight: 600; color: #F1F5F9; margin-top: 14px; }
+  dd { margin: 4px 0 0 0; }
+  .fine { color: var(--sub); font-size: 13px; margin-top: 44px; }
+</style>
+<script defer src="/hit.js"></script>
+</head>
+<body>
+<main>
+  <h1>JGT Forma Clash Export: user guide</h1>
+  <p class="lead">From the Forma Model Coordination clash list to an Excel report and a Navisworks handoff, step by step. Back to the <a href="/clash-export">product page</a>.</p>
+  <nav class="toc">
+    <a href="#start">Getting started</a><a href="#export">Export</a><a href="#excel">The Excel report</a><a href="#navis">Into Navisworks</a><a href="#rules">Rating rules</a><a href="#pro">Activate Pro</a><a href="#trouble">Troubleshooting</a>
+  </nav>
+
+  <h2 id="start">Getting started</h2>
+  <ol>
+    <li>Install the extension from the Chrome Web Store.</li>
+    <li>Reload (<kbd>F5</kbd>) any open Forma tab so the extension can add its button.</li>
+    <li>In Model Coordination, open a clash check (Selection A against Selection B).</li>
+    <li>Set <strong>Group clashes by</strong> to <strong>Object Name</strong>, and let the "N clash groups" list finish loading. Keep both models loaded in the viewer: that's how each clash is located for its viewpoint.</li>
+  </ol>
+  <table>
+    <tr><th>File</th><th>What's in it</th><th>Plan</th></tr>
+    <tr><td>Excel clash report</td><td>Every clash group and clash, totals that match the Forma panel, overlap in inches, a rating per clash</td><td><span class="tag free">Free</span></td></tr>
+    <tr><td>Navisworks saved viewpoints (.xml)</td><td>One per clash group, in Consequential, Review and Inconsequential folders</td><td><span class="tag pro">Pro</span></td></tr>
+    <tr><td>Navisworks search sets (.xml)</td><td>One per clash group that selects its elements, plus an ALL set per rating</td><td><span class="tag pro">Pro</span></td></tr>
+  </table>
+
+  <h2 id="export">Export</h2>
+  <ol>
+    <li>Click the gold <strong>JGT Clash Export</strong> button at the right end of the viewer toolbar (or the extension's icon in Chrome's toolbar). The panel opens over the viewer.</li>
+    <li>Check the counts: groups and clashes read, and how many groups were located in the viewer. They should match the Forma panel header.</li>
+    <li>Set the project and report name (used in the file names), and the <strong>Navisworks coordinates</strong>: Shared (the usual Revit export) or Internal. Pick Both if you're not sure.</li>
+    <li>Tick the files you want. <strong>Skip inconsequential viewpoints</strong> leaves the touches and minor hardware out of Navisworks.</li>
+    <li>Click <strong>Export</strong> and pick a folder. Every file is saved there. Cancel the folder window and nothing is saved.</li>
+  </ol>
+  <p>The first time, Chrome may ask to let acc.autodesk.com edit files in that folder. That's Chrome's rule for any site saving into a folder you pick; allow it. Next time the folder window opens where you saved last.</p>
+
+  <h2 id="excel">The Excel report</h2>
+  <ul>
+    <li><strong>Read Me:</strong> where the data came from, how clashes were rated, and caveats.</li>
+    <li><strong>Summary:</strong> Forma's totals next to the report's, counts by rating, and the types clashing most.</li>
+    <li><strong>Clash Groups:</strong> one row per group, with its worst rating and its Navisworks viewpoint name (G001, G002...).</li>
+    <li><strong>Clash Detail:</strong> one row per clash: both elements, their IDs, the overlap, and why it got its rating.</li>
+  </ul>
+  <p>All totals are live formulas, so filtering and sorting are safe.</p>
+
+  <h2 id="navis">Into Navisworks <span class="tag pro">Pro</span></h2>
+  <ol>
+    <li>Open the coordination model (the NWF/NWD with the same Revit models).</li>
+    <li><strong>Viewpoints:</strong> open the Saved Viewpoints window, right-click in it, choose <strong>Import Viewpoints</strong> and pick the <code>_Viewpoints_Shared.xml</code> (or Internal) file.</li>
+    <li><strong>Search sets:</strong> open the Sets window, right-click, choose <strong>Import Search Sets</strong> and pick <code>_SearchSets.xml</code>.</li>
+    <li>Click a viewpoint to jump to that clash group. Click its search set (same G### name) to select the clashing elements.</li>
+  </ol>
+  <p>Search sets find each element by its Revit Element ID, or by the "[ID]" at the end of its name, so they work on both locally exported NWCs and models brought in from Forma.</p>
+
+  <h2 id="rules">Rating rules</h2>
+  <p>Open <strong>Rating rules</strong> in the panel to tune them, then <strong>Save rules</strong>. <strong>Reset to defaults</strong> puts them back.</p>
+  <ul>
+    <li>Overlap under <strong>Touch below</strong> (default 1/8") is Inconsequential.</li>
+    <li>A clearance or access zone on either side is Review.</li>
+    <li>Hanger hardware (rod, nut, washer, bolt, gasket, weld) up to <strong>Hard above</strong> (default 1") is Inconsequential, and deeper is Review.</li>
+    <li>A support against another trade, up to the Hard threshold, is Review.</li>
+    <li>Everything else is Consequential. A group takes the worst rating of its clashes.</li>
+  </ul>
+  <p>The keyword boxes are matched against each element's family and type name, so add your own family names to them if your standards use different words.</p>
+
+  <h2 id="pro">Activate Pro</h2>
+  <ol>
+    <li>Buy Pro on <a href="https://jgriffithtech.gumroad.com/l/clash-export">Gumroad</a> ($9.99 one-time). Got a team code? Enter it at checkout.</li>
+    <li>Copy the license key: it's on the purchase page Gumroad opens after checkout, and in your receipt email (four blocks of eight letters and numbers).</li>
+    <li>Right-click the extension's icon in Chrome's toolbar and choose <strong>Options</strong> (or click <strong>License</strong> at the bottom of the export panel).</li>
+    <li>Paste the key, click <strong>Activate</strong>. It says "Pro is active".</li>
+    <li>Close and reopen the export panel. Viewpoints and Search sets are unlocked.</li>
+  </ol>
+  <p>A key works in up to 5 browsers. To move to a new computer, click <strong>Remove key from this browser</strong> on the old one first.</p>
+
+  <h2 id="trouble">Troubleshooting</h2>
+  <dl>
+    <dt>No gold button on the viewer toolbar.</dt>
+    <dd>Reload the Forma tab (<kbd>F5</kbd>), and check the extension is switched on in <code>chrome://extensions</code>.</dd>
+    <dt>"Set Group clashes by to Object Name".</dt>
+    <dd>The export reads that grouping only. Change it in the clash panel and open the export again.</dd>
+    <dt>The counts don't match Forma, or groups weren't located.</dt>
+    <dd>Let the clash list and both models finish loading, then close and reopen the panel. Groups that can't be located still go in the Excel report, but get no viewpoint.</dd>
+    <dt>Navisworks says "The import failed".</dt>
+    <dd>Make sure you used Import Viewpoints for the viewpoints file and Import Search Sets for the sets file, and that the file came from version 0.3.1 or later.</dd>
+    <dt>A viewpoint lands in empty space.</dt>
+    <dd>Export again with the other coordinate option (Shared or Internal), to match how the models were exported from Revit.</dd>
+    <dt>A search set selects nothing.</dt>
+    <dd>Check the Navisworks model contains the same Revit models, at the same version, as the Forma clash check.</dd>
+    <dt>Pro boxes stay locked after activating.</dt>
+    <dd>Close and reopen the export panel. On the options page, <strong>Check license now</strong> shows whether Gumroad accepted the key.</dd>
+  </dl>
+
+  <h2 id="contact">Contact</h2>
+  <p>Reply to your Gumroad receipt email and it comes straight to me. Include what you clicked, what you expected, and a screenshot if you can (blur any project names).</p>
+
+  <p class="fine">Made by JGriffith Tech. It only reads: nothing in Forma is clicked or changed, and your model data stays in your browser; see the <a href="/clash-export/privacy">privacy policy</a>. Not affiliated with or endorsed by Autodesk, Inc. Autodesk, Forma, Navisworks and Revit are registered trademarks or trademarks of Autodesk, Inc.</p>
+</main>
+</body>
+</html>
