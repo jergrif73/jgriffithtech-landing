@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JGT Forma Clash Export · JGriffith Tech</title>
+<meta name="description" content="Export the Autodesk Forma Model Coordination clash panel to an Excel report plus Navisworks saved viewpoints and search sets. Chrome extension by JGriffith Tech.">
+<style>
+  :root { --navy: #0F172A; --slate: #1E293B; --gold: #D4A926; --text: #E2E8F0; --sub: #94A3B8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--navy); color: var(--text); font: 16px/1.6 "Segoe UI", Arial, sans-serif; }
+  main { max-width: 820px; margin: 0 auto; padding: 44px 20px 60px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; color: #F1F5F9; }
+  .lead { color: var(--sub); font-size: 18px; margin: 0 0 24px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 0 0 32px; }
+  .btn { display: inline-block; padding: 11px 18px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+  .btn.gold { background: var(--gold); color: var(--navy); }
+  .btn.line { border: 1px solid #334155; color: var(--text); }
+  h2 { color: var(--gold); font-size: 19px; margin: 34px 0 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--slate); vertical-align: top; }
+  th { color: var(--sub); font-size: 13px; }
+  .tag { font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 10px; }
+  .free { background: #1E3A2B; color: #9FC28F; } .pro { background: #3B300B; color: var(--gold); }
+  ol li, ul li { margin: 6px 0; }
+  a { color: var(--gold); }
+  .fine { color: var(--sub); font-size: 13px; margin-top: 40px; }
+  @media (max-width: 560px) { h1 { font-size: 24px; } td:nth-child(2), th:nth-child(2) { display: none; } }
+</style>
+<script defer src="/hit.js"></script>
+</head>
+<body>
+<main>
+  <h1>JGT Forma Clash Export</h1>
+  <p class="lead">Turn the clash list in Autodesk Forma Model Coordination into a rated Excel report and a ready-to-import Navisworks handoff. One click, one folder, done.</p>
+  <!-- LAUNCH: replace this block with the two live buttons once the store listing is approved
+       (the Gumroad product is already live):
+       <a class="btn gold" href="CHROME_WEB_STORE_LISTING_URL">Add to Chrome (free)</a>
+       <a class="btn line" href="https://jgriffithtech.gumroad.com/l/clash-export">Get Pro, $9.99</a> -->
+  <div class="cta">
+    <span class="btn line">Coming soon to the Chrome Web Store</span>
+  </div>
+
+  <h2>What it does</h2>
+  <table>
+    <tr><th>Export</th><th>What you get</th><th>Plan</th></tr>
+    <tr><td>Excel clash report</td><td>Every clash group and clash, totals that match the Forma panel, overlap in inches, and a rating: Consequential, Review or Inconsequential</td><td><span class="tag free">Free</span></td></tr>
+    <tr><td>Rating rules</td><td>Touch and hard-overlap thresholds, plus keyword rules for clearance zones, hanger hardware and supports</td><td><span class="tag free">Free</span></td></tr>
+    <tr><td>Navisworks saved viewpoints</td><td>One per clash group, in folders by rating, in shared or internal coordinates</td><td><span class="tag pro">Pro</span></td></tr>
+    <tr><td>Navisworks search sets</td><td>One per clash group that selects its elements, plus an ALL set per rating</td><td><span class="tag pro">Pro</span></td></tr>
+  </table>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li>In Forma Model Coordination, open a clash check and set <strong>Group clashes by</strong> to <strong>Object Name</strong>.</li>
+    <li>Click the gold <strong>JGT Clash Export</strong> button at the right end of the viewer toolbar.</li>
+    <li>Check the counts, pick the report name and coordinates, then click <strong>Export</strong> and choose a folder.</li>
+    <li>In Navisworks: Saved Viewpoints, right-click, <strong>Import Viewpoints</strong>. Sets, right-click, <strong>Import Search Sets</strong>.</li>
+  </ol>
+
+  <h2>Activate Pro</h2>
+  <ol>
+    <li>Buy Pro on Gumroad. Got a team code? Enter it at checkout.</li>
+    <li>Copy the license key from your receipt.</li>
+    <li>Right-click the extension's icon in the Chrome toolbar, choose <strong>Options</strong> (or click <strong>License</strong> at the bottom of the export panel), paste the key and choose <strong>Activate</strong>.</li>
+    <li>Close and reopen the export panel.</li>
+  </ol>
+
+  <h2>Help</h2>
+  <ul>
+    <li><strong>No gold button on the toolbar:</strong> reload the Forma tab after installing or updating.</li>
+    <li><strong>"Set Group clashes by to Object Name":</strong> that's the grouping the export reads. Change it in the clash panel and open the export again.</li>
+    <li><strong>A viewpoint lands in the wrong place:</strong> export again with the other coordinate option (Shared or Internal), to match how the models were exported from Revit.</li>
+    <li><strong>Chrome asks to let acc.autodesk.com edit files:</strong> that's Chrome's rule for any site writing into a folder you picked. Allow it once.</li>
+    <li><strong>Moving to a new computer:</strong> remove the key on the old browser's options page, then activate it on the new one. Each key covers up to 5 browsers.</li>
+    <li>Still stuck? Reply to your Gumroad receipt email and it comes straight to me.</li>
+  </ul>
+
+  <p class="fine">Made by JGriffith Tech. It only reads: nothing in Forma is clicked or changed, and your model data stays in your browser; see the <a href="/clash-export/privacy">privacy policy</a>. Not affiliated with or endorsed by Autodesk, Inc. Autodesk, Forma and Navisworks are registered trademarks or trademarks of Autodesk, Inc.</p>
+</main>
+</body>
+</html>
