@@ -94,3 +94,8 @@
   from = "/forma-tools"
   to = "/forma-tools.html"
   status = 200
+
+[[redirects]]
+  from = "/navisworks-tools"
+  to = "/navisworks-tools.html"
+  status = 200

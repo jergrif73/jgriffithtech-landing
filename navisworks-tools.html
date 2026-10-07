@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JGT Navisworks Tools · JGriffith Tech</title>
+<meta name="description" content="JGT Element ID, JGT Section and JGT Views: plugins for Autodesk Navisworks Manage 2026 by JGriffith Tech. Free 30-day trial of each, then a one-time license.">
+<style>
+  :root { --navy: #0F172A; --slate: #1E293B; --gold: #D4A926; --text: #E2E8F0; --sub: #94A3B8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--navy); color: var(--text); font: 16px/1.6 "Segoe UI", Arial, sans-serif; }
+  main { max-width: 820px; margin: 0 auto; padding: 44px 20px 60px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; color: #F1F5F9; }
+  .lead { color: var(--sub); font-size: 18px; margin: 0 0 24px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 0 0 12px; }
+  .btn { display: inline-block; padding: 11px 18px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+  .btn.gold { background: var(--gold); color: var(--navy); }
+  .btn.line { border: 1px solid #334155; color: var(--text); }
+  .note { color: var(--sub); font-size: 14px; margin: 0 0 32px; }
+  h2 { color: var(--gold); font-size: 19px; margin: 34px 0 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--slate); vertical-align: top; }
+  th { color: var(--sub); font-size: 13px; }
+  .tag { font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 10px; white-space: nowrap; }
+  .free { background: #1E3A2B; color: #9FC28F; } .pro { background: #3B300B; color: var(--gold); }
+  kbd { font: 13px Consolas, monospace; background: var(--slate); padding: 1px 6px; border-radius: 4px; white-space: nowrap; }
+  ol li, ul li { margin: 6px 0; }
+  a { color: var(--gold); }
+  .fine { color: var(--sub); font-size: 13px; margin-top: 40px; }
+  @media (max-width: 560px) { h1 { font-size: 24px; } td:nth-child(3), th:nth-child(3) { display: none; } }
+</style>
+<script defer src="/hit.js"></script>
+</head>
+<body>
+<main>
+  <h1>JGT Navisworks Tools</h1>
+  <p class="lead">Three plugins for Navisworks Manage 2026 that put the things coordinators do all day one click away: Revit Element IDs, section planes, and saved views with markup.</p>
+  <div class="cta">
+    <a class="btn gold" href="/downloads/JGT-Navisworks-Tools-1.3.0.zip">Download and try free for 30 days</a>
+    <a class="btn line" href="https://jgriffithtech.gumroad.com/l/jgt-navisworks/LAUNCHBUNDLE">Get all three, $8.99</a>
+    <a class="btn line" href="https://jgriffithtech.gumroad.com/l/jgt-element-id/LAUNCH">Element ID, $4.99</a>
+    <a class="btn line" href="https://jgriffithtech.gumroad.com/l/jgt-section/LAUNCH">Section, $4.99</a>
+    <a class="btn line" href="https://jgriffithtech.gumroad.com/l/jgt-views/LAUNCH">Views, $4.99</a>
+  </div>
+  <p class="note">Launch prices through December 31, 2026 (regular $9.99 each, $19.99 for all three). One-time purchase, no subscription. The download is the same for everyone (version 1.3.0, 118 KB): every tool has a free 30-day trial, and a key from Gumroad unlocks it for good.</p>
+
+  <h2>What's in it</h2>
+  <table>
+    <tr><th>Tool</th><th>What it does</th><th>Shortcut</th></tr>
+    <tr><td><strong>JGT Element ID</strong></td><td>Copy Element ID copies the Revit Element IDs of the selection, joined with <code>;</code>, ready for Revit's Manage › Select by ID. Copy ID + Details gives one line per element (ID, name, source file) that pastes into Excel as columns. Works on ACC models too.</td><td><kbd>Ctrl+Shift+E</kbd><br><kbd>Ctrl+Shift+Alt+E</kbd></td></tr>
+    <tr><td><strong>JGT Section</strong></td><td>A dockable pane with all six section planes and the section box. Turn planes on, set their facing, type positions in feet and inches, nudge by a step, align a plane to a surface you click, box the selection, and save the view.</td><td><kbd>Ctrl+Shift+X</kbd></td></tr>
+    <tr><td><strong>JGT Views</strong></td><td>Saved viewpoints, comments and markup in one pane. New views save at once and you name them in place. Folders, drag to move, update from the current view, comments with status, and markup tools (cloud, arrow, line, text, ellipse) with color and thickness.</td><td><kbd>Ctrl+Shift+K</kbd></td></tr>
+    <tr><td>Capture Color Profile<br>Profile to .dat</td><td>Turn how a model is colored into an Appearance Profiler profile, and save any profile as a <code>.dat</code> others can Import. Free with any of the three.</td><td><span class="tag free">Included</span></td></tr>
+    <tr><td>Theme</td><td>Dark, Gray or Light colors for the JGT panes, or your own.</td><td><span class="tag free">Included</span></td></tr>
+  </table>
+
+  <h2>Install</h2>
+  <ol>
+    <li><a href="/downloads/JGT-Navisworks-Tools-1.3.0.zip">Download the zip</a> (also on your Gumroad receipt) and unzip it. Right-click, Extract All. Don't run the files from inside the zip.</li>
+    <li>Close Navisworks, then double-click <strong>Install.cmd</strong>. No admin rights needed. If Windows SmartScreen appears, choose More info, then Run anyway.</li>
+    <li>Start Navisworks Manage 2026 and open the <strong>JGT</strong> ribbon tab.</li>
+  </ol>
+  <p>To install for every user on a machine, run <code>powershell -ExecutionPolicy Bypass -File .\Install.ps1 -AllUsers</code> as administrator in the unzipped folder. To remove it, double-click <strong>Uninstall.cmd</strong>.</p>
+
+  <h2>Free trial and license</h2>
+  <ol>
+    <li>Open any of the tools. Until it's licensed, it shows a card with <strong>Start free 30-day trial</strong>. No signup or key.</li>
+    <li>Bought one? On the JGT tab click <strong>Settings › License</strong>, paste the key from your Gumroad receipt, and click <strong>Activate</strong>. The bundle key unlocks all three.</li>
+    <li>A key works on up to 5 computers. Moving to a new one? Click <strong>Remove</strong> next to the key on the old computer first.</li>
+  </ol>
+
+  <h2>Help</h2>
+  <ul>
+    <li><strong>No JGT tab:</strong> check that you started Navisworks Manage 2026, then run Install.cmd again.</li>
+    <li><strong>"File in use" during install:</strong> Navisworks is still open. Look for <code>Roamer.exe</code> in Task Manager.</li>
+    <li><strong>A tool still shows the locked card after activating:</strong> open Settings › License and click <strong>Check keys now</strong>. The key has to be for that tool or the bundle.</li>
+    <li><strong>No internet:</strong> a key checked once keeps working offline for 30 days.</li>
+    <li><strong>The Section pane won't stay docked:</strong> drop it with the pointer on a docking guide icon, while the blue shadow shows.</li>
+    <li>Still stuck? Reply to your Gumroad receipt email and it comes straight to me.</li>
+  </ul>
+
+  <p class="fine">Made by JGriffith Tech. Everything runs on your computer and nothing in your model is sent anywhere. The only network call is the license key check with Gumroad. Not affiliated with or endorsed by Autodesk, Inc. Autodesk, Navisworks and Revit are registered trademarks or trademarks of Autodesk, Inc.</p>
+</main>
+</body>
+</html>
