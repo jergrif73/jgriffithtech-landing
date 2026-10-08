@@ -49,8 +49,8 @@
   <table>
     <tr><th>File</th><th>What's in it</th><th>Plan</th></tr>
     <tr><td>Excel clash report</td><td>Every clash group and clash, totals that match the Forma panel, overlap in inches, a rating per clash</td><td><span class="tag free">Free</span></td></tr>
-    <tr><td>Navisworks saved viewpoints (.xml)</td><td>One per clash group, in Consequential, Review and Inconsequential folders</td><td><span class="tag pro">Pro</span></td></tr>
-    <tr><td>Navisworks search sets (.xml)</td><td>One per clash group that selects its elements, plus an ALL set per rating</td><td><span class="tag pro">Pro</span></td></tr>
+    <tr><td>Navisworks saved viewpoints (.xml)</td><td>A folder per clash group named like its Model Coordination header, with a view per clash named like the clash, in Consequential, Review and Inconsequential folders</td><td><span class="tag pro">Pro</span></td></tr>
+    <tr><td>Navisworks search sets (.xml)</td><td>One per clash group, named like its Model Coordination header, that selects its elements, plus an ALL set per rating</td><td><span class="tag pro">Pro</span></td></tr>
   </table>
 
   <h2 id="export">Export</h2>
@@ -67,7 +67,7 @@
   <ul>
     <li><strong>Read Me:</strong> where the data came from, how clashes were rated, and caveats.</li>
     <li><strong>Summary:</strong> Forma's totals next to the report's, counts by rating, and the types clashing most.</li>
-    <li><strong>Clash Groups:</strong> one row per group, with its worst rating and its Navisworks viewpoint name (G001, G002...).</li>
+    <li><strong>Clash Groups:</strong> one row per group, with its worst rating and where to find it in Navisworks (rating folder / group name, exactly as Model Coordination names it).</li>
     <li><strong>Clash Detail:</strong> one row per clash: both elements, their IDs, the overlap, and why it got its rating.</li>
   </ul>
   <p>All totals are live formulas, so filtering and sorting are safe.</p>
