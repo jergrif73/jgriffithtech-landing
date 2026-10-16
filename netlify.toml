@@ -36,6 +36,11 @@
   status = 200
 
 [[redirects]]
+  from = "/seensay/guide"
+  to = "/seensay-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/seensay"
   to = "/seensay.html"
   status = 200
@@ -93,6 +98,11 @@
 [[redirects]]
   from = "/forma-tools"
   to = "/forma-tools.html"
+  status = 200
+
+[[redirects]]
+  from = "/navisworks-tools/guide"
+  to = "/navisworks-tools-guide.html"
   status = 200
 
 [[redirects]]

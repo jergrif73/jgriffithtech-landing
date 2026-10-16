@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User guide · See 'n' Say for Revit</title>
+<meta name="description" content="How to install and use See 'n' Say, the Revit add-in for MEP detailers: Sync Views, Element Visibility, Snoop Selection, Super Filter, Compare, Find Sheet, Duct Orient, Coil Duct, Renumber, Place Tags, View Converter, Toggle Case, Rotate Multiple, Convert and Set Hangers, plus troubleshooting.">
+<style>
+  :root { --navy: #0F172A; --slate: #1E293B; --line: #334155; --gold: #D4A926; --text: #E2E8F0; --sub: #94A3B8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--navy); color: var(--text); font: 16px/1.65 "Segoe UI", Arial, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 44px 20px 70px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; color: #F1F5F9; }
+  .lead { color: var(--sub); font-size: 18px; margin: 0 0 18px; }
+  nav.toc { background: var(--slate); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; margin: 0 0 8px; font-size: 15px; }
+  nav.toc a { display: inline-block; margin: 2px 14px 2px 0; }
+  h2 { color: var(--gold); font-size: 21px; margin: 40px 0 10px; padding-top: 6px; border-top: 1px solid var(--slate); scroll-margin-top: 12px; }
+  h3 { color: #F1F5F9; font-size: 17px; margin: 22px 0 6px; scroll-margin-top: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0; }
+  th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--slate); vertical-align: top; }
+  th { color: var(--sub); font-size: 13px; }
+  kbd { background: var(--slate); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; font: 13px Consolas, monospace; white-space: nowrap; }
+  code { background: var(--slate); border-radius: 4px; padding: 0 5px; font: 14px Consolas, monospace; overflow-wrap: anywhere; }
+  .where { color: var(--sub); font-size: 14px; margin: -4px 0 8px; }
+  .tip { background: rgba(212,169,38,.08); border: 1px solid #6B5714; border-radius: 8px; padding: 10px 14px; margin: 12px 0; font-size: 15px; }
+  ol li, ul li { margin: 6px 0; }
+  a { color: var(--gold); }
+  dt { font-weight: 600; color: #F1F5F9; margin-top: 16px; }
+  dd { margin: 4px 0 0 0; color: var(--text); }
+  .fine { color: var(--sub); font-size: 13px; margin-top: 44px; }
+  @media (max-width: 560px) { h1 { font-size: 24px; } table { font-size: 14px; } }
+</style>
+<script defer src="/hit.js"></script>
+<style id="jgt-top-css">.jgt-top{background:#0B1222;border-bottom:1px solid #1E293B}.jgt-top-in{max-width:1100px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:10px 22px;flex-wrap:wrap}.jgt-top-logo img{height:32px;display:block}.jgt-top-links{display:flex;flex-wrap:wrap;gap:4px 16px;font:500 14px/1.6 "Segoe UI",Arial,sans-serif}.jgt-top-links a{color:#94A3B8;text-decoration:none;white-space:nowrap}.jgt-top-links a:hover,.jgt-top-links a.on{color:#D4A926}</style>
+</head>
+<body>
+<header class="jgt-top" id="jgt-top"><div class="jgt-top-in"><a class="jgt-top-logo" href="/"><img src="/logo-nav.png" alt="JGriffith Tech"></a><nav class="jgt-top-links" aria-label="Site"><a href="/">Home</a><a href="/#apps">Mobile Apps</a><a class="on" href="/seensay">See 'n' Say</a><a href="/navisworks-tools">Navisworks</a><a href="/forma-tools">Forma Tools</a><a href="/clash-export">Clash Export</a><a href="/detailers-path">Detailer's Path</a><a href="/testers">Beta</a></nav></div></header>
+<main>
+  <h1>See 'n' Say: user guide</h1>
+  <p class="lead">How to use all 15 tools on the See 'n' Say tab in Revit, step by step, and how to fix the problems people run into. Back to the <a href="/seensay">product page</a>.</p>
+  <nav class="toc">
+    <a href="#start">Getting started</a><a href="#sync">Sync Views</a><a href="#ev">Elem Visibility</a><a href="#snoop">Snoop Selection</a><a href="#superfilter">Super Filter</a><a href="#compare">Compare</a><a href="#findsheet">Find Sheet</a><a href="#ductorient">Duct Orient</a><a href="#coil">Coil Duct</a><a href="#renumber">Renumber</a><a href="#tags">Place Tags</a><a href="#viewconv">View Converter</a><a href="#case">Toggle Case</a><a href="#rotate">Rotate Multiple</a><a href="#convert">Convert</a><a href="#hangers">Set Hangers</a><a href="#settings">Saved settings</a><a href="#trouble">Troubleshooting</a>
+  </nav>
+
+  <h2 id="start">Getting started</h2>
+  <h3>Install</h3>
+  <ol>
+    <li><strong>Close Revit.</strong></li>
+    <li>Run <strong>SeeNSay_Setup.exe</strong> from your purchase. No admin rights are needed.</li>
+    <li>Choose your Revit version: <strong>Revit 2024</strong>, <strong>2025</strong>, <strong>2026</strong>, or all three.</li>
+    <li>Start Revit. A short splash shows the version and counts the tools to 15/15, then the <strong>See 'n' Say</strong> tab is ready.</li>
+  </ol>
+  <p>To update, run the newer installer over the old one; your settings are kept. To remove it, use <strong>Windows Settings › Apps</strong> and uninstall <strong>See 'n' Say</strong>. It asks <em>Also remove saved settings?</em>; answer Yes for a clean removal.</p>
+  <h3>Where the tools are</h3>
+  <table>
+    <tr><th>Panel</th><th>Button or menu</th><th>Tools</th></tr>
+    <tr><td rowspan="4">Inspection</td><td>Sync Views</td><td><a href="#sync">Sync Views</a></td></tr>
+    <tr><td>Look ▾</td><td><a href="#snoop">Snoop Selection</a>, <a href="#superfilter">Super Filter</a>, <a href="#compare">Compare</a>, <a href="#findsheet">Find Sheet</a></td></tr>
+    <tr><td>Elem Visibility</td><td><a href="#ev">Element Visibility</a></td></tr>
+    <tr><td>Duck ▾</td><td><a href="#ductorient">Duct Orient</a>, <a href="#coil">Coil Duct</a></td></tr>
+    <tr><td rowspan="3">Designation</td><td>Renumber</td><td><a href="#renumber">Renumber</a></td></tr>
+    <tr><td>Place Tags</td><td><a href="#tags">Place Tags</a></td></tr>
+    <tr><td>Spin ▾</td><td><a href="#viewconv">View Converter</a>, <a href="#case">Toggle Case</a>, <a href="#rotate">Rotate Multiple</a>, <a href="#convert">Convert</a>, <a href="#hangers">Set Hangers</a></td></tr>
+  </table>
+  <p>Results and errors appear as small notices at the bottom right of the screen (click to dismiss) or as messages inside the tool's window (click to dismiss). Tools that change the model are one step in Revit's <strong>Undo</strong> unless noted below. Most windows close with <kbd>Esc</kbd>.</p>
+
+  <h2 id="sync">Sync Views</h2>
+  <p class="where">Inspection › Sync Views</p>
+  <p>Keeps open views lined up: pan and zoom across 2D views, and camera, visual style, detail level and section box across 3D views.</p>
+  <ol>
+    <li>Open the views you want to sync in Revit (tile them if you like).</li>
+    <li>Run Sync Views. The window stays on top; it opens on <strong>Match 3D</strong> if the active view is 3D, otherwise on <strong>Sync 2D</strong>.</li>
+    <li><strong>Sync 2D:</strong> views are grouped by type and scale (only groups of 2 or more appear). Tick the views to include and pick the <strong>source</strong> with the round button.</li>
+    <li><strong>Match 3D:</strong> pick the <strong>owner</strong> (read from) with the round button and tick the views to write to. Under Match Options choose <strong>Visual Style</strong>, <strong>Detail Level</strong> (both on by default) and <strong>Section Box</strong> (off by default).</li>
+    <li>Click <strong>Sync Now</strong> / <strong>Match Now</strong> for a one-time match, or <strong>Start Sync</strong> / <strong>Start Match</strong> to keep them matched. The window shrinks to a small floating panel with a red stop button; while it runs, whichever synced view you move drives the others.</li>
+  </ol>
+  <p><strong>All</strong> and <strong>Clear</strong> tick or untick every view. <strong>Element Visibility →</strong> (or <strong>EV</strong> on the floating panel) stops syncing and opens <a href="#ev">Element Visibility</a>.</p>
+  <ul>
+    <li>2D syncing only changes zoom and pan, so it doesn't touch the model or Undo.</li>
+    <li>3D matching changes the views' properties. Each one-time match is one Undo step; in continuous 3D mode every automatic update is its own Undo step.</li>
+    <li>2D views must share the same view type <strong>and</strong> scale. Views opened after the window loads appear when you switch tabs or reopen the window.</li>
+  </ul>
+
+  <h2 id="ev">Element Visibility</h2>
+  <p class="where">Inspection › Elem Visibility</p>
+  <p>Answers "why is this element showing in one view and missing in another?" by running about 25 checks on the view where it's missing and listing the likely cause.</p>
+  <ol>
+    <li>Run Elem Visibility. In <strong>Element Visibility - Setup</strong>, choose the element: <strong>Pick Element</strong> (click the instance in a view where it shows), <strong>Enter ID</strong>, <strong>Use Last</strong>, or the <strong>Recent</strong> list (your last 20).</li>
+    <li>Pick the <strong>Source view (visible)</strong> and the <strong>Target view (missing)</strong>. Type in either box to filter the list.</li>
+    <li>Click <strong>Analyze</strong>. If you got the two views backwards, it offers to swap them.</li>
+    <li>The results show the element, both views, the Target's view template (and whether it locks the category), the <strong>Likely cause</strong>, and a <strong>Visibility checks</strong> list (click to expand) with PASS, WARN and FAIL for each check.</li>
+    <li><strong>Copy Report</strong> puts a plain-text report on the clipboard for an email or RFI.</li>
+  </ol>
+  <p>The checks include: worksets, category and subcategory V/G, view filters, Hide in View, graphic overrides (100% transparency), temporary hide/isolate, parts, detail level, discipline, phase and phase filter, design options, scope box, crop region, section box and annotation crop, level association, underlay, view range, plan regions, far clip, Revit links and imported categories.</p>
+  <p>It doesn't change your model. It reads the views, and for links it makes a temporary probe that is always undone. When nothing fails it lists other places to look (transparency, analytical model, view-specific elements, underlay, link overrides). Crop, section box and scope box tests use the element's bounding box.</p>
+
+  <h2 id="snoop">Snoop Selection</h2>
+  <p class="where">Inspection › Look › Snoop Selection</p>
+  <p>A read-only inspector for any element: parameters, properties, bounding box and linked objects you can drill into, and a side-by-side compare when several elements are selected.</p>
+  <ol>
+    <li>Select one or more elements (or run it and pick when asked).</li>
+    <li>The left panel lists your elements. The right panel shows <strong>Member</strong>, <strong>Value</strong> and <strong>Type</strong>, grouped into Object, Bounding Box, Fields, Properties, Indexers, Methods and Parameters.</li>
+    <li><strong>Double-click</strong> a linked row to drill into it; <strong>Back</strong> and <strong>Home</strong> step out. Double-clicking an element or ElementId row selects that element in Revit and zooms to it.</li>
+    <li><strong>Search</strong> filters rows as you type. With 2 or more elements, <strong>Similarities</strong> shows values they share and <strong>Differences</strong> shows values that vary.</li>
+    <li><strong>Copy</strong> puts the selected rows (or all rows) on the clipboard, tab-separated for Excel. <strong>Export CSV</strong> writes <code>%TEMP%\snoop_selection_export.csv</code>.</li>
+  </ol>
+  <p>It never changes the model. The window keeps Revit busy until you close it. Geometry members are left out.</p>
+
+  <h2 id="superfilter">Super Filter</h2>
+  <p class="where">Inspection › Look › Super Filter</p>
+  <p>Narrows a set of elements by unchecking what you don't want, by category, family and type or by any parameter value, then selects the rest in Revit.</p>
+  <ol>
+    <li>Pick a scope on the right: <strong>Current Selection</strong> (loads automatically if something was selected), <strong>Elements Visible in View</strong>, <strong>Elements Belonging to View</strong> (annotation and detail items) or <strong>All Model Elements</strong>.</li>
+    <li>On the <strong>Categories</strong> tab, uncheck what you don't want in the All › Category › Family › Type tree. Or use the <strong>Parameters</strong> tab: All › parameter › value (blank values show as "(empty)").</li>
+    <li>The footer counts what's left. <strong>Select</strong> puts it into the Revit selection and closes.</li>
+  </ol>
+  <ul>
+    <li><strong>Update Selection</strong> narrows the working set to what's checked and rebuilds both tabs, so you can filter by category and then by parameter.</li>
+    <li><strong>Box-Select to Add</strong> lets you drag a box in the view to add more elements, then returns.</li>
+    <li><strong>Expand All</strong>, <strong>Collapse All</strong>, <strong>Check All</strong> and <strong>Uncheck All</strong> act on the open tab.</li>
+  </ul>
+  <p>The result comes from the tab that's open when you click Select. It only changes the selection, never the model. Very large "All Model Elements" scopes can take a moment to load.</p>
+
+  <h2 id="compare">Compare</h2>
+  <p class="where">Inspection › Look › Compare</p>
+  <p>A side-by-side table of properties for fabrication parts, families, schedules or views, with differences highlighted.</p>
+  <ol>
+    <li>Choose a <strong>Mode</strong>: <strong>Elements</strong>, <strong>Families</strong>, <strong>Schedules</strong> or <strong>Views</strong> (the last mode is remembered).</li>
+    <li>Click <strong>Select Items</strong>:
+      <ul>
+        <li><strong>Elements:</strong> pick 2 or more fabrication parts (or have them selected first).</li>
+        <li><strong>Families:</strong> choose categories, then exactly two families, then what to compare: Family Properties, Family Parameters, Family Types.</li>
+        <li><strong>Schedules:</strong> choose 2 or more schedules, then Fields, Filters, Sorting/Grouping, Field Formatting.</li>
+        <li><strong>Views:</strong> choose Project Views or View Templates, exactly two, then Model, Annotation, Analytical and Imported Categories, Filters, Worksets, Revit Links.</li>
+      </ul>
+    </li>
+    <li>Use <strong>Everything</strong>, <strong>Differences</strong> or <strong>Same</strong> to filter the table. <strong>Export CSV</strong> and <strong>Export XLS</strong> save all rows.</li>
+  </ol>
+  <p>Compare only reads; nothing in the model changes. Elements mode works with fabrication parts only. The table shows up to 10 items side by side; exports include every item.</p>
+
+  <h2 id="findsheet">Find Sheet</h2>
+  <p class="where">Inspection › Look › Find Sheet</p>
+  <ol>
+    <li>Select a view in the Project Browser.</li>
+    <li>Run Find Sheet. If the view is on one sheet, it asks to open it. If it's on several, pick one from the list (up to 4 are offered). If it isn't on a sheet, a notice says so.</li>
+  </ol>
+  <p>Schedules and view templates aren't supported. Nothing in the model changes.</p>
+
+  <h2 id="ductorient">Duct Orient</h2>
+  <p class="where">Inspection › Duck › Duct Orient</p>
+  <p>Checks that each rectangular fabrication duct's labeled Width really is the horizontal side (and Depth the vertical), by reading the connector geometry, and fixes the ones that are turned 90°. Works on horizontal, sloped and vertical runs.</p>
+  <ol>
+    <li>Load parts: select fabrication duct first, or use <strong>Pick Elements</strong>, <strong>All in View</strong> or <strong>Visible</strong>.</li>
+    <li>Click <strong>Analyze</strong>. The table lists each part's Id, Service, Labeled size, Actual orientation (H x V) and Status: <strong>Correct</strong>, <strong>MISMATCHED</strong>, <strong>OK (Square)</strong> or <strong>Skipped</strong>. Mismatched parts are listed first and selected in Revit.</li>
+    <li><strong>Fix Mismatched</strong> rotates each mismatched part 90° about its own axis (one Undo step) and re-checks.</li>
+    <li><strong>Select in Revit</strong> selects and zooms to the mismatched parts; <strong>Export CSV</strong> saves the table.</li>
+  </ol>
+  <p>Parts need Main Primary Width and Depth and a rectangular connector; others are skipped. Analyze doesn't change the model.</p>
+
+  <h2 id="coil">Coil Duct</h2>
+  <p class="where">Inspection › Duck › Coil Duct</p>
+  <p>Works out each rectangular fabrication straight's overall cut length (body length plus the two connector allowances), checks it against your coil width, tags the result and colors the parts in the active view.</p>
+  <ol>
+    <li>Set <strong>Coil Width</strong> (default 60 in) and <strong>Write tags to</strong> (Comments or another text parameter).</li>
+    <li>In <strong>Valid Coil Connectors</strong>, tick the connectors that can go on the coil line and set each one's <strong>Allowance (in)</strong>. The defaults are None, RAW, RAW 1 NOTCH and DM 35 at 0", S&amp;D and S&amp;S at 0.5", and TDC at 1.875". <strong>Scan Model</strong> or <strong>Scan Database</strong> adds connectors you use (unticked, at 0").</li>
+    <li>Select parts, or use <strong>Pick Elements</strong>. Click <strong>Run Analysis</strong>. With nothing selected it offers to check all fabrication duct in the model.</li>
+  </ol>
+  <table>
+    <tr><th>Result</th><th>Tag written</th><th>Color</th></tr>
+    <tr><td>Fits and uses valid connectors, not yet coil</td><td>Should be Coil</td><td>Green</td></tr>
+    <tr><td>Set as coil but isn't a straight or has a connector that's not ticked</td><td>Should not be Coil</td><td>Red</td></tr>
+    <tr><td>Longer than the coil width (+1/4")</td><td>Fitting too Long</td><td>Purple</td></tr>
+    <tr><td>Already coil and correct</td><td>(none)</td><td>(none)</td></tr>
+  </table>
+  <p>Tags and colors are one Undo step, and the "Should be Coil" parts are left selected. The notice totals the linear feet of coil. Settings save on every run; <strong>Export</strong> and <strong>Import</strong> share a connector profile (.json) with your team, and <strong>Save Default</strong> keeps the current setup. Colors go on the active view only, and old tags and colors aren't cleared before a new run.</p>
+
+  <h2 id="renumber">Renumber</h2>
+  <p class="where">Designation › Renumber</p>
+  <p>Writes sequential numbers (with prefix, suffix and zero padding) into one to three parameters, in an order you control, with an option to give identical parts the same number.</p>
+  <ol>
+    <li>Select elements (or use <strong>Pick Elements</strong>). Trim the set with <strong>Deselect Elements</strong> (by individual, category, family, type or parameter value) or <strong>Filter Selection</strong> (keep one parameter value).</li>
+    <li>Set <strong>Target A</strong> (required), and optionally <strong>Target B</strong> and <strong>C</strong>. Assembly Mark and fabrication Item Number are available.</li>
+    <li>Set <strong>Prefix</strong>, <strong>Start</strong> (default 1), <strong>Suffix</strong> and <strong>Pad</strong> (digits, for 001-style numbers).</li>
+    <li>Choose <strong>Ordering</strong>:
+      <ul>
+        <li><strong>Group</strong>: All at Once, By Category, By Family, By Type, or Order by Parameter. <strong>Group Order</strong> sets which group comes first. Numbering continues from one group to the next.</li>
+        <li><strong>Order</strong>: Largest → Smallest, Smallest → Largest, Clockwise, Counterclockwise, or Follow spline (click <strong>Pick Curve</strong>).</li>
+        <li>Or tick <strong>Manual pick order</strong> and click <strong>Pick Order</strong>, then click elements in the order you want; <kbd>Esc</kbd> when done.</li>
+      </ul>
+    </li>
+    <li>Optional: <strong>Same number for identical parts</strong>, with the fields to compare (fabrication fields like Alias, CutType, Gauge, Service; common fields like Size, Length, Material) and a <strong>Length tolerance</strong> from Exact to 1". <strong>Include nested families</strong>. <strong>Place TextNote tags after renumbering</strong> (uses a text type named "Renumber Tag" if you have one).</li>
+    <li>Click <strong>OK</strong>, or <strong>Run &amp; Place Tags</strong> to number and then open <a href="#tags">Place Tags</a> for the same elements.</li>
+  </ol>
+  <p>Renumbering is one Undo step (TextNotes are a second). Writing to Item Number also fills CP_Item Number if you have it. <strong>Save</strong> and <strong>Load</strong> keep setups as .xml profiles; otherwise your last settings are remembered until Revit closes.</p>
+
+  <h2 id="tags">Place Tags</h2>
+  <p class="where">Designation › Place Tags</p>
+  <p>Tags many elements across categories in one go, with offset, rotation and leader control.</p>
+  <ol>
+    <li>Select the elements to tag, or click <strong>Select Elements in Revit</strong>. <strong>Include Nested Families</strong> adds nested instances when you pick.</li>
+    <li>The <strong>Tag Configuration</strong> list shows each category, its count and the tag it will use (picked automatically from loaded tags). <strong>Double-click</strong> a row to choose a different tag, or to load a tag family (.rfa) if none is loaded.</li>
+    <li>Set <strong>Offsets</strong> in inches: Up/Down (default 12") and Along (default 0").</li>
+    <li>Set <strong>Orientation</strong>: In-Line, Horizontal, Vertical or Perpendicular, plus an <strong>Extra Angle</strong>. Choose a <strong>Leader</strong>: None, Attached End or Free End (with a <strong>Shoulder</strong> length).</li>
+    <li>Leave <strong>Skip Already Tagged</strong> on to avoid duplicates on reruns. Click <strong>Place Tags</strong>.</li>
+  </ol>
+  <p>Tags go in the active view, one Undo step. Save the setup as a <strong>profile</strong> (name it and click Save As) and pick it from the list next time. The notice reports how many were placed, skipped and failed; an element fails when its category has no tag assigned or no placement point.</p>
+
+  <h2 id="viewconv">View Converter</h2>
+  <p class="where">Designation › Spin › View Converter</p>
+  <p>Turns a Legend into a Drafting view, or a Drafting view into a Legend, by rebuilding its contents.</p>
+  <ol>
+    <li>Choose <strong>Legend → Detail</strong> or <strong>Detail → Legend</strong>, then the source view. The <strong>Summary</strong> shows what was found and what will be rebuilt.</li>
+    <li>Options: <strong>Delete source view after conversion</strong> (off), <strong>Open result view</strong> (on), <strong>Zoom to fit</strong> (on).</li>
+    <li>Click <strong>Convert</strong>. The new view gets the source's name and scale.</li>
+  </ol>
+  <p>Rebuilt: detail lines and curves, text notes, filled regions, generic annotations and dimensions (a dimension comes back when at least two of the things it measures were rebuilt). <strong>Legend Components can't be carried over</strong> to a drafting view. Detail → Legend needs at least one existing Legend in the project. It's one Undo step, including deleting the source.</p>
+
+  <h2 id="case">Toggle Case</h2>
+  <p class="where">Designation › Spin › Toggle Case</p>
+  <ol>
+    <li>Select text notes, or click <strong>Select Elements in Revit</strong> (only text notes can be picked).</li>
+    <li>Choose <strong>Auto-Cycle</strong> (like <kbd>Shift</kbd>+<kbd>F3</kbd> in Word: UPPERCASE → Title Case → lowercase, based on the most common case in your selection), <strong>UPPERCASE</strong>, <strong>Title Case</strong> or <strong>lowercase</strong>. The <strong>Preview</strong> shows the result.</li>
+    <li>Click <strong>Apply</strong>. The window stays open so you can apply again; each Apply is one Undo step.</li>
+  </ol>
+  <p>Save a favorite mode as a <strong>profile</strong>. Title Case capitalizes every word, so acronyms like HVAC become Hvac. Tags and dimension text aren't changed.</p>
+
+  <h2 id="rotate">Rotate Multiple</h2>
+  <p class="where">Designation › Spin › Rotate Multiple</p>
+  <p>Rotates many elements, each about its own center, which Revit's Rotate can't do.</p>
+  <ol>
+    <li>Select elements or click <strong>Pick Elements</strong>. Trim with <strong>Deselect</strong> by individual, category, family or type.</li>
+    <li>Choose <strong>Manual</strong> (every element turns by the <strong>angle</strong> you type, default 90°) or <strong>Align to Reference</strong> (each element turns to match a direction: <strong>Pick Reference</strong> on a duct, pipe, line, grid, scope box or family, or <strong>Two Points</strong>; then <strong>Parallel</strong> or <strong>Perpendicular</strong>).</li>
+    <li><strong>Axis</strong>: World Z (Up) or View Normal. <strong>Center</strong>: Auto or Force BBox (more reliable for odd shapes).</li>
+    <li>Click <strong>Rotate</strong>. Pinned elements are skipped unless you allow unpinning (the checkbox, or Yes when asked); they're re-pinned afterwards.</li>
+  </ol>
+  <p>The whole run is one Undo step. The notice reports how many rotated and how many were skipped.</p>
+
+  <h2 id="convert">Convert</h2>
+  <p class="where">Designation › Spin › Convert</p>
+  <p>Replaces fabrication ductwork with native Revit ducts and fittings.</p>
+  <ol>
+    <li>Load parts: select fabrication duct, or use <strong>Pick Elements</strong>, <strong>All in View</strong> or <strong>Visible</strong>.</li>
+    <li>Choose the engine. Work in this order: <strong>Straights</strong>, then <strong>Elbows</strong>, then <strong>Transitions</strong>, then <strong>Taps</strong>. Elbows and taps connect to native duct that already exists in the active view, so straights must come first.</li>
+    <li>Leave <strong>Delete originals after conversion</strong> on (default) to replace the fabrication parts, or turn it off to keep them.</li>
+    <li>Click <strong>Convert</strong>. The results list says what was created, skipped and why.</li>
+  </ol>
+  <p>The run is one Undo step. Native ducts copy workset, phases, Comments, Mark and System Name. The model needs a native Duct Type for each shape and at least one Mechanical System Type. Taps work on round and rectangular duct.</p>
+
+  <h2 id="hangers">Set Hangers</h2>
+  <p class="where">Designation › Spin › Set Hangers</p>
+  <p>Sets Generic Model hanger families to the duct or pipe they hold: bottom-of-hanger elevation following the slope, clamp size, trapeze width and insulation (Lower Attachment), and top depths or offsets following a sloped line (Upper Attachment).</p>
+  <h3>Lower Attachment (BOH from duct or pipe)</h3>
+  <ol>
+    <li>Choose the content: <strong>Current Selection</strong>, <strong>Active View</strong> or <strong>Entire Model</strong>, or <strong>Pick Content</strong>. Duct, pipe and fabrication duct and pipe all work.</li>
+    <li>Click <strong>Scan for Hangers</strong>. Hangers within the <strong>Max hanger distance</strong> (default 1 ft) of each run are listed; distances over 0.5 ft show in orange so you can double-check them.</li>
+    <li>Insulation is read automatically, or choose the parameter that holds it. <strong>Elevation offset</strong> stores a per-family adjustment in inches (select a row, type, click <strong>Set</strong>).</li>
+    <li>Click <strong>Sync Lower</strong>. Each hanger gets its bottom elevation (CP_Hung Object Bottom Elev, BOHElevation or CP_Bottom Elevation), diameter, trapeze width and insulation, and is centered on the run.</li>
+  </ol>
+  <h3>Upper Attachment (follow a slope line)</h3>
+  <ol>
+    <li>From the start window click <strong>Pick Hangers</strong>, or use the hangers from a scan.</li>
+    <li>Click <strong>Pick Line</strong> and click the model line that sets the slope.</li>
+    <li>Click <strong>Sync Upper</strong> (or <strong>Sync Both</strong>). Hangers with structural-depth parameters get those set; others get Top Offset, or move in height.</li>
+  </ol>
+  <h3>Quick Sync</h3>
+  <p><strong>Quick Sync: Pick Part + Hanger</strong> on the start window syncs one hanger to one duct or pipe without the list, after asking whether to hang outside the insulation or on the bare surface.</p>
+  <p>Each Lower hanger is its own Undo step; Upper is one step. Status shows per row (Ready, Synced, Outside Range, No writable elevation param and so on). Settings, including per-family offsets, are remembered.</p>
+
+  <h2 id="settings">Saved settings</h2>
+  <table>
+    <tr><th>Tool</th><th>Saved in <code>%AppData%\JGriffithTech\</code></th></tr>
+    <tr><td>Compare, Convert, Rotate Multiple, Set Hangers</td><td><code>SeeNSay\ToolSettings\&lt;tool&gt;.json</code></td></tr>
+    <tr><td>Coil Duct</td><td><code>settings\coilduct.json</code> (plus any profiles you export)</td></tr>
+    <tr><td>Place Tags profiles</td><td><code>SeeNSay\TagProfiles\</code></td></tr>
+    <tr><td>Toggle Case profiles</td><td><code>SeeNSay\CaseProfiles\</code></td></tr>
+    <tr><td>Element Visibility recent IDs</td><td><code>SeeNSay\recent_ev_elements.json</code></td></tr>
+    <tr><td>Renumber</td><td>Profiles are .xml files wherever you save them</td></tr>
+  </table>
+  <p>To reset a tool, close Revit and delete its file. To share Place Tags or Toggle Case profiles, copy the files in those folders.</p>
+
+  <h2 id="trouble">Troubleshooting</h2>
+  <dl>
+    <dt>There's no See 'n' Say tab</dt>
+    <dd>Check that your Revit year was ticked in the installer: there should be a <code>JGriffithTech.SeeNSay.addin</code> in <code>%AppData%\Autodesk\Revit\Addins\&lt;year&gt;</code>. Revit 2024, 2025 and 2026 are supported. Run the installer again with Revit closed.</dd>
+    <dt>"The See 'n' Say add-in failed to load"</dt>
+    <dd>Close Revit, run the installer again, and restart. If it keeps happening, email the error text it shows.</dd>
+    <dt>A tool says "Open a project first"</dt>
+    <dd>Open a project (not a family) and run it again.</dd>
+    <dt>Element Visibility: "You picked a Type" or "That Id refers to a Type"</dt>
+    <dd>Pick the element itself in a view, or enter an instance's Element ID, not its type.</dd>
+    <dt>Element Visibility finds nothing</dt>
+    <dd>Check the suggestions it lists (transparency, analytical model, view-specific items, underlay, link overrides). Some Revit visibility rules can't be read through the API.</dd>
+    <dt>Compare: "Need at least 2 fabrication parts"</dt>
+    <dd>Elements mode compares fabrication parts only. Pick two or more; other elements are ignored.</dd>
+    <dt>Find Sheet: "Select a view in the Project Browser first"</dt>
+    <dd>Click a view (not a schedule or template) in the Project Browser, then run it.</dd>
+    <dt>Convert: "No native Duct Type found for shape"</dt>
+    <dd>Draw a short native duct of that shape, or use Manage › Transfer Project Standards › Duct Types, then run Convert again.</dd>
+    <dt>Convert: "no native endpoint near… (convert straights first)"</dt>
+    <dd>Run the Straights engine first; elbows and taps attach to native duct in the active view.</dd>
+    <dt>Coil Duct: "Enter a valid coil width in inches"</dt>
+    <dd>Type a number greater than 0 in Coil Width.</dd>
+    <dt>Coil Duct: a part has no tag or color</dt>
+    <dd>Parts that are already coil and correct, round or oval parts, and non-coil parts with unticked connectors are left alone. Colors go on the active view only.</dd>
+    <dt>Duct Orient: everything is "Skipped"</dt>
+    <dd>Parts need Main Primary Width and Depth and a rectangular connector. Round and oval duct is skipped.</dd>
+    <dt>Place Tags: elements counted as "Failed"</dt>
+    <dd>Assign a tag to each category (double-click its row) or load the tag family. Elements with no placement point can't be tagged.</dd>
+    <dt>Renumber: "No elements were updated" or "target skipped"</dt>
+    <dd>Check Target A is a parameter the elements have and that it isn't read-only (for example a type parameter or one driven by a formula).</dd>
+    <dt>Rotate Multiple: "Skipped" elements</dt>
+    <dd>Pinned elements are skipped unless you allow unpinning. In Align mode, elements without a readable direction are skipped.</dd>
+    <dt>Set Hangers: "No hangers found"</dt>
+    <dd>Hangers must be Generic Model families placed at a point. Raise <strong>Max hanger distance</strong> and click <strong>Re-Scan</strong>.</dd>
+    <dt>Set Hangers: "No writable elevation param"</dt>
+    <dd>The hanger family needs one of CP_Hung Object Bottom Elev, BOHElevation or CP_Bottom Elevation as a writable instance parameter.</dd>
+    <dt>Set Hangers Upper: "Outside Range" or "No slope line"</dt>
+    <dd>Click <strong>Pick Line</strong> and pick a model line that runs past every hanger you want to set.</dd>
+    <dt>View Converter: "No existing Legend views found to use as template"</dt>
+    <dd>Create one Legend view in the project (View › Legends), then convert Detail → Legend again.</dd>
+    <dt>Something else</dt>
+    <dd>Email <a href="mailto:jeremiah@jgriffithtech.com">jeremiah@jgriffithtech.com</a> with the tool, what you did, a screenshot of any message, your Revit version, and the See 'n' Say version (shown on the splash when Revit starts).</dd>
+  </dl>
+
+  <h2 id="contact">Contact</h2>
+  <p>Questions or feature requests: <a href="mailto:jeremiah@jgriffithtech.com">jeremiah@jgriffithtech.com</a>.</p>
+  <p class="fine">Made by JGriffith Tech. See 'n' Say runs entirely on your computer and sends nothing anywhere. Not affiliated with or endorsed by Autodesk, Inc. Autodesk and Revit are registered trademarks or trademarks of Autodesk, Inc.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User guide · JGT Navisworks Tools</title>
+<meta name="description" content="How to install and use JGT Navisworks Tools for Navisworks Manage 2026: Copy Element ID, Section Palette, Views & Markup, the Saved Viewpoints menu, Selection Tree, Capture Color Profile, licensing, and troubleshooting.">
+<style>
+  :root { --navy: #0F172A; --slate: #1E293B; --line: #334155; --gold: #D4A926; --text: #E2E8F0; --sub: #94A3B8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--navy); color: var(--text); font: 16px/1.65 "Segoe UI", Arial, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 44px 20px 70px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; color: #F1F5F9; }
+  .lead { color: var(--sub); font-size: 18px; margin: 0 0 18px; }
+  nav.toc { background: var(--slate); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; margin: 0 0 8px; font-size: 15px; }
+  nav.toc a { display: inline-block; margin: 2px 14px 2px 0; }
+  h2 { color: var(--gold); font-size: 21px; margin: 40px 0 10px; padding-top: 6px; border-top: 1px solid var(--slate); scroll-margin-top: 12px; }
+  h3 { color: #F1F5F9; font-size: 17px; margin: 22px 0 6px; scroll-margin-top: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0; }
+  th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--slate); vertical-align: top; }
+  th { color: var(--sub); font-size: 13px; }
+  kbd { background: var(--slate); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; font: 13px Consolas, monospace; white-space: nowrap; }
+  code { background: var(--slate); border-radius: 4px; padding: 0 5px; font: 14px Consolas, monospace; overflow-wrap: anywhere; }
+  .tag { font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 10px; white-space: nowrap; }
+  .piece { background: #3B300B; color: var(--gold); } .free { background: #1E3A2B; color: #9FC28F; }
+  .tip { background: rgba(212,169,38,.08); border: 1px solid #6B5714; border-radius: 8px; padding: 10px 14px; margin: 12px 0; font-size: 15px; }
+  ol li, ul li { margin: 6px 0; }
+  a { color: var(--gold); }
+  dt { font-weight: 600; color: #F1F5F9; margin-top: 16px; }
+  dd { margin: 4px 0 0 0; color: var(--text); }
+  .fine { color: var(--sub); font-size: 13px; margin-top: 44px; }
+  @media (max-width: 560px) { h1 { font-size: 24px; } table { font-size: 14px; } }
+</style>
+<script defer src="/hit.js"></script>
+
+<style id="jgt-top-css">.jgt-top{background:#0B1222;border-bottom:1px solid #1E293B}.jgt-top-in{max-width:1100px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:10px 22px;flex-wrap:wrap}.jgt-top-logo img{height:32px;display:block}.jgt-top-links{display:flex;flex-wrap:wrap;gap:4px 16px;font:500 14px/1.6 "Segoe UI",Arial,sans-serif}.jgt-top-links a{color:#94A3B8;text-decoration:none;white-space:nowrap}.jgt-top-links a:hover,.jgt-top-links a.on{color:#D4A926}</style>
+</head>
+<body>
+<header class="jgt-top" id="jgt-top"><div class="jgt-top-in"><a class="jgt-top-logo" href="/"><img src="/logo-nav.png" alt="JGriffith Tech"></a><nav class="jgt-top-links" aria-label="Site"><a href="/">Home</a><a href="/#apps">Mobile Apps</a><a href="/seensay">See 'n' Say</a><a class="on" href="/navisworks-tools">Navisworks</a><a href="/forma-tools">Forma Tools</a><a href="/clash-export">Clash Export</a><a href="/detailers-path">Detailer's Path</a><a href="/testers">Beta</a></nav></div></header>
+<main>
+  <h1>JGT Navisworks Tools: user guide</h1>
+  <p class="lead">Everything the JGT tab does in Navisworks Manage 2026, step by step, plus fixes for the problems people run into. Back to the <a href="/navisworks-tools">product page</a>.</p>
+  <nav class="toc">
+    <a href="#start">Getting started</a><a href="#license">Trial and license</a><a href="#panes">Docking the panes</a><a href="#elementid">Element ID</a><a href="#section">Section Palette</a><a href="#views">Views &amp; Markup</a><a href="#viewpoints-menu">Saved Viewpoints menu</a><a href="#tree">Selection Tree</a><a href="#color">Color profiles</a><a href="#theme">Theme</a><a href="#trouble">Troubleshooting</a><a href="#new">What's new</a>
+  </nav>
+
+  <h2 id="start">Getting started</h2>
+  <ol>
+    <li><strong>Close Navisworks.</strong></li>
+    <li>Download the zip from the <a href="/navisworks-tools">product page</a> (or your Gumroad receipt). Right-click it, choose <strong>Extract All</strong>, and open the extracted folder. Don't run anything from inside the zip.</li>
+    <li>Double-click <strong>Install.cmd</strong>. It needs no admin rights, installs for your Windows user only, and replaces any older JGT version.</li>
+    <li>Start <strong>Navisworks Manage 2026</strong> and open the <strong>JGT</strong> ribbon tab.</li>
+  </ol>
+  <p>The JGT tab has these panels. On a narrow window Navisworks folds each panel into a single dropdown button with the panel's name; click it to see the buttons.</p>
+  <table>
+    <tr><th>Panel</th><th>Button</th><th>Shortcut</th><th>Comes with</th></tr>
+    <tr><td>Revit Link</td><td>Copy Element ID</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd></td><td><span class="tag piece">JGT Element ID</span></td></tr>
+    <tr><td>Revit Link</td><td>Copy ID + Details</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>E</kbd></td><td><span class="tag piece">JGT Element ID</span></td></tr>
+    <tr><td>Appearance</td><td>Capture Color Profile, Profile to .dat</td><td></td><td><span class="tag free">Any JGT tool</span></td></tr>
+    <tr><td>Section</td><td>Section Palette</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd></td><td><span class="tag piece">JGT Section</span></td></tr>
+    <tr><td>Review</td><td>Views &amp; Markup</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd></td><td><span class="tag piece">JGT Views</span></td></tr>
+    <tr><td>Model</td><td>Selection Tree</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd></td><td><span class="tag piece">JGT Views</span></td></tr>
+    <tr><td>Settings</td><td>Theme, License</td><td></td><td><span class="tag free">Always free</span></td></tr>
+  </table>
+  <div class="tip">The keyboard shortcuts work when the <strong>3D view</strong> has focus. If one does nothing, click once in the 3D view and press it again.</div>
+
+  <h2 id="license">Trial and license</h2>
+  <p>JGT Element ID, JGT Section and JGT Views are sold separately, or all three in the bundle. Each has its own <strong>free 30-day trial</strong>.</p>
+  <h3>Start a trial</h3>
+  <ol>
+    <li>Open the tool (for example press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd> for Views).</li>
+    <li>Until it's licensed, the pane shows a card describing the tool. Click <strong>Start free 30-day trial</strong>. There's no signup and no key.</li>
+  </ol>
+  <p>The trial starts when you click, not when you install, and reinstalling doesn't restart it. Capture Color Profile and Profile to .dat work while any trial or key is active.</p>
+  <h3>Enter a license key</h3>
+  <ol>
+    <li>Copy the key from your Gumroad receipt email (it looks like <code>XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX</code>).</li>
+    <li>On the JGT tab click <strong>Settings › License</strong>, paste the key and click <strong>Activate</strong>.</li>
+    <li>The window lists what the key unlocks. Open panes switch from the trial card to the tool straight away.</li>
+  </ol>
+  <p>A key works on <strong>up to 5 computers</strong>. The key is checked with Gumroad when you activate it and about once a week after that; if you're offline it keeps working for 30 days. The key is the only thing the tools ever send anywhere.</p>
+  <h3>Moving to a new computer</h3>
+  <p>On the old computer open <strong>Settings › License</strong> and click <strong>Remove</strong> next to the key. That frees one of its 5 computers for the new one.</p>
+
+  <h2 id="panes">Docking the panes</h2>
+  <p>Section Palette, Views &amp; Markup and the Selection Tree are Navisworks dock panes, like the built-in Selection Tree or Properties. Each one:</p>
+  <ul>
+    <li><strong>Opens floating</strong> the first time. Drag its title bar and drop it on one of the blue docking guides (the arrows of the center cross, or the arrows at the window edges). Let go while the blue shadow shows where it will land.</li>
+    <li>Can <strong>tab</strong> with another pane: drop it on the middle of the cross over that pane. For example, drop the JGT Selection Tree onto Navisworks' own Selection Tree.</li>
+    <li>Has a <strong>pin</strong> when docked under the ribbon: unpin it and it shrinks to a side tab that slides out when you point at it.</li>
+    <li>Is listed under <strong>View › Windows</strong>, and its JGT button or shortcut shows or hides it.</li>
+  </ul>
+  <p>Navisworks remembers where you leave each pane.</p>
+
+  <h2 id="elementid">Element ID <span class="tag piece">JGT Element ID</span></h2>
+  <h3>Copy Element ID</h3>
+  <ol>
+    <li>Select one or more items in the 3D view or the Selection Tree.</li>
+    <li>Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> (or <strong>JGT › Copy Element ID</strong>).</li>
+    <li>A small notice at the bottom right says what was copied, for example <em>Copied 3 IDs: 5907150;5907151;5907152</em>, and which file they came from.</li>
+    <li>In Revit open <strong>Manage › Select by ID</strong>, paste with <kbd>Ctrl</kbd>+<kbd>V</kbd>, and click <strong>Show</strong> or <strong>OK</strong>.</li>
+  </ol>
+  <p>IDs are separated by <code>;</code>, the format Select by ID expects, and duplicates are removed. Selecting a piece of geometry inside an element still gives you the element's ID.</p>
+  <h3>Copy ID + Details</h3>
+  <p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>E</kbd> copies one line per element: Element ID, name and the source file. Paste it into Excel and it lands in three columns. Use it whenever the selection spans several models, because <strong>a Revit Element ID is only unique within one Revit file</strong>.</p>
+  <h3>Where the ID comes from</h3>
+  <p>It works on locally exported NWCs and on ACC Model Coordination models. For each item it looks at the item and its parents and takes the first of: the <em>Element ID</em> property, the <em>Element › Id</em> property, or the number in square brackets at the end of the item's name (how ACC models carry it, for example <code>Strut Hanger [5907150]</code>).</p>
+  <table>
+    <tr><th>The notice says</th><th>What it means</th></tr>
+    <tr><td>Copied 2 IDs. 1 item had no Element ID.</td><td>Some selected items aren't from Revit (or lost their IDs on export). The others were copied.</td></tr>
+    <tr><td>Select a part first.</td><td>Nothing was selected. The clipboard wasn't changed.</td></tr>
+    <tr><td>No Revit Element ID found on selection.</td><td>None of the items carry an ID. See <a href="#t-noid">Troubleshooting</a>.</td></tr>
+    <tr><td>…Checked the first 5,000 of N selected items.</td><td>Very large selections are capped at 5,000 items.</td></tr>
+    <tr><td>Clipboard is busy. Nothing was copied.</td><td>Another program is holding the clipboard. Try again.</td></tr>
+  </table>
+
+  <h2 id="section">Section Palette <span class="tag piece">JGT Section</span></h2>
+  <p>All six section planes and the section box in one pane, so you don't go into the Sectioning Tools tab. Open it with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>. It follows the section live: drag Navisworks' gizmo or open a saved viewpoint and the pane updates.</p>
+  <ul>
+    <li><strong>Header:</strong> Section on/off, <strong>Planes</strong> or <strong>Box</strong> mode, and <strong>Linked</strong> (the planes move together, for a slice of fixed thickness).</li>
+    <li><strong>Gizmo row:</strong> Move, Rotate and Scale (box mode) start Navisworks' own gizmos, and <strong>Fit selection</strong> fits the section to the selection. A button turns gold while its gizmo is on.</li>
+    <li><strong>One row per plane:</strong> an on/off box, <strong>Plane N</strong> (makes it the current plane, which the gizmo follows), the cut dropdown, and <strong>Flip</strong>, which cuts away the other side.</li>
+  </ul>
+  <h3>The cut dropdown</h3>
+  <ul>
+    <li><strong>Top, Bottom, Front, Back, Left, Right</strong> and <strong>Align to View</strong> apply as soon as you choose them.</li>
+    <li><strong>Align to Surface:</strong> the status bar turns gold. Click any face in the 3D view and the plane aligns to it.</li>
+    <li><strong>Align to Line:</strong> click two points along a line (they snap to edges and corners). The plane is set square to that line.</li>
+    <li><kbd>Esc</kbd> or a right-click cancels a pick and gives you your previous tool back.</li>
+  </ul>
+  <h3>Box mode</h3>
+  <p><strong>Box selection</strong> boxes the selected items plus a padding (default 1'-0"; type a new one in <strong>Pad</strong> and press <kbd>Enter</kbd>). <strong>Box the whole model</strong> fits the box to everything. Positions and padding take feet and inches (<code>12'-6"</code>, <code>12' 6 1/2"</code>, <code>150"</code>, <code>12.5</code> = feet) or metric (<code>3810mm</code>, <code>3.81 m</code>).</p>
+  <p><strong>Save viewpoint</strong> stores the current view and section under the name you type. <strong>Reset</strong> puts every plane back to Navisworks' default.</p>
+
+  <h2 id="views">Views &amp; Markup <span class="tag piece">JGT Views</span></h2>
+  <p>Saved viewpoints, comments and markup in one pane. Open it with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd>. Everything you do here goes through Navisworks' own saved viewpoints, so <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes it.</p>
+  <h3>Save a view</h3>
+  <ol>
+    <li>Set up the camera (and section) you want.</li>
+    <li>Click <strong>New view</strong>. The view is saved straight away under the next automatic name and the name opens for typing.</li>
+    <li>Type a name and click anywhere else. <kbd>Enter</kbd> and <kbd>Tab</kbd> also work; <kbd>Esc</kbd> keeps the automatic name.</li>
+  </ol>
+  <p>The <strong>Name</strong> box sets the automatic names: <code>{n}</code> counts up and <code>{nnn}</code> pads with zeros, so <code>RFI-{nnn}</code> gives RFI-001, RFI-002 and so on. The count continues after the highest number already used. New views go into the selected folder.</p>
+  <h3>Work with views</h3>
+  <ul>
+    <li><strong>Click</strong> a view to go to it. <strong>Double-click</strong> or <kbd>F2</kbd> renames it.</li>
+    <li><strong>Drag</strong> a view onto a folder to move it in, or between two views to reorder.</li>
+    <li><strong>Update</strong> re-saves the selected view from what's on screen now. <strong>Folder</strong> adds a folder.</li>
+    <li><strong>Delete</strong> (or the <kbd>Delete</kbd> key) asks for a second click on <strong>Confirm</strong> instead of a dialog; it cancels itself after 4 seconds.</li>
+    <li>The <strong>search box</strong> filters by view name and comment text.</li>
+    <li>The current view shows in bold gold. A colored dot and a number show the latest comment status and how many comments a view has.</li>
+  </ul>
+  <h3>Select several views</h3>
+  <p><kbd>Ctrl</kbd>+click adds or removes a view, <kbd>Shift</kbd>+click (or <kbd>Shift</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd>) selects a range, <kbd>Ctrl</kbd>+<kbd>A</kbd> selects every visible view, and <kbd>Esc</kbd> clears the selection. Then <strong>Delete</strong>, <strong>drag to move</strong> and <strong>Copy name</strong> act on all of them; a folder brings what's inside it. A plain click picks one view again.</p>
+  <h3>Comments</h3>
+  <p>Select a view, type a comment, pick a status (New, Active, Approved, Resolved) and click <strong>Add</strong> (or <kbd>Ctrl</kbd>+<kbd>Enter</kbd>). Select one or several comments to change their status or delete them.</p>
+  <h3>Markup</h3>
+  <ul>
+    <li><strong>Cloud, Arrow, Line, Text, Tag, Pen, Ellipse</strong> and <strong>Erase</strong> switch the 3D view to Navisworks' markup tools; <strong>Done</strong> goes back to Select. If no saved view is current, one is saved first so the markup lands on a named view.</li>
+    <li>The <strong>color swatches</strong> and <strong>Thickness</strong> set the color and line weight. With markups selected in the list they change those markups; with none selected they set the style for new ones (shared with Review › Markup on the ribbon).</li>
+    <li>The <strong>markup list</strong> shows every markup on the current view. Click a markup in the 3D view to select it in the list (<kbd>Ctrl</kbd>+click adds). <strong>All</strong> selects every one.</li>
+    <li><strong>Move</strong>: select markups, click Move and drag in the 3D view. <kbd>Esc</kbd> or a right-click ends it. Arrow keys in the list nudge them (<kbd>Ctrl</kbd> for bigger steps).</li>
+    <li><strong>Text</strong> edits a selected Text or Tag markup. <strong>Delete</strong> removes the selected markups.</li>
+    <li><strong>Convert to cloud</strong> turns selected lines and ellipses into revision clouds, or, with nothing selected, lets you drag a box around markups to cloud them. <strong>Arch</strong> sets the cloud's arc size. Right-click a markup for <strong>Cloud around</strong> (a cloud hugging the selection), <strong>Flip arches</strong>, Duplicate and more.</li>
+    <li><strong>Undo</strong> in the markup list steps back through markup changes on that view (the last 30 are kept).</li>
+  </ul>
+  <h3>Resizing the pane</h3>
+  <p>Drag the handles between the views list, Comments and Markup. Click a section's header to fold it away; the views list takes the room. Sizes are remembered.</p>
+
+  <h2 id="viewpoints-menu">The Saved Viewpoints menu <span class="tag piece">JGT Views</span></h2>
+  <p>The same menu as Navisworks' own Saved Viewpoints window. <strong>Right-click empty space</strong> in the views list for the menu acting on the top level, or <strong>right-click a view or folder</strong> to act there.</p>
+  <dl>
+    <dt>Save Viewpoint, New Folder</dt>
+    <dd>Same as the New view and Folder buttons.</dd>
+    <dt>Add Animation</dt>
+    <dd>Adds a viewpoint animation. To add frames, select the animation and click <strong>New view</strong> for each camera position, or drag existing views onto it. Click the animation to play it.</dd>
+    <dt>Add Cut</dt>
+    <dd>Inside an animation, adds a cut after the selected frame, so the animation jumps instead of gliding to the next frame. Available when you right-click an animation or a frame in one.</dd>
+    <dt>Sort</dt>
+    <dd>Sorts A to Z with numbers in order (View 2 before View 10), folders first, through every folder below. From empty space it sorts everything; from a folder, what's in it; from a view, its folder. Animations keep their frame order. <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes it one move at a time.</dd>
+    <dt>Import Viewpoints…</dt>
+    <dd>Navisworks' own importer: pick a viewpoints <code>.xml</code> and its views are added.</dd>
+    <dt>Export Viewpoints…</dt>
+    <dd>Navisworks' own exporter: saves every view to an <code>.xml</code> others can import.</dd>
+    <dt>Export Selected Viewpoints (N)…</dt>
+    <dd>Saves only the views you picked (with <kbd>Ctrl</kbd>/<kbd>Shift</kbd>, or the one you right-clicked). Picking a folder includes everything in it. Nothing is deleted from your model.</dd>
+    <dt>Export Viewpoints Report…</dt>
+    <dd>Navisworks' HTML report of every view.</dd>
+  </dl>
+  <p>Like the native window, folders can't go inside animations and cuts only live inside animations.</p>
+
+  <h2 id="tree">Selection Tree <span class="tag piece">JGT Views</span></h2>
+  <p>Navisworks' Selection Tree with the things it's missing: expand and collapse menus, multi-select and a real search. Open it with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd> or <strong>JGT › Model › Selection Tree</strong>.</p>
+  <h3>Modes</h3>
+  <ul>
+    <li><strong>Standard</strong>: the whole hierarchy (files, layers, groups, objects and geometry).</li>
+    <li><strong>Compact</strong>: down to objects, without the geometry rows.</li>
+    <li><strong>Properties</strong>: category › property › value › items. Click a value to select everything that has it. The first time, it reads the model's properties in the background; the status bar shows progress.</li>
+    <li><strong>Sets</strong>: your selection and search sets. Click one to select it; expand it to see what's in it.</li>
+  </ul>
+  <h3>Selecting</h3>
+  <p>Click selects in the model, <kbd>Ctrl</kbd>+click adds or removes, <kbd>Shift</kbd>+click selects a range. Visible items show in <strong>bold</strong>, hidden items in grey italics and Required items in red, as in Navisworks.</p>
+  <p>With <strong>Follow</strong> on (gold), selecting something in the 3D view opens the tree down to it and scrolls it into view. <strong>Locate</strong> does the same once.</p>
+  <h3>Right-click menu</h3>
+  <ul>
+    <li><strong>Expand all</strong>, <strong>Collapse all</strong>, <strong>Expand selected</strong>, <strong>Collapse selected</strong>, <strong>Expand to level</strong> 1 to 6, <strong>Locate selection in tree</strong>.</li>
+    <li><strong>Select same</strong> Name or Type, <strong>Select children</strong>, <strong>Invert selection</strong>.</li>
+    <li><strong>Hide</strong> (toggles), <strong>Required</strong>, <strong>Hide unselected</strong>, <strong>Unhide all</strong>.</li>
+    <li><strong>Zoom</strong>, <strong>Focus</strong>, <strong>Appearance</strong> (override color, transparency, reset).</li>
+    <li><strong>Save selection as set</strong>, <strong>Save matches as set</strong>, <strong>Update set from current selection</strong> (in Sets mode).</li>
+    <li><strong>Copy name</strong>, <strong>Copy path</strong>.</li>
+  </ul>
+  <h3>Keys</h3>
+  <table>
+    <tr><th>Key</th><th>Does</th></tr>
+    <tr><td><kbd>↑</kbd> <kbd>↓</kbd> <kbd>Home</kbd> <kbd>End</kbd> <kbd>PgUp</kbd> <kbd>PgDn</kbd></td><td>Move (with <kbd>Shift</kbd> to extend the selection)</td></tr>
+    <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Close or open a row</td></tr>
+    <tr><td><kbd>*</kbd> (numeric keypad)</td><td>Expand the selected rows fully</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>→</kbd> / <kbd>←</kbd></td><td>Expand all / Collapse all</td></tr>
+    <tr><td><kbd>Enter</kbd></td><td>Zoom to the selection</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>H</kbd> / <kbd>Ctrl</kbd>+<kbd>R</kbd></td><td>Hide / Required</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></td><td>Copy names / paths</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>F</kbd>, <kbd>F3</kbd>, <kbd>Shift</kbd>+<kbd>F3</kbd></td><td>Search box, next match, previous match</td></tr>
+    <tr><td>Letters</td><td>Jump to the next row starting with what you type</td></tr>
+  </table>
+  <h3>Search</h3>
+  <p>Type in the search box and the tree shows only the matches and the path down to them. <kbd>Enter</kbd> searches at once, <kbd>Esc</kbd> clears it.</p>
+  <table>
+    <tr><th>Type</th><th>Finds</th></tr>
+    <tr><td><code>pipe</code></td><td>Name contains "pipe"</td></tr>
+    <tr><td><code>*elbow*90*</code></td><td>Name with wildcards (<code>*</code> any text, <code>?</code> one character)</td></tr>
+    <tr><td><code>/^L2[0-9]/</code></td><td>Name matching a regular expression</td></tr>
+    <tr><td><code>Size=4</code></td><td>Any property called Size whose value contains 4</td></tr>
+    <tr><td><code>Element/Category==Ducts</code></td><td>Category/property exactly equal (wildcards allowed)</td></tr>
+    <tr><td><code>System Name!=CHW</code></td><td>Value doesn't contain CHW</td></tr>
+    <tr><td><code>Length&gt;=10</code></td><td>Number comparison (also <code>&gt;</code>, <code>&lt;</code>, <code>&lt;=</code>)</td></tr>
+    <tr><td><code>Element/Id=</code></td><td>Has the property at all</td></tr>
+    <tr><td><code>"a=b"</code></td><td>Quotes search the name literally</td></tr>
+  </table>
+  <p><strong>Aa</strong> matches case. The folder button lists only top matches, not items inside a match. The bar under the box shows the count, steps through matches, selects all of them, and <strong>saves them as a set</strong>: a live search set when Navisworks can run the search itself, otherwise a selection set. In Sets mode the box filters set names; in Properties mode, category and property names.</p>
+  <h3>Big models</h3>
+  <p>Children load when a row first opens, so huge models stay quick. <strong>Expand all</strong> stops at 250,000 rows, a search draws the first 5,000 matches (<strong>Select all matches</strong> still takes every one), and a value or set lists 2,000 items and then a "more" row that selects the rest.</p>
+
+  <h2 id="color">Color profiles <span class="tag free">Any JGT tool</span></h2>
+  <h3>Capture Color Profile</h3>
+  <p>Turns the way the open model is colored into an Appearance Profiler profile you can apply to another model, for example a GC's coordination NWF where the colors were saved but the rules weren't.</p>
+  <ol>
+    <li>Open the colored model and click <strong>JGT › Capture Color Profile</strong>.</li>
+    <li>It reads every part's color, finds the properties that explain them (such as System Abbreviation or Category), and writes the rules.</li>
+    <li>The summary says how many rules it wrote and how much of the coloring they recreate.</li>
+  </ol>
+  <p>The profile appears in Appearance Profiler's <strong>Profiles</strong> list (reopen the Profiler if it was open). A shareable <code>.dat</code>, a copy of the profile and a CSV of every rule go to <code>Documents\JGT Color Profiles</code>. <strong>Send the .dat</strong> to share it: anyone loads it with <strong>Appearance Profiler › Import…</strong> and then <strong>Apply Profile</strong>.</p>
+  <p>Limits: only text properties become rules; a few hand-painted parts that don't follow a pattern can't be recreated; and the profile only transfers to models with the same property names and values.</p>
+  <h3>Profile to .dat</h3>
+  <p>Navisworks 2026's Profiler can import a <code>.dat</code> but can't export one. Click <strong>Profile to .dat</strong>, pick any profile, and it writes the <code>.dat</code>. Only By Property rules using Equals or Not Equals can go into a <code>.dat</code>; the summary says how many other rules were left out.</p>
+
+  <h2 id="theme">Theme</h2>
+  <p><strong>Settings › Theme</strong> switches the JGT panes and notices between <strong>Dark</strong>, <strong>Gray</strong> and <strong>Light</strong>, and lets you change any color (background, buttons, text, accent and so on). Open panes update at once and the choice is remembered.</p>
+
+  <h2 id="trouble">Troubleshooting</h2>
+  <dl>
+    <dt>There's no JGT tab</dt>
+    <dd>Make sure you started <strong>Navisworks Manage 2026</strong> (not Simulate, Freedom or another year). Check that <code>%APPDATA%\Autodesk\ApplicationPlugins\ElementIdGrabber.bundle\Contents\2026\ElementIdGrabber.dll</code> exists; if not, close Navisworks and run Install.cmd again.</dd>
+    <dt>"Windows protected your PC" when running Install.cmd</dt>
+    <dd>Click <strong>More info</strong>, then <strong>Run anyway</strong>. The installer is a plain script.</dd>
+    <dt>The installer says a file is in use</dt>
+    <dd>Navisworks is still running. Close every Navisworks window; if it persists, end <code>Roamer.exe</code> in Task Manager.</dd>
+    <dt>My company blocks scripts</dt>
+    <dd>Copy the <code>ElementIdGrabber.bundle</code> folder from the zip into <code>%APPDATA%\Autodesk\ApplicationPlugins\</code> by hand, then right-click <code>Contents\2026\ElementIdGrabber.dll</code> › Properties › tick <strong>Unblock</strong> › OK.</dd>
+    <dt>A shortcut does nothing</dt>
+    <dd>Click once in the 3D view, then press it again. The shortcuts listen in the 3D view.</dd>
+    <dt>A pane opened as a floating window / I can't find a pane</dt>
+    <dd>Panes open floating the first time; dock them as described in <a href="#panes">Docking the panes</a>. A hidden pane comes back with its JGT button, its shortcut, or <strong>View › Windows</strong>.</dd>
+    <dt>A pane just shows a card with "Start free 30-day trial" or "Your trial has ended"</dt>
+    <dd>That tool isn't licensed on this computer. Start its trial, or enter a key under <strong>Settings › License</strong>. The Selection Tree is part of JGT Views.</dd>
+    <dt>"This key is already on 5 computers"</dt>
+    <dd>Remove it on a computer you no longer use (<strong>Settings › License › Remove</strong>), then activate it here. Reply to your receipt email if you no longer have that computer.</dd>
+    <dt id="t-noid">"No Revit Element ID found on selection"</dt>
+    <dd>The model was exported without IDs, or the items aren't from Revit (for example an IFC or DWG). For local NWCs, re-export from Revit with <strong>Convert element IDs</strong> turned on in the Navisworks exporter settings. ACC models carry the ID in the item name; check that the selected item's name ends with a number in square brackets.</dd>
+    <dt>The IDs don't select the right things in Revit</dt>
+    <dd>IDs are only unique within one Revit file. Use <strong>Copy ID + Details</strong> to see which file each ID came from, and paste each file's IDs into that file.</dd>
+    <dt>The Selection Tree doesn't open to what I click in 3D</dt>
+    <dd>Turn <strong>Follow</strong> on (gold). It works in Standard and Compact modes; with a search showing, it jumps to the item only if the results include it, otherwise clear the search with <kbd>Esc</kbd>.</dd>
+    <dt>Nothing happens when I right-click empty space in the views list</dt>
+    <dd>Click once inside the Views pane first, then right-click below the last view. If the list is full, right-click any view instead; its menu has the same Saved Viewpoints items.</dd>
+    <dt>Export Selected says nothing was exported</dt>
+    <dd>Pick the views first (<kbd>Ctrl</kbd>/<kbd>Shift</kbd>+click), then right-click one of them. Animations export with all their frames.</dd>
+    <dt>A captured profile doesn't color the other model</dt>
+    <dd>The other model has to carry the same property names and values (for example the same System Abbreviation values). Check one item's properties in both models.</dd>
+    <dt>Something else</dt>
+    <dd>Email <a href="mailto:jeremiah@jgriffithtech.com">jeremiah@jgriffithtech.com</a> with what you did, what you expected, a screenshot, and the version (in the zip's name or <strong>Settings › License</strong>).</dd>
+  </dl>
+  <h3>Removing the tools</h3>
+  <p>Double-click <strong>Uninstall.cmd</strong> from the zip. Your license keys, trial dates and settings stay in <code>%APPDATA%\JGT</code> in case you reinstall.</p>
+
+  <h2 id="new">What's new</h2>
+  <table>
+    <tr><th>Version</th><th>Changes</th></tr>
+    <tr><td>1.4.2</td><td>The Saved Viewpoints right-click menu in Views &amp; Markup: animations and cuts, sort, import, export (all or only the selected views) and the viewpoints report.</td></tr>
+    <tr><td>1.4.1</td><td>Selection Tree: visible items in bold; it opens to whatever you click in 3D.</td></tr>
+    <tr><td>1.4.0</td><td>The Selection Tree pane (part of JGT Views). Multi-select in Views &amp; Markup and in comments.</td></tr>
+  </table>
+
+  <h2 id="contact">Contact</h2>
+  <p>Questions or feature requests: <a href="mailto:jeremiah@jgriffithtech.com">jeremiah@jgriffithtech.com</a>, or reply to your Gumroad receipt.</p>
+  <p class="fine">Made by JGriffith Tech. Everything runs on your computer; the only thing sent anywhere is your license key, to Gumroad, to check it. Not affiliated with or endorsed by Autodesk, Inc. Autodesk, Navisworks and Revit are registered trademarks or trademarks of Autodesk, Inc.</p>
+</main>
+</body>
+</html>
