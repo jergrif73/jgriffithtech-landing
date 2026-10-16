@@ -1383,3 +1383,38 @@ html.has-cursor-fx, html.has-cursor-fx a, html.has-cursor-fx button, html.has-cu
   .nav-links.open { display: flex; }
   .nav-toggle { display: block; }
 }
+
+
+/* === Nav dropdowns (2026-10-16) === */
+.nav-dd { position: relative; }
+.nav-dd-btn {
+  display: flex; align-items: center; gap: 4px; background: none; border: 0; cursor: pointer; white-space: nowrap;
+  font: inherit; color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+  font-size: 0.9rem; font-weight: 500; transition: all var(--transition);
+}
+.nav-dd-btn svg { width: 12px; height: 12px; transition: transform 0.2s; }
+.nav-dd-btn:hover, .nav-dd-btn.active, .nav-dd.open .nav-dd-btn { color: var(--text-primary); background: rgba(255,255,255,0.06); }
+.nav-dd-menu {
+  list-style: none; display: none; position: absolute; top: 100%; left: 0; z-index: 1001;
+  min-width: 230px; margin-top: 6px; padding: 6px;
+  background: rgba(15, 23, 42, 0.98); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow);
+}
+.nav-dd-menu::before { content: ''; position: absolute; left: 0; right: 0; top: -10px; height: 10px; }
+.nav-dd-menu a { display: block; padding: 8px 12px; }
+@media (min-width: 901px) {
+  .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu, .nav-dd.open .nav-dd-menu { display: block; }
+  .nav-dd:hover .nav-dd-btn svg, .nav-dd.open .nav-dd-btn svg { transform: rotate(180deg); }
+}
+@media (max-width: 1240px) and (min-width: 901px) { .nav-dd-btn { padding: 8px 7px; font-size: 0.8rem; } }
+@media (max-width: 1080px) and (min-width: 901px) { .nav-dd-btn { padding: 6px 5px; font-size: 0.74rem; } }
+@media (max-width: 900px) {
+  .nav-links { max-height: calc(100vh - 72px); overflow-y: auto; }
+  .nav-dd { width: 100%; text-align: center; margin-top: 6px; }
+  .nav-dd-btn { width: 100%; justify-content: center; cursor: default; color: var(--text-muted, #94A3B8); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 16px; }
+  .nav-dd-btn:hover, .nav-dd-btn.active { background: none; }
+  .nav-dd-btn svg { display: none; }
+  .nav-dd-menu { display: block; position: static; margin: 0 auto 6px; padding: 0; min-width: 0;
+    background: none; border: 0; border-radius: 0; box-shadow: none; }
+  .nav-dd-menu a { padding: 6px 12px; }
+}
+/* === end nav dropdowns === */

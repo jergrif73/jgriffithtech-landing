@@ -43,6 +43,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Nav dropdowns: click to open (touch screens), hover/focus opens them on desktop via CSS
+  const closeDropdowns = () => document.querySelectorAll('.nav-dd.open').forEach(dd => {
+    dd.classList.remove('open');
+    dd.querySelector('.nav-dd-btn').setAttribute('aria-expanded', 'false');
+  });
+  document.querySelectorAll('.nav-dd-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const dd = btn.parentElement, open = !dd.classList.contains('open');
+      closeDropdowns();
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+  document.addEventListener('click', closeDropdowns);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDropdowns(); });
+
   // Close mobile nav on link click
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => links.classList.remove('open'));
