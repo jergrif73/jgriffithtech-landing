@@ -18,8 +18,8 @@
   <meta property="og:image:height" content="800">
   <meta property="og:site_name" content="JGriffith Tech">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="See 'n' Say — 14 Revit Tools Built by an MEP Detailer">
-  <meta name="twitter:description" content="Compiled Revit add-in. 14 tools that diagnose visibility, QA fab duct, renumber by location, and sync hangers. $39.99 one-time purchase.">
+  <meta name="twitter:title" content="See 'n' Say — 15 Revit Tools Built by an MEP Detailer">
+  <meta name="twitter:description" content="Compiled Revit add-in for Revit 2024–2026. 15 tools that diagnose visibility, QA fab duct, renumber by location, and sync hangers. $39.99 one-time purchase.">
   <meta name="twitter:image" content="https://jgriffithtech.com/seensay-cover.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -78,20 +78,22 @@
         <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
           <a href="https://jgriffithtech.gumroad.com/l/seensay" class="btn btn-primary" target="_blank">Buy Now on Gumroad</a>
         </div>
-        <p style="color:var(--text-muted);font-size:0.85rem;margin-top:16px;">Windows installer &bull; Revit 2024 &amp; 2025 &bull; Lifetime updates &bull; .NET Framework 4.8</p>
+        <p style="color:var(--text-muted);font-size:0.85rem;margin-top:16px;">Windows installer &bull; Revit 2024, 2025 &amp; 2026 &bull; Lifetime updates &bull; .NET Framework 4.8</p>
         <p style="margin-top:10px;"><a href="/seensay/guide" style="color:var(--gold);font-weight:600;">Read the user guide</a>: every tool step by step, plus troubleshooting.</p>
       </div>
       <div class="animate-on-scroll stagger-2" style="display:flex;justify-content:center;">
         <div style="width:320px;background:var(--dark-card);border-radius:16px;border:2px solid var(--gold);padding:32px;box-shadow:var(--shadow-lg);">
           <div style="text-align:center;margin-bottom:24px;">
             <span style="font-size:3rem;">🔍</span>
-            <h3 style="margin-top:12px;font-size:1.2rem;">14 Professional Tools</h3>
+            <h3 style="margin-top:12px;font-size:1.2rem;">15 Professional Tools</h3>
             <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:4px;">Inspection + Designation</p>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
             <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Sync Views</div>
             <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Elem Visibility</div>
             <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Snoop Selection</div>
+            <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Super Filter</div>
+            <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Super Filter</div>
             <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Compare</div>
             <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Find Sheet</div>
             <div style="background:var(--dark-surface);padding:10px;border-radius:8px;text-align:center;font-size:0.8rem;color:var(--text-secondary);">Duct Orient</div>
@@ -133,13 +135,13 @@
       <div class="product-card-v2 animate-on-scroll stagger-3" style="--card-accent:#D4A926;">
         <div class="pc-head"><div class="pc-icon">🔬</div></div>
         <div class="pc-name">Snoop Selection</div>
-        <div class="pc-desc">Deep-inspect any element's full property tree: parameters, geometry, connectors, fabrication data, and raw .NET members. Essential for debugging API behavior, verifying parameter values, and understanding how Revit stores element data.</div>
+        <div class="pc-desc">Deep-inspect any element's full property tree: parameters, properties, bounding box, connectors, fabrication data, and raw .NET members, with Similarities and Differences views for several elements at once. Essential for debugging API behavior, verifying parameter values, and understanding how Revit stores element data.</div>
       </div>
       
       <div class="product-card-v2 animate-on-scroll stagger-4" style="--card-accent:#D4A926;">
         <div class="pc-head"><div class="pc-icon">⚖️</div></div>
         <div class="pc-name">Compare</div>
-        <div class="pc-desc">Side-by-side comparison of two elements, families, views, or schedules. Highlights every parameter difference in a sortable grid. Verify consistency between similar elements or track changes between model versions.</div>
+        <div class="pc-desc">Side-by-side comparison of fabrication parts, two families, two views or view templates, or schedules. Highlights every difference, filters to differences or matches, and exports to CSV or Excel. Verify consistency between similar elements or track changes between model versions.</div>
       </div>
       
       <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#D4A926;">
@@ -148,10 +150,16 @@
         <div class="pc-desc">Select a view or viewport and instantly navigate to the sheet where it lives. Saves time hunting through the Project Browser on large models with hundreds of sheets.</div>
       </div>
       
+      <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#D4A926;">
+        <div class="pc-head"><div class="pc-icon">🧹</div></div>
+        <div class="pc-name">Super Filter</div>
+        <div class="pc-desc">Filter More on steroids. Load your selection, the active view or the whole model, then uncheck what you don't want in a Category › Family › Type tree or a Parameter › Value tree. Narrow again as often as you like, box-select to add more, and push the result into the Revit selection.</div>
+      </div>
+      
       <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#D4A926;">
         <div class="pc-head"><div class="pc-icon">📐</div></div>
         <div class="pc-name">Check Duct Orientation</div>
-        <div class="pc-desc">Scans fabrication duct and flags any piece where the width dimension is narrower than the depth. Catches orientation errors before they reach the shop floor. Color-codes affected elements in the active view.</div>
+        <div class="pc-desc">Reads the connectors of rectangular fabrication duct to check that the labeled width really is the horizontal side. Flags pieces turned 90°, selects them in Revit, and fixes them with one click by rotating them back. Works on horizontal, sloped and vertical runs, with CSV export.</div>
       </div>
       
       <div class="product-card-v2 animate-on-scroll stagger-3" style="--card-accent:#D4A926;">
@@ -175,7 +183,7 @@
       <div class="product-card-v2 animate-on-scroll stagger-1" style="--card-accent:#7A8B6F;">
         <div class="pc-head"><div class="pc-icon">🔢</div></div>
         <div class="pc-name">Renumber</div>
-        <div class="pc-desc">Wizard-driven renumbering with multiple ordering modes: left-to-right, top-to-bottom, nearest-neighbor, or along a path. Supports prefix/suffix patterns, grouping by system or level, and gap numbering. Preview mode shows proposed numbers before committing. Undo-safe.</div>
+        <div class="pc-desc">Writes sequential numbers with prefix, suffix and zero padding into up to three parameters. Order by size, clockwise or counterclockwise, along a picked curve, by parameter value, or in the order you click; group by category, family or type. Optionally gives identical parts the same number. Saves setups as profiles. Undo-safe.</div>
       </div>
       
       <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#7A8B6F;">
@@ -205,13 +213,13 @@
       <div class="product-card-v2 animate-on-scroll stagger-2" style="--card-accent:#7A8B6F;">
         <div class="pc-head"><div class="pc-icon">🔁</div></div>
         <div class="pc-name">Convert</div>
-        <div class="pc-desc">Unified conversion engine for fabrication ductwork. Convert between fabrication and native Revit elements, change service types, or swap connector configurations. Handles rectangular, round, and oval profiles with automatic size mapping.</div>
+        <div class="pc-desc">Replaces fabrication ductwork with native Revit ducts and fittings, in four passes: straights, elbows, transitions and taps. Sizes come from the fabrication connectors, and workset, phases, Comments, Mark and System Name carry over. Keep or delete the originals; one undo step per run.</div>
       </div>
       
       <div class="product-card-v2 animate-on-scroll stagger-3" style="--card-accent:#7A8B6F;">
         <div class="pc-head"><div class="pc-icon">🪝</div></div>
         <div class="pc-name">Set Hangers</div>
-        <div class="pc-desc">Pre-select duct or pipe (or pick after launching). Finds all Generic Model RFA hangers within 1 ft XY of each element and writes slope-interpolated BOH elevation, clamp size, trapeze width, and insulation parameters. Pick Host lets you manually reassign a hanger.</div>
+        <div class="pc-desc">Pre-select duct or pipe (or pick after launching). Finds Generic Model RFA hangers near each run (1 ft by default, adjustable) and writes slope-interpolated BOH elevation, clamp size, trapeze width and insulation, then centers each hanger on the run. Upper Attachment makes hanger tops follow a sloped model line, and Quick Sync sets one hanger to one run.</div>
       </div>
 
     </div>
@@ -225,7 +233,7 @@
       <ul style="list-style:none;text-align:left;max-width:320px;margin:24px auto;opacity:0.95;">
         <li style="padding:8px 0;display:flex;align-items:center;gap:12px;"><span style="color:var(--dark);">&#10003;</span> SeeNSay_Setup.exe installer</li>
         <li style="padding:8px 0;display:flex;align-items:center;gap:12px;"><span style="color:var(--dark);">&#10003;</span> One-time purchase, lifetime updates</li>
-        <li style="padding:8px 0;display:flex;align-items:center;gap:12px;"><span style="color:var(--dark);">&#10003;</span> Revit 2024 and 2025 support</li>
+        <li style="padding:8px 0;display:flex;align-items:center;gap:12px;"><span style="color:var(--dark);">&#10003;</span> Revit 2024, 2025 and 2026 support</li>
         <li style="padding:8px 0;display:flex;align-items:center;gap:12px;"><span style="color:var(--dark);">&#10003;</span> Windows 10/11, .NET Framework 4.8</li>
         <li style="padding:8px 0;display:flex;align-items:center;gap:12px;"><span style="color:var(--dark);">&#10003;</span> Email support</li>
       </ul>
