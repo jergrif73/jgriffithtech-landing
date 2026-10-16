@@ -47,6 +47,7 @@
   <div class="tiles" id="tiles"></div>
   <div class="grid">
     <section class="wide"><h2>Daily views</h2><div class="chart" id="chart"></div></section>
+    <section class="wide"><h2>Downloads</h2><table id="downloads"><thead><tr><th>File</th><th>Source</th><th>Country</th><th class="n">Downloads</th></tr></thead><tbody></tbody></table></section>
     <section><h2>Pages</h2><table id="pages"><thead><tr><th>Page</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
     <section><h2>Referrers</h2><table id="refs"><thead><tr><th>Source</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
     <section><h2>Countries</h2><table id="countries"><thead><tr><th>Country</th><th class="n">Views</th></tr></thead><tbody></tbody></table></section>
@@ -88,7 +89,8 @@
       `<div class="tile"><b>${fmt(todays)}</b><span>views today (UTC)</span></div>` +
       `<div class="tile"><b>${fmt(pageCount)}</b><span>pages viewed</span></div>` +
       `<div class="tile"><b>${fmt(Object.keys(d.refs).filter(r => r !== 'direct' && r !== 'internal').length)}</b><span>external sources</span></div>` +
-      `<div class="tile"><b>${fmt(Object.keys(d.countries || {}).length)}</b><span>countries</span></div>`;
+      `<div class="tile"><b>${fmt(Object.keys(d.countries || {}).length)}</b><span>countries</span></div>` +
+      `<div class="tile"><b>${fmt((d.downloads || {}).total || 0)}</b><span>downloads</span></div>`;
     const chart = document.getElementById('chart'); chart.innerHTML = '';
     const max = Math.max(1, ...d.daily.map(x => x.total));
     for (const x of d.daily) { const bar = document.createElement('div'); bar.style.height = (100 * x.total / max) + '%'; bar.title = `${x.day}: ${x.total}`; chart.appendChild(bar); }
@@ -97,6 +99,14 @@
     rows(document.querySelector('#refs tbody'), Object.entries(d.refs).sort((a, b) => b[1] - a[1]));
     rows(document.querySelector('#countries tbody'), Object.entries(d.countries || {}).sort((a, b) => b[1] - a[1]));
     rows(document.querySelector('#cities tbody'), Object.entries(d.cities || {}).sort((a, b) => b[1] - a[1]).slice(0, 40));
+    // Downloads counted by /dl/<file> (dl.mjs): one row per file, newest version first, with where they came from.
+    const dt = document.querySelector('#downloads tbody'); dt.innerHTML = '';
+    const files = Object.entries((d.downloads || {}).files || {}).sort((a, b) => b[0].localeCompare(a[0], undefined, { numeric: true }));
+    if (!files.length) dt.innerHTML = '<tr><td colspan="4" style="color:var(--sub)">No downloads yet</td></tr>';
+    for (const [f, v] of files) {
+      const top = (o) => Object.entries(o || {}).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${fmt(n)}`).join(', ');
+      dt.innerHTML += `<tr><td>${f}</td><td>${top(v.refs)}</td><td>${top(v.countries)}</td><td class="n">${fmt(v.n)}</td></tr>`;
+    }
     const tg = document.querySelector('#traverseGeo tbody'); tg.innerHTML = '';
     for (const p of ['/opus-pilot-traverse', '/fable-learning-traverse']) {
       const v = d.pages[p]; const cs = v ? Object.entries(v.countries || {}).sort((a, b) => b[1] - a[1]) : [];
@@ -110,7 +120,7 @@
       const srcs = Object.entries(v.refs).sort((a, b) => b[1] - a[1]);
       srcs.forEach(([r, n], i) => { tb.innerHTML += `<tr><td>${i === 0 ? p + ' <span style="color:var(--sub)">(' + fmt(v.n) + ')</span>' : ''}</td><td>${r}</td><td class="n">${fmt(n)}</td></tr>`; });
     }
-    document.getElementById('meta').textContent = `Page views, referrers and visitor location (country/city from Netlify's edge, no IP stored). No cookies. Updated ${new Date(d.generated).toLocaleString()}.`;
+    document.getElementById('meta').textContent = `Page views, downloads, referrers and visitor location (country/city from Netlify's edge, no IP stored). No cookies. Updated ${new Date(d.generated).toLocaleString()}.`;
   }
   document.querySelectorAll('button[data-days]').forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll('button[data-days]').forEach(x => x.classList.remove('on')); b.classList.add('on');
