@@ -56,6 +56,11 @@
   status = 200
 
 [[redirects]]
+  from = "/revtris"
+  to = "/revtris.html"
+  status = 200
+
+[[redirects]]
   from = "/stats"
   to = "/stats.html"
   status = 200
