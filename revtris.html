@@ -119,6 +119,31 @@
             font-weight: bold;
         }
 
+        #right-ui-col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        #quit-btn {
+            pointer-events: auto;
+            margin-top: 0;
+            padding: 6px 18px;
+            font-size: clamp(12px, 2vh, 15px);
+            color: #f44747;
+            border: 1px solid #f44747;
+            background: rgba(0,0,0,0.7);
+            box-shadow: 0 0 8px rgba(244, 71, 71, 0.5) inset;
+            letter-spacing: 2px;
+        }
+
+        #quit-btn:hover, #quit-btn:active {
+            background: #f44747;
+            color: #0a0a0a;
+            box-shadow: 0 0 15px #f44747;
+        }
+
         #buffer-display {
             font-size: clamp(16px, 3vh, 26px);
             font-weight: bold;
@@ -441,10 +466,13 @@
             <div id="ui-overlay">
                 <div id="top-ui-row">
                     <div id="buffer-display">_ _</div>
-                    <div id="score-board">
-                        SCORE: <span id="score">0</span><br>
-                        LINES: <span id="lines">0</span><br>
-                        LVL: <span id="level">1</span>
+                    <div id="right-ui-col">
+                        <div id="score-board">
+                            SCORE: <span id="score">0</span><br>
+                            LINES: <span id="lines">0</span><br>
+                            LVL: <span id="level">1</span>
+                        </div>
+                        <button id="quit-btn" title="End the run now and log your score">QUIT</button>
                     </div>
                 </div>
             </div>
@@ -938,12 +966,13 @@
             }
         }
 
-        function gameOver() {
+        function gameOver(quit = false) {
+            if (!isPlaying) return;
             isPlaying = false;
             cancelAnimationFrame(animationId);
             document.getElementById('start-screen').style.display = 'flex';
             document.getElementById('start-btn').innerText = "REBOOT SYSTEM";
-            document.querySelector('#start-screen h1').innerText = "SYSTEM CRASHED";
+            document.querySelector('#start-screen h1').innerText = quit ? "SYSTEM HALTED" : "SYSTEM CRASHED";
             document.querySelector('#start-screen h1').style.color = "#f44747";
             document.querySelector('#start-screen h1').style.textShadow = "0 0 20px #f44747";
 
@@ -975,6 +1004,12 @@
         }
 
         document.getElementById('start-btn').addEventListener('click', startGame);
+
+        // Quit: end the run now and go straight to the final score / submit screen
+        const quitBtn = document.getElementById('quit-btn');
+        quitBtn.addEventListener('click', () => gameOver(true));
+        // Keep the tap from also reaching the canvas swipe handler (which would rotate the piece)
+        ['touchstart', 'touchend'].forEach(evt => quitBtn.addEventListener(evt, e => e.stopPropagation()));
 
         // Difficulty Selection Logic
         document.querySelectorAll('.diff-btn').forEach(btn => {
