@@ -161,7 +161,7 @@
     <li>The <strong>markup list</strong> shows every markup on the current view. Click a markup in the 3D view to select it in the list (<kbd>Ctrl</kbd>+click adds). <strong>All</strong> selects every one.</li>
     <li><strong>Move</strong>: select markups, click Move and drag in the 3D view. <kbd>Esc</kbd> or a right-click ends it. Arrow keys in the list nudge them (<kbd>Ctrl</kbd> for bigger steps).</li>
     <li><strong>Text</strong> edits a selected Text or Tag markup. <strong>Delete</strong> removes the selected markups.</li>
-    <li><strong>Convert to cloud</strong> turns selected lines and ellipses into revision clouds, or, with nothing selected, lets you drag a box around markups to cloud them. <strong>Arch</strong> sets the cloud's arc size. Right-click a markup for <strong>Cloud around</strong> (a cloud hugging the selection), <strong>Flip arches</strong>, Duplicate and more.</li>
+    <li><strong>Convert to cloud</strong> turns selected lines and ellipses into revision clouds, or, with nothing selected, lets you drag a box around markups to cloud them (markups that are already clouds are left alone). A converted markup keeps its color and thickness. <strong>Arch</strong> sets the cloud's arc size. Right-click a markup for <strong>Cloud around</strong> (a cloud hugging the selection), <strong>Flip arches</strong>, Duplicate and more.</li>
     <li><strong>Undo</strong> in the markup list steps back through markup changes on that view (the last 30 are kept).</li>
   </ul>
   <h3>Resizing the pane</h3>
@@ -296,6 +296,7 @@
   <h2 id="new">What's new</h2>
   <table>
     <tr><th>Version</th><th>Changes</th></tr>
+    <tr><td>1.4.4</td><td>Convert to cloud: editing a view no longer distorts the clouds already on it, a converted markup keeps its own color and thickness, and the box drag ignores markups that are already clouds.</td></tr>
     <tr><td>1.4.3</td><td>A Help button in each JGT pane, and F1 over a JGT ribbon button, open the matching section of this guide.</td></tr>
     <tr><td>1.4.2</td><td>The Saved Viewpoints right-click menu in Views &amp; Markup: animations and cuts, sort, import, export (all or only the selected views) and the viewpoints report.</td></tr>
     <tr><td>1.4.1</td><td>Selection Tree: visible items in bold; it opens to whatever you click in 3D.</td></tr>
