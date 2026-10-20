@@ -52,8 +52,18 @@
 
 [[redirects]]
   from = "/testers"
-  to = "/testers.html"
-  status = 200
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/testers.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/beta-testers-flyer.pdf"
+  to = "/"
+  status = 301
 
 [[redirects]]
   from = "/revtris"
