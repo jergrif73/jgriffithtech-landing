@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>User guide · JGT Navisworks Tools</title>
-<meta name="description" content="How to install and use JGT Navisworks Tools for Navisworks Manage 2026: Copy Element ID, Section Palette, Views & Markup, the Saved Viewpoints menu, Selection Tree, Capture Color Profile, licensing, and troubleshooting.">
+<meta name="description" content="How to install and use JGT Navisworks Tools for Navisworks Manage 2024, 2025, 2026 and 2027: Copy Element ID, Section Palette, Views & Markup, the Saved Viewpoints menu, Selection Tree, Capture Color Profile, licensing, and troubleshooting.">
 <style>
   :root { --navy: #0F172A; --slate: #1E293B; --line: #334155; --gold: #D4A926; --text: #E2E8F0; --sub: #94A3B8; }
   * { box-sizing: border-box; }
@@ -39,7 +39,7 @@
 <header class="jgt-top" id="jgt-top"><div class="jgt-top-in"><a class="jgt-top-logo" href="/"><img src="/logo-nav.png" alt="JGriffith Tech"></a><nav class="jgt-top-links" aria-label="Site"><a href="/">Home</a><a href="/#apps">Mobile Apps</a><a href="/seensay">See 'n' Say</a><a class="on" href="/navisworks-tools">Navisworks</a><a href="/forma-tools">Forma Tools</a><a href="/clash-export">Clash Export</a><a href="/detailers-path">Detailer's Path</a><a href="/revtris">Revtris</a></nav></div></header>
 <main>
   <h1>JGT Navisworks Tools: user guide</h1>
-  <p class="lead">Everything the JGT tab does in Navisworks Manage 2026, step by step, plus fixes for the problems people run into. Back to the <a href="/navisworks-tools">product page</a>.</p>
+  <p class="lead">Everything the JGT tab does in Navisworks Manage 2024, 2025, 2026 and 2027, step by step, plus fixes for the problems people run into. Back to the <a href="/navisworks-tools">product page</a>.</p>
   <nav class="toc">
     <a href="#start">Getting started</a><a href="#license">Trial and license</a><a href="#panes">Docking the panes</a><a href="#elementid">Element ID</a><a href="#section">Section Palette</a><a href="#views">Views &amp; Markup</a><a href="#viewpoints-menu">Saved Viewpoints menu</a><a href="#tree">Selection Tree</a><a href="#color">Color profiles</a><a href="#theme">Theme</a><a href="#trouble">Troubleshooting</a><a href="#new">What's new</a>
   </nav>
@@ -49,7 +49,7 @@
     <li><strong>Close Navisworks.</strong></li>
     <li>Download the zip from the <a href="/navisworks-tools">product page</a> (or your Gumroad receipt). Right-click it, choose <strong>Extract All</strong>, and open the extracted folder. Don't run anything from inside the zip.</li>
     <li>Double-click <strong>Install.cmd</strong>. It needs no admin rights, installs for your Windows user only, and replaces any older JGT version.</li>
-    <li>Start <strong>Navisworks Manage 2026</strong> and open the <strong>JGT</strong> ribbon tab.</li>
+    <li>Start <strong>Navisworks Manage</strong> (2024, 2025, 2026 or 2027) and open the <strong>JGT</strong> ribbon tab.</li>
   </ol>
   <p>The JGT tab has these panels. On a narrow window Navisworks folds each panel into a single dropdown button with the panel's name; click it to see the buttons.</p>
   <table>
@@ -252,7 +252,7 @@
   <p>The profile appears in Appearance Profiler's <strong>Profiles</strong> list (reopen the Profiler if it was open). A shareable <code>.dat</code>, a copy of the profile and a CSV of every rule go to <code>Documents\JGT Color Profiles</code>. <strong>Send the .dat</strong> to share it: anyone loads it with <strong>Appearance Profiler › Import…</strong> and then <strong>Apply Profile</strong>.</p>
   <p>Limits: only text properties become rules; a few hand-painted parts that don't follow a pattern can't be recreated; and the profile only transfers to models with the same property names and values.</p>
   <h3>Profile to .dat</h3>
-  <p>Navisworks 2026's Profiler can import a <code>.dat</code> but can't export one. Click <strong>Profile to .dat</strong>, pick any profile, and it writes the <code>.dat</code>. Only By Property rules using Equals or Not Equals can go into a <code>.dat</code>; the summary says how many other rules were left out.</p>
+  <p>The 2026 and 2027 Profilers can import a <code>.dat</code> but can't export one (2024 and 2025 save one themselves with Save...). Click <strong>Profile to .dat</strong>, pick any profile, and it writes the <code>.dat</code>. Only By Property rules using Equals or Not Equals can go into a <code>.dat</code>; the summary says how many other rules were left out.</p>
 
   <h2 id="theme">Theme</h2>
   <p><strong>Settings › Theme</strong> switches the JGT panes and notices between <strong>Dark</strong>, <strong>Gray</strong> and <strong>Light</strong>, and lets you change any color (background, buttons, text, accent and so on). Open panes update at once and the choice is remembered.</p>
@@ -260,7 +260,7 @@
   <h2 id="trouble">Troubleshooting</h2>
   <dl>
     <dt>There's no JGT tab</dt>
-    <dd>Make sure you started <strong>Navisworks Manage 2026</strong> (not Simulate, Freedom or another year). Check that <code>%APPDATA%\Autodesk\ApplicationPlugins\ElementIdGrabber.bundle\Contents\2026\ElementIdGrabber.dll</code> exists; if not, close Navisworks and run Install.cmd again.</dd>
+    <dd>Make sure you started <strong>Navisworks Manage 2024, 2025, 2026 or 2027</strong> (not Simulate or Freedom). Check that <code>%APPDATA%\Autodesk\ApplicationPlugins\ElementIdGrabber.bundle\Contents\&lt;year&gt;\ElementIdGrabber.dll</code> exists for your year; if not, close Navisworks and run Install.cmd again.</dd>
     <dt>"Windows protected your PC" when running Install.cmd</dt>
     <dd>Click <strong>More info</strong>, then <strong>Run anyway</strong>. The installer is a plain script.</dd>
     <dt>The installer says a file is in use</dt>
@@ -296,6 +296,7 @@
   <h2 id="new">What's new</h2>
   <table>
     <tr><th>Version</th><th>Changes</th></tr>
+    <tr><td>1.5.0</td><td>One package for Navisworks Manage 2024, 2025, 2026 and 2027. What differs: on 2024, Align to Line doesn't snap to edges. On 2024 and 2025, add animations and cuts in Saved Viewpoints (they show up in the pane), and Capture Color Profile writes a <code>.dat</code> to load with Appearance Profiler &gt; Load.... On 2027, Navisworks hides clouds and tags drawn with its own Review tools from plugins, and changing markup in Views &amp; Markup removes them from that view; the pane asks once first, and clouds made with its own buttons are kept.</td></tr>
     <tr><td>1.4.4</td><td>Convert to cloud: editing a view no longer distorts the clouds already on it, a converted markup keeps its own color and thickness, and the box drag ignores markups that are already clouds.</td></tr>
     <tr><td>1.4.3</td><td>A Help button in each JGT pane, and F1 over a JGT ribbon button, open the matching section of this guide.</td></tr>
     <tr><td>1.4.2</td><td>The Saved Viewpoints right-click menu in Views &amp; Markup: animations and cuts, sort, import, export (all or only the selected views) and the viewpoints report.</td></tr>
