@@ -124,3 +124,13 @@
   from = "/navisworks-tools"
   to = "/navisworks-tools.html"
   status = 200
+
+[[redirects]]
+  from = "/legend-to-toolchest/guide"
+  to = "/legend-to-toolchest-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/legend-to-toolchest"
+  to = "/legend-to-toolchest.html"
+  status = 200
