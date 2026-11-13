@@ -56,7 +56,7 @@
 </head>
 <body>
 <header><div class="in"><svg class="mark" viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="112" height="112" rx="24" fill="#0F172A" stroke="#D4A926" stroke-width="8"/><g transform="translate(14 14) scale(.92)"><g stroke="#D4A926" stroke-width="4.6"><path d="M9 27h6"/><path d="M15 18v18l15-9z"/><path d="M45 18v18l-15-9z"/><path d="M45 27h6"/></g><rect x="58" y="19.5" width="31" height="5.5" rx="2.75" fill="#52647C"/><rect x="58" y="29.5" width="20" height="5.5" rx="2.75" fill="#52647C"/><path d="M50 44v12M43.5 51.5L50 58l6.5-6.5" stroke="#D4A926" stroke-width="4.6"/><path d="M39 66v-4.5a2 2 0 0 1 2-2h18a2 2 0 0 1 2 2V66" stroke="#8FA486" stroke-width="4.4"/><rect x="15" y="66" width="70" height="25" rx="6" fill="#5D7057" stroke="#8FA486" stroke-width="3.4"/><g stroke="#fff" stroke-width="3.6"><path d="M38 72.5v12l11-6z"/><path d="M60 72.5v12l-11-6z"/></g></g></svg><div><h1>Legend to Tool Chest: User Guide</h1>
-  <p>Version 0.5.1 · JGriffith Tech · Turn a drawing legend into a Bluebeam Revu tool set</p></div></div></header>
+  <p>Version 0.6.0 · JGriffith Tech · Turn a drawing legend into a Bluebeam Revu tool set</p></div></div></header>
 
 <div class="wrap">
 <nav aria-label="Contents">
@@ -92,8 +92,9 @@
   <ol class="steps">
     <li>Open <b>Legend to Tool Chest</b> from the Start menu or your Desktop. It opens in its own window.</li>
     <li>In your PDF, zoom in on the legend, then press <kbd>Windows</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> and drag around the rows you want.
-        Include the names beside the symbols.</li>
-    <li>Click in the Legend to Tool Chest window and press <kbd>Ctrl</kbd> + <kbd>V</kbd>. Paste as many snips as you like.</li>
+        Include the names beside or under the symbols.</li>
+    <li>Click the paste area in the Legend to Tool Chest window and press <kbd>Ctrl</kbd> + <kbd>V</kbd>. Paste as many snips as you like.
+        (To pick a saved image instead, press <b>Browse for an image</b>.)</li>
     <li>Answer the questions: a name for the tool set, how tall a typical symbol should be, how names and colors should look, and the line weight.</li>
     <li>Check each card. Fix any name by typing over it, untick anything you don't want, and click a picture to change that symbol's color.</li>
     <li>Press <b>Add to Revu</b>. The new tool set appears at the bottom of Revu's Tool Chest.</li>
@@ -106,8 +107,13 @@
   <ul>
     <li><b>Zoom in first.</b> Zoom the PDF 2 to 3 times before you snip. Aim for legend text at least about 30 pixels tall on screen.
         If a snip is small, the app tells you so.</li>
-    <li><b>Include the names.</b> Each symbol is paired with the text to its right. Snip the symbol column and the description column together.</li>
-    <li><b>One legend column at a time.</b> If the legend has two or three columns side by side, snip each column separately.</li>
+    <li><b>Include the names.</b> Names can sit to the right of the symbols (most P&amp;ID and plumbing legends) or under them
+        (duct fittings and equipment legends laid out in a grid). The app works out which; if it guesses wrong, change the
+        <b>Names</b> choice under that snip to <b>beside</b> or <b>below</b> and it reads the snip again.</li>
+    <li><b>Dimension notes stay with the drawing.</b> Notes like <code>R=1-1/2D</code>, <code>D1</code> or <code>L</code> drawn around a fitting
+        become part of its stamp. Don't want them? Use <a href="#fix">Fix boxes</a> and box just the fitting.</li>
+    <li><b>One legend column at a time</b> for names-beside legends. If it has two or three columns side by side, snip each one separately.
+        A names-below grid can be snipped whole.</li>
     <li><b>Leave out borders and titles you don't need.</b> Long table lines and frames are ignored, but a tight snip is cleaner.</li>
     <li><b>Any snipping tool works.</b> Windows Snipping Tool, Snagit, or Revu's own Snapshot. You can also drop image files (PNG, JPG, BMP) onto the window or click it to browse.</li>
   </ul>
@@ -222,7 +228,9 @@
     <tr><td>"Windows protected your PC" when installing</td><td>The installer is new to Windows' reputation list. Click <b>More info</b>, then <b>Run anyway</b>.</td></tr>
     <tr><td>Nothing seems to open</td><td>Look for a window called <b>Legend to Tool Chest</b> on the taskbar. If you just closed it, wait a few seconds and open it again.</td></tr>
     <tr><td>"The clipboard has no picture"</td><td>Snip first with <kbd>Windows</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>, then paste.</td></tr>
-    <tr><td>No symbols found in a snip</td><td>Make sure the names are in the snip, to the right of the symbols, and snip one legend column at a time.</td></tr>
+    <tr><td>No symbols found, or names on the wrong symbols</td><td>Make sure the names are in the snip, then try the <b>Names</b> choice under the snip
+        (beside or below). Still off? Use <a href="#fix">Fix boxes</a>.</td></tr>
+    <tr><td>Clicking the paste area doesn't open anything</td><td>That's on purpose: click it, then press <kbd>Ctrl</kbd> + <kbd>V</kbd>. To pick a file, press <b>Browse for an image</b>.</td></tr>
     <tr><td>Two symbols became one tool</td><td>They touch on the drawing. Use <a href="#fix">Fix boxes</a> to box each one.</td></tr>
     <tr><td>A name is misread</td><td>Type over it on the card. Names are read by the text reader built into Windows, which sometimes swaps similar letters.</td></tr>
     <tr><td>Symbols look rough or blobby</td><td>Zoom in further before you snip, then try the <a href="#weight">Line weight</a> slider.</td></tr>
@@ -254,7 +262,7 @@
      <b>jgriffithtech.com</b>.</p>
 </section>
 
-<footer>JGT Legend to Tool Chest 0.5.1 · © 2026 JGriffith Tech · Bluebeam and Revu are trademarks of Bluebeam, Inc. This product is not affiliated with Bluebeam.</footer>
+<footer>JGT Legend to Tool Chest 0.6.0 · © 2026 JGriffith Tech · Bluebeam and Revu are trademarks of Bluebeam, Inc. This product is not affiliated with Bluebeam.</footer>
 </main>
 </div>
 </body>
