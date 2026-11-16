@@ -37,9 +37,9 @@
 <header class="jgt-top" id="jgt-top"><div class="jgt-top-in"><a class="jgt-top-logo" href="/"><img src="/logo-nav.png" alt="JGriffith Tech"></a><nav class="jgt-top-links" aria-label="Site"><a href="/">Home</a><a href="/#apps">Mobile Apps</a><a class="on" href="/seensay">See 'n' Say</a><a href="/navisworks-tools">Navisworks</a><a href="/forma-tools">Forma Tools</a><a href="/clash-export">Clash Export</a><a href="/legend-to-toolchest">Legend to Tool Chest</a><a href="/detailers-path">Detailer's Path</a><a href="/revtris">Revtris</a></nav></div></header>
 <main>
   <h1>See 'n' Say: user guide</h1>
-  <p class="lead">How to use all 15 tools on the See 'n' Say tab in Revit, step by step, and how to fix the problems people run into. Back to the <a href="/seensay">product page</a>.</p>
+  <p class="lead">How to use all 16 tools on the See 'n' Say tab in Revit, step by step, and how to fix the problems people run into. Back to the <a href="/seensay">product page</a>.</p>
   <nav class="toc">
-    <a href="#start">Getting started</a><a href="#sync">Sync Views</a><a href="#ev">Elem Visibility</a><a href="#snoop">Snoop Selection</a><a href="#superfilter">Super Filter</a><a href="#compare">Compare</a><a href="#findsheet">Find Sheet</a><a href="#ductorient">Duct Orient</a><a href="#coil">Coil Duct</a><a href="#renumber">Renumber</a><a href="#tags">Place Tags</a><a href="#viewconv">View Converter</a><a href="#case">Toggle Case</a><a href="#rotate">Rotate Multiple</a><a href="#convert">Convert</a><a href="#hangers">Set Hangers</a><a href="#settings">Saved settings</a><a href="#trouble">Troubleshooting</a>
+    <a href="#start">Getting started</a><a href="#license">Trial and license</a><a href="#sync">Sync Views</a><a href="#ev">Elem Visibility</a><a href="#snoop">Snoop Selection</a><a href="#superfilter">Super Filter</a><a href="#filterlens">Filter Lens</a><a href="#compare">Compare</a><a href="#findsheet">Find Sheet</a><a href="#ductorient">Duct Orient</a><a href="#coil">Coil Duct</a><a href="#renumber">Renumber</a><a href="#tags">Place Tags</a><a href="#viewconv">View Converter</a><a href="#case">Toggle Case</a><a href="#rotate">Rotate Multiple</a><a href="#convert">Convert</a><a href="#hangers">Set Hangers</a><a href="#settings">Saved settings</a><a href="#trouble">Troubleshooting</a>
   </nav>
 
   <h2 id="start">Getting started</h2>
@@ -47,20 +47,21 @@
   <ol>
     <li><strong>Close Revit.</strong></li>
     <li>Run <strong>SeeNSay_Setup.exe</strong> from your purchase. No admin rights are needed.</li>
-    <li>Choose your Revit version: <strong>Revit 2024</strong>, <strong>2025</strong>, <strong>2026</strong>, or all three.</li>
-    <li>Start Revit. A short splash shows the version and counts the tools to 15/15, then the <strong>See 'n' Say</strong> tab is ready.</li>
+    <li>Choose your Revit version: <strong>Revit 2024</strong>, <strong>2025</strong>, <strong>2026</strong>, <strong>2027</strong>, or all four.</li>
+    <li>Start Revit. A short splash shows the version and counts the tools to 16/16, then the <strong>See 'n' Say</strong> tab is ready.</li>
   </ol>
   <p>To update, run the newer installer over the old one; your settings are kept. To remove it, use <strong>Windows Settings › Apps</strong> and uninstall <strong>See 'n' Say</strong>. It asks <em>Also remove saved settings?</em>; answer Yes for a clean removal.</p>
   <h3>Where the tools are</h3>
   <table>
     <tr><th>Panel</th><th>Button or menu</th><th>Tools</th></tr>
     <tr><td rowspan="4">Inspection</td><td>Sync Views</td><td><a href="#sync">Sync Views</a></td></tr>
-    <tr><td>Look ▾</td><td><a href="#snoop">Snoop Selection</a>, <a href="#superfilter">Super Filter</a>, <a href="#compare">Compare</a>, <a href="#findsheet">Find Sheet</a></td></tr>
+    <tr><td>Look ▾</td><td><a href="#snoop">Snoop Selection</a>, <a href="#superfilter">Super Filter</a>, <a href="#filterlens">Filter Lens</a>, <a href="#compare">Compare</a>, <a href="#findsheet">Find Sheet</a></td></tr>
     <tr><td>Elem Visibility</td><td><a href="#ev">Element Visibility</a></td></tr>
     <tr><td>Duck ▾</td><td><a href="#ductorient">Duct Orient</a>, <a href="#coil">Coil Duct</a></td></tr>
     <tr><td rowspan="3">Designation</td><td>Renumber</td><td><a href="#renumber">Renumber</a></td></tr>
     <tr><td>Place Tags</td><td><a href="#tags">Place Tags</a></td></tr>
     <tr><td>Spin ▾</td><td><a href="#viewconv">View Converter</a>, <a href="#case">Toggle Case</a>, <a href="#rotate">Rotate Multiple</a>, <a href="#convert">Convert</a>, <a href="#hangers">Set Hangers</a></td></tr>
+    <tr><td>License</td><td>License</td><td><a href="#license">Trial and license key</a></td></tr>
   </table>
   <p>Results and errors appear as small notices at the bottom right of the screen (click to dismiss) or as messages inside the tool's window (click to dismiss). Tools that change the model are one step in Revit's <strong>Undo</strong> unless noted below. Most windows close with <kbd>Esc</kbd>.</p>
 
@@ -118,8 +119,20 @@
     <li><strong>Update Selection</strong> narrows the working set to what's checked and rebuilds both tabs, so you can filter by category and then by parameter.</li>
     <li><strong>Box-Select to Add</strong> lets you drag a box in the view to add more elements, then returns.</li>
     <li><strong>Expand All</strong>, <strong>Collapse All</strong>, <strong>Check All</strong> and <strong>Uncheck All</strong> act on the open tab.</li>
+    <li>The <strong>search box</strong> above the tree narrows it to matching names: categories, families and types, or parameters and their values.</li>
   </ul>
   <p>The result comes from the tab that's open when you click Select. It only changes the selection, never the model. Very large "All Model Elements" scopes can take a moment to load.</p>
+
+  <h2 id="filterlens">Filter Lens</h2>
+  <p class="where">Inspection › Look › Filter Lens</p>
+  <p>Manages view filters on models with hundreds of them: find a filter fast, build or edit its rules, and set its overrides on the active view or its view template. The window stays open while you work and follows the active view.</p>
+  <ol>
+    <li>The top bar shows what you're editing: the active view, or its <strong>view template</strong> when one controls the view's filters (edits then reach every view using that template).</li>
+    <li>Search the <strong>Filter Library</strong> by name. <strong>Also search categories and rules</strong> widens the search. The chips switch between All, Favorites, Recent, In this view and Unused; each filter shows how many views and templates use it.</li>
+    <li><strong>Add to view</strong> applies the selected filter. <strong>New</strong> and <strong>Edit</strong> open the rule editor: name at the top, categories, then rules with AND/OR sets. Parameter boxes filter as you type, and values offer what's in the model (worksets, levels, phases and so on by name).</li>
+    <li>In <strong>Applied to</strong>, set Enable, Visible, projection and cut lines and patterns, transparency and halftone. Reorder with Top, Up, Down and Bottom; copy, paste or clear overrides across selected rows; or <strong>Copy from view</strong> to merge or replace another view's setup.</li>
+  </ol>
+  <p><strong>Duplicate</strong>, <strong>Rename</strong>, <strong>Where used</strong> and <strong>Delete</strong> (unused filters only) work on the library. Every change is its own Undo step.</p>
 
   <h2 id="compare">Compare</h2>
   <p class="where">Inspection › Look › Compare</p>
@@ -256,6 +269,13 @@
     <li>Insulation is read automatically, or choose the parameter that holds it. <strong>Elevation offset</strong> stores a per-family adjustment in inches (select a row, type, click <strong>Set</strong>).</li>
     <li>Click <strong>Sync Lower</strong>. Each hanger gets its bottom elevation (CP_Hung Object Bottom Elev, BOHElevation or CP_Bottom Elevation), diameter, trapeze width and insulation, and is centered on the run.</li>
   </ol>
+  <h3>Clevis hangers and MEP Fabrication hangers on pipe</h3>
+  <p>The scan also lists clevis hanger kits (Generic Model or Mechanical Equipment families whose name contains one of the <strong>Clevis family names</strong>, by default Clevis, Stress Less and Pipe Guide) and MEP Fabrication hangers on each pipe. The <strong>Kind</strong> column tells them apart, and two checkboxes turn each on or off.</p>
+  <ul>
+    <li><strong>Align clevis RFAs</strong>: the clevis switches to the loaded type of its family that carries the pipe size (else the smallest Pipe Rad that fits), turns square to the pipe, and sits on the pipe centerline at its spot along the slope.</li>
+    <li><strong>Fab hangers to pipe centerline</strong>: the hanger's product entry follows the pipe size, it turns square and recenters, and its bottom pick point goes to the pipe centerline while the rod top stays where it was.</li>
+  </ul>
+  <p>Each is measured after the move. <strong>Synced</strong> means it landed in tolerance; <strong>Check</strong> says why not (for example "no 9&quot; entry on hanger").</p>
   <h3>Upper Attachment (follow a slope line)</h3>
   <ol>
     <li>From the start window click <strong>Pick Hangers</strong>, or use the hangers from a scan.</li>
@@ -265,6 +285,15 @@
   <h3>Quick Sync</h3>
   <p><strong>Quick Sync: Pick Part + Hanger</strong> on the start window syncs one hanger to one duct or pipe without the list, after asking whether to hang outside the insulation or on the bare surface.</p>
   <p>Each Lower hanger is its own Undo step; Upper is one step. Status shows per row (Ready, Synced, Outside Range, No writable elevation param and so on). Settings, including per-family offsets, are remembered.</p>
+
+  <h2 id="license">Free trial and license key</h2>
+  <p class="where">See 'n' Say › License</p>
+  <p>Every tool is free for 30 days from the first time you use one; the License button on the ribbon counts the days down. After that, a license key keeps all 16 tools unlocked.</p>
+  <ol>
+    <li>Buy See 'n' Say on Gumroad. Your key is on the receipt and on the product's page in your Gumroad library.</li>
+    <li>In Revit, click <strong>See 'n' Say › License</strong>, paste the key and click <strong>Activate</strong>.</li>
+  </ol>
+  <p>One key works on up to 5 computers. The key is re-checked with Gumroad about once a week; if you're offline it keeps working for 30 days. <strong>Remove</strong> takes the key off a computer. If a key reaches its 5 computers, email us to reset it.</p>
 
   <h2 id="settings">Saved settings</h2>
   <table>
@@ -281,7 +310,7 @@
   <h2 id="trouble">Troubleshooting</h2>
   <dl>
     <dt>There's no See 'n' Say tab</dt>
-    <dd>Check that your Revit year was ticked in the installer: there should be a <code>JGriffithTech.SeeNSay.addin</code> in <code>%AppData%\Autodesk\Revit\Addins\&lt;year&gt;</code>. Revit 2024, 2025 and 2026 are supported. Run the installer again with Revit closed.</dd>
+    <dd>Check that your Revit year was ticked in the installer: there should be a <code>JGriffithTech.SeeNSay.addin</code> in <code>%AppData%\Autodesk\Revit\Addins\&lt;year&gt;</code>. Revit 2024, 2025, 2026 and 2027 are supported. Run the installer again with Revit closed.</dd>
     <dt>"The See 'n' Say add-in failed to load"</dt>
     <dd>Close Revit, run the installer again, and restart. If it keeps happening, email the error text it shows.</dd>
     <dt>A tool says "Open a project first"</dt>
@@ -310,6 +339,10 @@
     <dd>Check Target A is a parameter the elements have and that it isn't read-only (for example a type parameter or one driven by a formula).</dd>
     <dt>Rotate Multiple: "Skipped" elements</dt>
     <dd>Pinned elements are skipped unless you allow unpinning. In Align mode, elements without a readable direction are skipped.</dd>
+    <dt>License: "That license does not exist for the provided product"</dt>
+    <dd>Copy the key again from your receipt with nothing extra before or after it. Keys from other JGriffith Tech products don't unlock See 'n' Say.</dd>
+    <dt>License: "This key is already active on 5 computers"</dt>
+    <dd>Email us with the key and we'll reset it.</dd>
     <dt>Set Hangers: "No hangers found"</dt>
     <dd>Hangers must be Generic Model families placed at a point. Raise <strong>Max hanger distance</strong> and click <strong>Re-Scan</strong>.</dd>
     <dt>Set Hangers: "No writable elevation param"</dt>
@@ -324,7 +357,7 @@
 
   <h2 id="contact">Contact</h2>
   <p>Questions or feature requests: <a href="mailto:jeremiah@jgriffithtech.com">jeremiah@jgriffithtech.com</a>.</p>
-  <p class="fine">Made by JGriffith Tech. See 'n' Say runs entirely on your computer and sends nothing anywhere. Not affiliated with or endorsed by Autodesk, Inc. Autodesk and Revit are registered trademarks or trademarks of Autodesk, Inc.</p>
+  <p class="fine">Made by JGriffith Tech. See 'n' Say runs on your computer and never sends your model or project data anywhere; its only network call is the license check with Gumroad. Not affiliated with or endorsed by Autodesk, Inc. Autodesk and Revit are registered trademarks or trademarks of Autodesk, Inc.</p>
 </main>
 </body>
 </html>
