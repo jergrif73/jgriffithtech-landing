@@ -8,8 +8,10 @@
 //   GUMROAD_ACCESS_TOKEN  Gumroad application token, used only to create one-use offer codes
 //   RESEND_API_KEY        sends the code email
 //   LICENSE_MAIL_FROM     sender, e.g. "JGriffith Tech <licenses@jgriffithtech.com>"
-//   WORK_LICENSE_SECRET   long random string; emails, IPs and codes are stored only as HMACs of it
-// Until all five are set, every request answers 503 "not set up", so the page is safe to deploy early.
+//   WORK_LICENSE_SECRET   optional long random string; emails, IPs and codes are stored only as HMACs of it.
+//                         If it is not set, the function makes one on first use and keeps it in Blobs
+//                         (config/secret), so nobody has to create or paste it.
+// Until the four required settings exist, every request answers 503 "not set up", so the page is safe to deploy early.
 //
 // Stored in Netlify Blobs ("work-license"): pending codes and send counts keyed by HMAC, and one record per
 // issued offer code {email, product, offer, at} so Jeremiah can see who claimed what.
@@ -20,7 +22,7 @@ import {
   sendWindow, checkCode, checkoutUrl, codeEmail,
 } from "../lib/work-license-core.mjs";
 
-const NEEDED = ["FREE_EMAIL_DOMAINS", "GUMROAD_ACCESS_TOKEN", "RESEND_API_KEY", "LICENSE_MAIL_FROM", "WORK_LICENSE_SECRET"];
+const NEEDED = ["FREE_EMAIL_DOMAINS", "GUMROAD_ACCESS_TOKEN", "RESEND_API_KEY", "LICENSE_MAIL_FROM"];
 
 const env = (k) => (typeof Netlify !== "undefined" ? Netlify.env.get(k) : process.env[k]) || "";
 
@@ -34,10 +36,23 @@ const json = (obj, status = 200) =>
 
 const randomBytes = (n) => crypto.getRandomValues(new Uint8Array(n));
 
+const hex = (bytes) => [...bytes].map((b) => b.toString(16).padStart(2, "0")).join("");
+
+/** The HMAC secret: the WORK_LICENSE_SECRET setting if there is one, otherwise one made once and kept in Blobs. */
+async function loadSecret(s) {
+  if (env("WORK_LICENSE_SECRET")) return env("WORK_LICENSE_SECRET");
+  const saved = await s.get("config/secret", { type: "json" });
+  if (saved?.secret) return saved.secret;
+  await s.setJSON("config/secret", { secret: hex(randomBytes(32)), at: Date.now() });
+  return (await s.get("config/secret", { type: "json" })).secret; // re-read so two first calls agree
+}
+
+let secret = "";
+
 async function hmac(text) {
-  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(env("WORK_LICENSE_SECRET")), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
   const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(text));
-  return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, "0")).join("");
+  return hex(new Uint8Array(sig));
 }
 
 async function sendCode(email, code, productName) {
@@ -79,6 +94,7 @@ export default async (req, context) => {
   }
 
   const s = store();
+  secret = await loadSecret(s);
   const now = Date.now();
   const who = await hmac("email:" + email);
   const pendingKey = "pending/" + who + "/" + product;

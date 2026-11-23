@@ -85,7 +85,7 @@ test("function: start emails a code, verify mints one offer, again returns the s
   assert.equal(sent.length, 1);
   assert.deepEqual(sent[0].to, ["pat@example.com"]);
   const code = sent[0].text.match(/\b(\d{6})\b/)[1];
-  assert.ok(![...globalThis.__blobs.values()].some((v) => v.includes(code)), "code is stored only as a hash");
+  assert.ok(![...globalThis.__blobs.entries()].some(([k, v]) => k !== "config/secret" && v.includes(code)), "code is stored only as a hash");
   assert.ok(![...globalThis.__blobs.keys()].some((k) => k.includes("example")), "keys hold no email");
 
   const wrong = await post({ action: "verify", email: "pat@example.com", product: "navisworks", code: code === "000000" ? "111111" : "000000" });
@@ -119,4 +119,25 @@ test("function: answers 503 until every setting exists", async () => {
   const { default: fn } = await import("../netlify/functions/work-license.mjs?unset");
   const r = await fn(new Request("https://x/api/work-license", { method: "POST", body: "{}" }), {});
   assert.equal(r.status, 503);
+});
+
+test("function: with no secret setting, makes one once and keeps using it", async () => {
+  globalThis.__blobs.clear(); // the fake Blobs module holds the Map from the first test
+  const envs = { FREE_EMAIL_DOMAINS: "example.com", GUMROAD_ACCESS_TOKEN: "t", RESEND_API_KEY: "r", LICENSE_MAIL_FROM: "x <a@b.com>" };
+  globalThis.Netlify = { env: { get: (k) => envs[k] }, context: { deploy: { context: "production" } } };
+  const sent = [];
+  globalThis.fetch = async (url, init) => {
+    if (String(url).startsWith("https://api.resend.com")) { sent.push(JSON.parse(init.body)); return { ok: true }; }
+    if (String(url).includes("/offer_codes")) return { ok: true, json: async () => ({ success: true }) };
+    throw new Error("unexpected fetch " + url);
+  };
+  const { default: fn } = await import("../netlify/functions/work-license.mjs?nosecret");
+  const post = async (b) => { const r = await fn(new Request("https://x/api/work-license", { method: "POST", body: JSON.stringify(b) }), { ip: "1.2.3.4" }); return { status: r.status, body: await r.json() }; };
+  assert.equal((await post({ action: "start", email: "pat@example.com", product: "clash-export" })).status, 200);
+  const first = JSON.parse(globalThis.__blobs.get("config/secret")).secret;
+  assert.match(first, /^[0-9a-f]{64}$/);
+  const code = sent[0].text.match(/\b(\d{6})\b/)[1];
+  const ok = await post({ action: "verify", email: "pat@example.com", product: "clash-export", code });
+  assert.equal(ok.status, 200, "the code made before still checks out, so the same secret was reused");
+  assert.equal(JSON.parse(globalThis.__blobs.get("config/secret")).secret, first);
 });
