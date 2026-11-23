@@ -134,3 +134,8 @@
   from = "/legend-to-toolchest"
   to = "/legend-to-toolchest.html"
   status = 200
+
+[[redirects]]
+  from = "/work-email"
+  to = "/work-email.html"
+  status = 200
